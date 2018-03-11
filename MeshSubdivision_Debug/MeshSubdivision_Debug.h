@@ -1,7 +1,11 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
+#include <QVTKWidget.h>
 #include "ui_MeshSubdivision_Debug.h"
+
+#include <pcl\point_cloud.h>
+#include <pcl\visualization\pcl_visualizer.h>
 
 class MeshSubdivision_Debug : public QMainWindow
 {
@@ -16,4 +20,45 @@ public slots:
 
 private:
 	Ui::MeshSubdivision_DebugClass ui;
+
+	// Carl: QVTKWidget
+	QVTKWidget *qvtkWidget_1;
+	QVTKWidget *qvtkWidget_2;
+	QVTKWidget *qvtkWidget_3;
+	QVTKWidget *qvtkWidget_4;
+
+	// Carl: pcl viewers
+	boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer_1;
+	boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer_2;
+	boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer_3;
+	boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer_4;
+
+	// Carl: define mesh cloud
+	pcl::PolygonMesh mesh_1;
+	pcl::PolygonMesh mesh_2;
+	pcl::PolygonMesh mesh_3;
+	pcl::PolygonMesh mesh_4;
+
+	// Carl: cloud data;
+	pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud_1;
+	pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud_2;
+	pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud_3;
+	pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud_4;
+
+	// Carl: eventfilter
+	bool eventFilter(QObject *, QEvent *);
+
+	/******************** Initialization.cpp ********************/
+	void InitializeLayout_1();
+	void InitializeQVTKWidget_1();
+	void InitializeQVTKWidget_2();
+	void InitializeQVTKWidget_3();
+	void InitializeQVTKWidget_4();
+	void InitializeTextEdit_CMD();
+
+	/******************** ChangeLayout.cpp ********************/
+	void ChangeToLayout_1();
+	void ChangeToLayout_2();
+	void ChangeToLayout_4();
+
 };

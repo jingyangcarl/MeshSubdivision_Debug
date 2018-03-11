@@ -29,10 +29,9 @@ class Ui_MeshSubdivision_DebugClass
 public:
     QWidget *centralWidget;
     QGridLayout *gridLayout;
-    QGridLayout *gridLayout_r;
-    QTextEdit *textEdit_r;
-    QGridLayout *gridLayout_l;
-    QTextEdit *textEdit_l;
+    QGridLayout *gridLayout_widget;
+    QGridLayout *gridLayout_cmd;
+    QTextEdit *textEdit_cmd;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -48,27 +47,23 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        gridLayout_r = new QGridLayout();
-        gridLayout_r->setSpacing(6);
-        gridLayout_r->setObjectName(QStringLiteral("gridLayout_r"));
-        textEdit_r = new QTextEdit(centralWidget);
-        textEdit_r->setObjectName(QStringLiteral("textEdit_r"));
+        gridLayout_widget = new QGridLayout();
+        gridLayout_widget->setSpacing(6);
+        gridLayout_widget->setObjectName(QStringLiteral("gridLayout_widget"));
 
-        gridLayout_r->addWidget(textEdit_r, 0, 0, 1, 1);
+        gridLayout->addLayout(gridLayout_widget, 0, 0, 1, 1);
 
+        gridLayout_cmd = new QGridLayout();
+        gridLayout_cmd->setSpacing(6);
+        gridLayout_cmd->setObjectName(QStringLiteral("gridLayout_cmd"));
+        textEdit_cmd = new QTextEdit(centralWidget);
+        textEdit_cmd->setObjectName(QStringLiteral("textEdit_cmd"));
+        textEdit_cmd->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
-        gridLayout->addLayout(gridLayout_r, 0, 1, 1, 1);
-
-        gridLayout_l = new QGridLayout();
-        gridLayout_l->setSpacing(6);
-        gridLayout_l->setObjectName(QStringLiteral("gridLayout_l"));
-        textEdit_l = new QTextEdit(centralWidget);
-        textEdit_l->setObjectName(QStringLiteral("textEdit_l"));
-
-        gridLayout_l->addWidget(textEdit_l, 0, 0, 1, 1);
+        gridLayout_cmd->addWidget(textEdit_cmd, 0, 0, 1, 1);
 
 
-        gridLayout->addLayout(gridLayout_l, 0, 0, 1, 1);
+        gridLayout->addLayout(gridLayout_cmd, 0, 1, 1, 1);
 
         MeshSubdivision_DebugClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MeshSubdivision_DebugClass);
