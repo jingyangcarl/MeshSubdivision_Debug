@@ -119,6 +119,7 @@
     <ClCompile Include="Initialization.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MeshSubdivision_Debug.cpp" />
+    <ClCompile Include="OutputTextEdit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MeshSubdivision_Debug.h" />

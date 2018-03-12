@@ -48,6 +48,9 @@ private:
 	// Carl: eventfilter
 	bool eventFilter(QObject *, QEvent *);
 
+	// Carl: textEditlength
+	int textEditRecordLenth = 0;
+
 	/******************** Initialization.cpp ********************/
 	void InitializeLayout_1();
 	void InitializeQVTKWidget_1();
@@ -60,5 +63,13 @@ private:
 	void ChangeToLayout_1();
 	void ChangeToLayout_2();
 	void ChangeToLayout_4();
+
+	/******************** OutputTextEdit.cpp ********************/
+	void OutputTextEditFinished(QString);		// Carl: grey
+	void OutputTextEditProcessing(QString);		// Carl: blue
+	void OutputTextEditNotice(QString);			// Carl: green
+	void OutputTextEditWarning(QString);		// Carl: orange
+	void OutputTextEditError(QString);			// Carl: red
+	void OutputTextEditColoredString(QColor, QString);
 
 };

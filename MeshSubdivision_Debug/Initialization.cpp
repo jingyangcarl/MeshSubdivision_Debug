@@ -4,14 +4,15 @@
 void MeshSubdivision_Debug::InitializeLayout_1() {
 	// Carl: initialize the framework including 1 QVTKWidget
 
-	InitializeQVTKWidget_1();
 	InitializeTextEdit_CMD();
+	InitializeQVTKWidget_1();
 
 	ui.gridLayout_widget->addWidget(qvtkWidget_1, 0, 0);
 	
 	ui.gridLayout->setColumnStretch(0, 4);
 	ui.gridLayout->setColumnStretch(1, 1);
 
+	OutputTextEditFinished("Layout_1 initialization finished;");
 	return;
 }
 
@@ -24,6 +25,7 @@ void MeshSubdivision_Debug::InitializeQVTKWidget_1() {
 	viewer_1->setupInteractor(qvtkWidget_1->GetInteractor(), qvtkWidget_1->GetRenderWindow());
 	qvtkWidget_1->update();
 
+	OutputTextEditFinished("QVTKWidget_1 initialization finished;");
 	return;
 }
 
@@ -75,7 +77,10 @@ void MeshSubdivision_Debug::InitializeTextEdit_CMD() {
 	cursor.movePosition(QTextCursor::Start);
 	ui.textEdit_cmd->setTextCursor(cursor);
 
+	ui.textEdit_cmd->setTextColor(QColor("gray"));
 	ui.textEdit_cmd->textCursor().insertText(">> ");
+	textEditRecordLenth += 3;
 
+	OutputTextEditFinished("TextEdit_CMD initialization finished;");
 	return;
 }

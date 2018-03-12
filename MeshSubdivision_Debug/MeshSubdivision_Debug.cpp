@@ -13,8 +13,6 @@ MeshSubdivision_Debug::MeshSubdivision_Debug(QWidget *parent)
 	// Carl: install eventfilter
 	ui.textEdit_cmd->installEventFilter(this);
 
-	ChangeToLayout_2();
-	ChangeToLayout_4();
-	//ChangeToLayout_1();
+	//ChangeToLayout_2();
 
 }
