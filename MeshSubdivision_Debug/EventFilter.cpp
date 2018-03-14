@@ -8,6 +8,7 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 		// Carl: key events
 
 		QKeyEvent *keyEvent = static_cast<QKeyEvent *>(e);
+		QTextCursor cursor;
 
 		if (keyEvent->key() == Qt::Key_Return) {
 			// Carl: enter key events
@@ -18,6 +19,7 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 		}
 		else if (keyEvent->key() == Qt::Key_Backspace) {
 			// Carl: backspace key events
+
 			if (ui.textEdit_cmd->textCursor().hasSelection()) {
 				// Carl: if there is a selected text
 				if (ui.textEdit_cmd->textCursor().selectionStart() >= textEditRecordLenth)
@@ -25,24 +27,109 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 				else if (ui.textEdit_cmd->textCursor().selectionEnd() <= textEditRecordLenth)
 					return true;
 				else {
-					QTextCursor cursor = ui.textEdit_cmd->textCursor();
+					cursor = ui.textEdit_cmd->textCursor();
 					cursor.setPosition(ui.textEdit_cmd->textCursor().selectionEnd());
 					ui.textEdit_cmd->setTextCursor(cursor);
 
 					// Carl: delete the selected text that is from input instruction
-					while (ui.textEdit_cmd->textCursor().position() > textEditRecordLenth+1)	ui.textEdit_cmd->textCursor().deletePreviousChar();
+					while (ui.textEdit_cmd->textCursor().position() > textEditRecordLenth)	ui.textEdit_cmd->textCursor().deletePreviousChar();
+
+					// Carl: set the output color back to white
+					ui.textEdit_cmd->setTextColor(QColor("white"));
+					return true;
 				}
 			}
 			else {
 				// Carl: there isn't any selected text
 				if (ui.textEdit_cmd->textCursor().position() > textEditRecordLenth)
 					return false;
-				else
+				else {
+					ui.textEdit_cmd->setTextColor(QColor("white"));
 					return true;
+				}
 			}
-
 		}
-	}
+		else if (keyEvent->key() == Qt::Key_Delete) {
+			// Carl: delete key events
 
+			if (ui.textEdit_cmd->textCursor().hasSelection()) {
+				// Carl: if there is a selected text
+				if (ui.textEdit_cmd->textCursor().selectionStart() >= textEditRecordLenth)
+					return false;
+				else if (ui.textEdit_cmd->textCursor().selectionEnd() <= textEditRecordLenth)
+					return true;
+				else {
+					cursor = ui.textEdit_cmd->textCursor();
+					cursor.setPosition(ui.textEdit_cmd->textCursor().selectionEnd());
+					ui.textEdit_cmd->setTextCursor(cursor);
+
+					// Carl: delete the selected text that is from input instruction
+					while (ui.textEdit_cmd->textCursor().position() > textEditRecordLenth)	ui.textEdit_cmd->textCursor().deletePreviousChar();
+
+					// Carl: set the output color back to white
+					ui.textEdit_cmd->setTextColor(QColor("white"));
+					return true;
+				}
+			}
+			else {
+				// Carl: there isn't any selected text
+				if (ui.textEdit_cmd->textCursor().position() >= textEditRecordLenth)
+					return false;
+				else {
+					ui.textEdit_cmd->setTextColor(QColor("white"));
+					return true;
+				}
+			}
+		}
+		else {
+			// Carl: other keys
+
+			if (ui.textEdit_cmd->textCursor().hasSelection()) {
+				// Carl: if there is a selected text
+				if (ui.textEdit_cmd->textCursor().selectionStart() >= textEditRecordLenth) {
+
+					// Carl: set the output color back to white
+					ui.textEdit_cmd->setTextColor(QColor("white")); 
+					return false;
+
+				}
+				else if (ui.textEdit_cmd->textCursor().selectionEnd() <= textEditRecordLenth) {
+					cursor = ui.textEdit_cmd->textCursor();
+					cursor.movePosition(QTextCursor::End);
+					ui.textEdit_cmd->setTextCursor(cursor);
+
+					// Carl: set the output color back to white
+					ui.textEdit_cmd->setTextColor(QColor("white"));
+					return false;
+				}
+				else {
+					cursor = ui.textEdit_cmd->textCursor();
+					cursor.setPosition(ui.textEdit_cmd->textCursor().selectionEnd());
+					ui.textEdit_cmd->setTextCursor(cursor);
+
+					// Carl: delete the selected text that is from input instruction
+					while (ui.textEdit_cmd->textCursor().position() > textEditRecordLenth)	ui.textEdit_cmd->textCursor().deletePreviousChar();
+
+					// Carl: set the output color back to white
+					ui.textEdit_cmd->setTextColor(QColor("white"));
+					return false;
+				}
+			}
+			else {
+				// Carl: there isn't any selected text
+				if (ui.textEdit_cmd->textCursor().position() < textEditRecordLenth) {
+					cursor = ui.textEdit_cmd->textCursor();
+					cursor.movePosition(QTextCursor::End);
+					ui.textEdit_cmd->setTextCursor(cursor);
+
+				}
+				// Carl: set the output color back to white
+				ui.textEdit_cmd->setTextColor(QColor("white"));
+				return false;
+			}
+		}
+
+	}
+	
 	return false;
 }

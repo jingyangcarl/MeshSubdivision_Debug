@@ -15,6 +15,8 @@ void MeshSubdivision_Debug::OutputTextEditFinished(QString output) {
 	ui.textEdit_cmd->textCursor().insertText("\n>> ");
 	textEditRecordLenth = ui.textEdit_cmd->toPlainText().size();
 
+	// Carl: set output color back
+	ui.textEdit_cmd->setTextColor(QColor("white"));
 	return;
 }
 
