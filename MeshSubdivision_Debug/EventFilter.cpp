@@ -13,8 +13,13 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 		if (keyEvent->key() == Qt::Key_Return) {
 			// Carl: enter key events
 			QString command = ui.textEdit_cmd->toPlainText().right(ui.textEdit_cmd->toPlainText().size() - textEditRecordLenth);
+			OutputTextEditFinished("");
+			if (command.size()) {
+				// deal with the command;
 
+			}
 
+			ui.textEdit_cmd->setTextColor(QColor("white"));
 			return true;
 		}
 		else if (keyEvent->key() == Qt::Key_Backspace) {
@@ -34,7 +39,6 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 					// Carl: delete the selected text that is from input instruction
 					while (ui.textEdit_cmd->textCursor().position() > textEditRecordLenth)	ui.textEdit_cmd->textCursor().deletePreviousChar();
 
-					// Carl: set the output color back to white
 					ui.textEdit_cmd->setTextColor(QColor("white"));
 					return true;
 				}
@@ -66,7 +70,6 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 					// Carl: delete the selected text that is from input instruction
 					while (ui.textEdit_cmd->textCursor().position() > textEditRecordLenth)	ui.textEdit_cmd->textCursor().deletePreviousChar();
 
-					// Carl: set the output color back to white
 					ui.textEdit_cmd->setTextColor(QColor("white"));
 					return true;
 				}
@@ -88,7 +91,6 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 				// Carl: if there is a selected text
 				if (ui.textEdit_cmd->textCursor().selectionStart() >= textEditRecordLenth) {
 
-					// Carl: set the output color back to white
 					ui.textEdit_cmd->setTextColor(QColor("white")); 
 					return false;
 
@@ -98,7 +100,6 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 					cursor.movePosition(QTextCursor::End);
 					ui.textEdit_cmd->setTextCursor(cursor);
 
-					// Carl: set the output color back to white
 					ui.textEdit_cmd->setTextColor(QColor("white"));
 					return false;
 				}
@@ -110,7 +111,6 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 					// Carl: delete the selected text that is from input instruction
 					while (ui.textEdit_cmd->textCursor().position() > textEditRecordLenth)	ui.textEdit_cmd->textCursor().deletePreviousChar();
 
-					// Carl: set the output color back to white
 					ui.textEdit_cmd->setTextColor(QColor("white"));
 					return false;
 				}
@@ -123,7 +123,6 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 					ui.textEdit_cmd->setTextCursor(cursor);
 
 				}
-				// Carl: set the output color back to white
 				ui.textEdit_cmd->setTextColor(QColor("white"));
 				return false;
 			}

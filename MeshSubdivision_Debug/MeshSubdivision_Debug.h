@@ -7,6 +7,8 @@
 #include <pcl\point_cloud.h>
 #include <pcl\visualization\pcl_visualizer.h>
 
+#include "CommandProcessor.h"
+
 class MeshSubdivision_Debug : public QMainWindow
 {
 	Q_OBJECT
@@ -50,6 +52,9 @@ private:
 
 	// Carl: textEditlength
 	int textEditRecordLenth = 0;
+
+	// Carl: command analyser and processor
+
 
 	/******************** Initialization.cpp ********************/
 	void InitializeLayout_1();

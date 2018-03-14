@@ -115,6 +115,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ChangeLayout.cpp" />
+    <ClCompile Include="CommandAnalyser.cpp" />
+    <ClCompile Include="CommandProcessor.cpp" />
     <ClCompile Include="EventFilter.cpp" />
     <ClCompile Include="Initialization.cpp" />
     <ClCompile Include="main.cpp" />
@@ -129,6 +131,10 @@
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="MeshSubdivision_Debug.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CommandAnalyser.h" />
+    <ClInclude Include="CommandProcessor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
