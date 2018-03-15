@@ -60,6 +60,9 @@
     <ClCompile Include="CommandProcessor.cpp">
       <Filter>Source Files\Command</Filter>
     </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MeshSubdivision_Debug.h">
@@ -81,6 +84,9 @@
       <Filter>Header Files\Command</Filter>
     </ClInclude>
     <ClInclude Include="CommandProcessor.h">
+      <Filter>Header Files\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
       <Filter>Header Files\Command</Filter>
     </ClInclude>
   </ItemGroup>

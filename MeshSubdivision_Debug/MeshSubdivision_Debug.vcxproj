@@ -115,6 +115,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ChangeLayout.cpp" />
+    <ClCompile Include="Command.cpp" />
     <ClCompile Include="CommandAnalyser.cpp" />
     <ClCompile Include="CommandProcessor.cpp" />
     <ClCompile Include="EventFilter.cpp" />
@@ -133,6 +134,7 @@
     <QtRcc Include="MeshSubdivision_Debug.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Command.h" />
     <ClInclude Include="CommandAnalyser.h" />
     <ClInclude Include="CommandProcessor.h" />
   </ItemGroup>

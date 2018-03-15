@@ -7,6 +7,7 @@
 #include <pcl\point_cloud.h>
 #include <pcl\visualization\pcl_visualizer.h>
 
+#include "CommandAnalyser.h"
 #include "CommandProcessor.h"
 
 class MeshSubdivision_Debug : public QMainWindow
@@ -54,7 +55,8 @@ private:
 	int textEditRecordLenth = 0;
 
 	// Carl: command analyser and processor
-
+	CommandAnalyser *commandAnalyser;
+	CommandProcessor *commandProcessor;
 
 	/******************** Initialization.cpp ********************/
 	void InitializeLayout_1();

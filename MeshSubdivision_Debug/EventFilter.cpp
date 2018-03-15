@@ -12,11 +12,12 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 
 		if (keyEvent->key() == Qt::Key_Return) {
 			// Carl: enter key events
-			QString command = ui.textEdit_cmd->toPlainText().right(ui.textEdit_cmd->toPlainText().size() - textEditRecordLenth);
+			QString input = ui.textEdit_cmd->toPlainText().right(ui.textEdit_cmd->toPlainText().size() - textEditRecordLenth);
 			OutputTextEditFinished("");
-			if (command.size()) {
+			if (input.size()) {
 				// deal with the command;
-
+				commandAnalyser = new CommandAnalyser(input);
+				commandProcessor = new CommandProcessor(commandAnalyser->Analyse());
 			}
 
 			ui.textEdit_cmd->setTextColor(QColor("white"));

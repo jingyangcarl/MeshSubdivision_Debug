@@ -1,6 +1,7 @@
 #pragma once
 
 #include <qstring.h>
+#include "Command.h"
 
 class CommandAnalyser
 {
@@ -9,10 +10,12 @@ public:
 	CommandAnalyser(QString);
 	~CommandAnalyser();
 
-	bool isCommand();
+	// Carl: analyse if the input is a command or not;
+	Command Analyse();
 
 private:
 	QString input;
-	QString output;
+	Command command;
+
 };
 
