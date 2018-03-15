@@ -16,8 +16,11 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 			OutputTextEditFinished("");
 			if (input.size()) {
 				// deal with the command;
-				commandAnalyser = new CommandAnalyser(input);
-				commandProcessor = new CommandProcessor(commandAnalyser->Analyse());
+				commandAnalyser->SetInput(input);
+				commandProcessor->SetCommand(commandAnalyser->Analyse());
+				commandProcessor->start();
+
+				//commandProcessor->wait();
 			}
 
 			ui.textEdit_cmd->setTextColor(QColor("white"));

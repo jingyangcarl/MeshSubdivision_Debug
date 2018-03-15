@@ -18,7 +18,7 @@ public:
 	MeshSubdivision_Debug(QWidget *parent = Q_NULLPTR);
 
 	// Carl: define slot functions
-public slots:
+private slots:
 	
 
 private:
@@ -55,8 +55,8 @@ private:
 	int textEditRecordLenth = 0;
 
 	// Carl: command analyser and processor
-	CommandAnalyser *commandAnalyser;
-	CommandProcessor *commandProcessor;
+	CommandAnalyser *commandAnalyser = new CommandAnalyser();
+	CommandProcessor *commandProcessor = new CommandProcessor();
 
 	/******************** Initialization.cpp ********************/
 	void InitializeLayout_1();
@@ -65,6 +65,7 @@ private:
 	void InitializeQVTKWidget_3();
 	void InitializeQVTKWidget_4();
 	void InitializeTextEdit_CMD();
+	void InitializeSlotSignal();
 
 	/******************** ChangeLayout.cpp ********************/
 	void ChangeToLayout_1();
@@ -72,6 +73,7 @@ private:
 	void ChangeToLayout_4();
 
 	/******************** OutputTextEdit.cpp ********************/
+private slots:
 	void OutputTextEditFinished(QString);		// Carl: grey
 	void OutputTextEditProcessing(QString);		// Carl: blue
 	void OutputTextEditNotice(QString);			// Carl: green

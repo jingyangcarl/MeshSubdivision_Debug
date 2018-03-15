@@ -9,6 +9,7 @@ public:
 	CommandAnalyser();
 	CommandAnalyser(QString);
 	~CommandAnalyser();
+	void SetInput(QString);
 
 	// Carl: analyse if the input is a command or not;
 	Command Analyse();

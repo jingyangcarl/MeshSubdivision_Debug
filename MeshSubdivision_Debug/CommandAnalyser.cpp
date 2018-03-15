@@ -13,6 +13,10 @@ CommandAnalyser::~CommandAnalyser() {
 
 }
 
+void CommandAnalyser::SetInput(QString input) {
+	this->input = input;
+}
+
 Command CommandAnalyser::Analyse() {
 	// Carl: analyse if the input is a command or not;
 

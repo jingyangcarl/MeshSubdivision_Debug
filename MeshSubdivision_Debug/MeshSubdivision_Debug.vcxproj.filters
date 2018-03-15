@@ -68,6 +68,9 @@
     <QtMoc Include="MeshSubdivision_Debug.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="CommandProcessor.h">
+      <Filter>Header Files\Command</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="MeshSubdivision_Debug.ui">
@@ -81,9 +84,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommandAnalyser.h">
-      <Filter>Header Files\Command</Filter>
-    </ClInclude>
-    <ClInclude Include="CommandProcessor.h">
       <Filter>Header Files\Command</Filter>
     </ClInclude>
     <ClInclude Include="Command.h">

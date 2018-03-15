@@ -10,6 +10,9 @@ MeshSubdivision_Debug::MeshSubdivision_Debug(QWidget *parent)
 	// Carl: initialize the framework
 	InitializeLayout_1();
 
+	// Carl: initialize connections between slot and signals;
+	InitializeSlotSignal();
+
 	// Carl: install eventfilter
 	ui.textEdit_cmd->installEventFilter(this);
 

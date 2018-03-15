@@ -9,3 +9,11 @@ CommandProcessor::CommandProcessor(Command command) {
 
 CommandProcessor::~CommandProcessor() {
 }
+
+void CommandProcessor::SetCommand(Command command) {
+	this->command = command;
+}
+
+void CommandProcessor::run() {
+	emit MsgSignalFinished("finished");
+}

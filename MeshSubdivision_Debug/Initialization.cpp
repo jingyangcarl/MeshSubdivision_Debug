@@ -84,3 +84,8 @@ void MeshSubdivision_Debug::InitializeTextEdit_CMD() {
 	OutputTextEditFinished("TextEdit_CMD initialization finished;");
 	return;
 }
+
+void MeshSubdivision_Debug::InitializeSlotSignal() {
+	// Carl: initialize connections between slot and signals;
+	connect(commandProcessor, SIGNAL(MsgSignalFinished(QString)), this, SLOT(OutputTextEditFinished(QString)));
+}
