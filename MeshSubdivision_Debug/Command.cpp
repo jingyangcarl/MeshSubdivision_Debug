@@ -1,23 +1,29 @@
 #include"Command.h"
 
-QStringList Command::dicPredicate = { "show", "load", "change", "clear" };
+// Carl: Predicate can have only one word;
+QStringList Command::dicPredicate = { "load", "show", "change", "clear" };
 
-QStringList Command::dicObject = { "text" , "color" , "mesh" , "layout" };
+// Carl: Object can have one or two words;
+QStringList Command::dicObject = { "mesh" , "cloud", "keypoint" , "keypoint color" , "text", "layout"};
 
+// Carl: Complement is used for parameters;
 QStringList Command::dicComplement = { "" };
 
 // Command list
 /*
 load mesh [No.]
 show help
+show mesh [No.]
 show cloud [No.]
+show keypoint [No.]
 show keypoint color [No.]
 show mesh status [No.]
 show system status
 *show error []
-*show 
 clear text
 clear mesh [No.]
+clear cloud [No.]
+clear keypoint [No.]
 clear keypoint color [No.]
 change layout [No.]
 change cloud color [No.]
