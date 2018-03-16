@@ -63,6 +63,12 @@
     <ClCompile Include="Command.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LoadMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowOrClear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MeshSubdivision_Debug.h">

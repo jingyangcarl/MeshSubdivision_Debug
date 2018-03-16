@@ -120,9 +120,11 @@
     <ClCompile Include="CommandProcessor.cpp" />
     <ClCompile Include="EventFilter.cpp" />
     <ClCompile Include="Initialization.cpp" />
+    <ClCompile Include="LoadMesh.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MeshSubdivision_Debug.cpp" />
     <ClCompile Include="OutputTextEdit.cpp" />
+    <ClCompile Include="ShowOrClear.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MeshSubdivision_Debug.h" />

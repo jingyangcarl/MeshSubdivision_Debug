@@ -36,6 +36,12 @@ private:
 	boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer_3;
 	boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer_4;
 
+	// Carl: mesh path
+	QString pathMesh_1;
+	QString pathMesh_2;
+	QString pathMesh_3;
+	QString pathMesh_4;
+
 	// Carl: define mesh cloud
 	pcl::PolygonMesh mesh_1;
 	pcl::PolygonMesh mesh_2;
@@ -48,11 +54,20 @@ private:
 	pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud_3;
 	pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud_4;
 
+	// Carl: cloud color
+	QColor colorCloud_1;
+	QColor colorCloud_2;
+	QColor colorCloud_3;
+	QColor colorCloud_4;
+
 	// Carl: eventfilter
 	bool eventFilter(QObject *, QEvent *);
 
 	// Carl: textEditlength
 	int textEditRecordLenth = 0;
+
+	// Carl: layout status
+	int layoutStatus = 1;
 
 	// Carl: command analyser and processor
 	CommandAnalyser *commandAnalyser = new CommandAnalyser();
@@ -65,11 +80,11 @@ private slots:
 	void InitializeQVTKWidget_2();
 	void InitializeQVTKWidget_3();
 	void InitializeQVTKWidget_4();
+	void InitializeMesh_1();
 	void InitializeTextEdit_CMD();
 	void InitializeSlotSignal();
 
 	/******************** ChangeLayout.cpp ********************/
-	int layoutStatus = 1;
 	void ChangeToLayout_1();
 	void ChangeToLayout_2();
 	void ChangeToLayout_4();
@@ -87,5 +102,11 @@ private slots:
 	void LoadMesh_2();
 	void LoadMesh_3();
 	void LoadMesh_4();
+
+	/******************** ShowOrClear.cpp ********************/
+	void ShowMesh_1();
+	void ClearMesh_1();
+	void ShowCloud_1();
+	void ClearCloud_1();
 
 };

@@ -1,11 +1,15 @@
 #include "MeshSubdivision_Debug.h"
 #include <vtkRenderWindow.h>
+#include <pcl\io\ply_io.h>
+
 
 void MeshSubdivision_Debug::InitializeLayout_1() {
 	// Carl: initialize the framework including 1 QVTKWidget
 
 	InitializeTextEdit_CMD();
 	InitializeQVTKWidget_1();
+	InitializeMesh_1();
+	ShowMesh_1();
 
 	ui.gridLayout_widget->addWidget(qvtkWidget_1, 0, 0);
 	
@@ -67,6 +71,45 @@ void MeshSubdivision_Debug::InitializeQVTKWidget_4() {
 	OutputTextEditFinished("QVTKWidget_4 initialization finished;");
 	return;
 }
+
+void MeshSubdivision_Debug::InitializeMesh_1() {
+	// Carl: initialize mesh 1
+
+	pathMesh_1 = "../MeshFile/footbones.ply";
+
+	// Carl: clear the mesh;
+	pcl::PolygonMesh emptyMesh;
+	mesh_1 = emptyMesh;
+
+	// Carl: read mesh from mesh path
+	pcl::io::loadPLYFile(pathMesh_1.toStdString(), mesh_1);
+
+	// Carl: choose a color
+	srand(time(NULL));
+	colorCloud_1.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_1.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_1.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+
+	if (!mesh_1.cloud.data.empty()) {
+		// Carl: read mesh succeed
+		OutputTextEditFinished("Mesh_1 loaded finished;");
+
+		// Carl: initialize cloud
+		cloud_1.reset(new pcl::PointCloud <pcl::PointXYZRGBA>);
+		pcl::fromPCLPointCloud2(mesh_1.cloud, *cloud_1);
+
+		// Carl: colored the cloud
+		for (int i = 0; i < cloud_1->points.size(); i++) {
+			cloud_1->points[i].r = colorCloud_1.red();
+			cloud_1->points[i].g = colorCloud_1.green();
+			cloud_1->points[i].b = colorCloud_1.blue();
+		}
+
+	}
+	else OutputTextEditError("Mesh_1 loaded failed;");
+}
+
+
 
 void MeshSubdivision_Debug::InitializeTextEdit_CMD() {
 	// Carl: initialize the textfield
