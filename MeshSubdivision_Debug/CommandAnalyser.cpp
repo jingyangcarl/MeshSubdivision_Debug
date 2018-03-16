@@ -21,7 +21,7 @@ Command CommandAnalyser::Analyse() {
 	// Carl: analyse if the input is a command or not;
 
 	// Carl: remove blank characters on left and right, while remove continuous bland characters inside;
-	input = input.simplified();
+	input = input.simplified().toLower();
 
 	QStringList inputWords = input.split(QRegExp(" "));
 	
@@ -33,7 +33,7 @@ Command CommandAnalyser::Analyse() {
 	else {
 		command.predicate = "show";
 		command.object = "error";
-		command.complement = "No such instruction, please check your input;";
+		command.complement = "No such instruction, please check your input at " + inputWords.at(0);
 
 		return command;
 	}
@@ -44,12 +44,14 @@ Command CommandAnalyser::Analyse() {
 		command.object = inputWords.at(1) + " " + inputWords.at(2);
 		for (QStringList::Iterator iter = inputWords.begin() + 3; iter != inputWords.end(); iter++)
 			command.complement += *iter + " ";
+		command.complement = command.complement.simplified();
 	}
 	else if (inputWords.size() >= 2 && Command::dicObject.indexOf(inputWords.at(1)) != -1) {
 		// Carl: object with one word
 		command.object = inputWords.at(1);
 		for (QStringList::Iterator iter = inputWords.begin() + 2; iter != inputWords.end(); iter++)
 			command.complement += *iter + " ";
+		command.complement = command.complement.simplified();
 	}
 	else {
 		command.complement = "No such instruction, please check your input after " + command.predicate;

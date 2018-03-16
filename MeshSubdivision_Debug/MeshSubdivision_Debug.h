@@ -58,6 +58,7 @@ private:
 	CommandAnalyser *commandAnalyser = new CommandAnalyser();
 	CommandProcessor *commandProcessor = new CommandProcessor();
 
+private slots:
 	/******************** Initialization.cpp ********************/
 	void InitializeLayout_1();
 	void InitializeQVTKWidget_1();
@@ -68,17 +69,23 @@ private:
 	void InitializeSlotSignal();
 
 	/******************** ChangeLayout.cpp ********************/
+	int layoutStatus = 1;
 	void ChangeToLayout_1();
 	void ChangeToLayout_2();
 	void ChangeToLayout_4();
 
 	/******************** OutputTextEdit.cpp ********************/
-private slots:
 	void OutputTextEditFinished(QString);		// Carl: grey
 	void OutputTextEditProcessing(QString);		// Carl: blue
 	void OutputTextEditNotice(QString);			// Carl: green
 	void OutputTextEditWarning(QString);		// Carl: orange
 	void OutputTextEditError(QString);			// Carl: red
 	void OutputTextEditColoredString(QColor, QString);
+
+	/******************** LoadMesh.cpp ********************/
+	void LoadMesh_1();
+	void LoadMesh_2();
+	void LoadMesh_3();
+	void LoadMesh_4();
 
 };

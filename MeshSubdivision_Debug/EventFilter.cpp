@@ -16,7 +16,7 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 			OutputTextEditFinished("");
 			if (input.size()) {
 				// deal with the command;
-				commandAnalyser->SetInput(input);
+				commandAnalyser = new CommandAnalyser(input);
 				commandProcessor->SetCommand(commandAnalyser->Analyse());
 				commandProcessor->start();
 

@@ -11,6 +11,9 @@ void MeshSubdivision_Debug::ChangeToLayout_1() {
 
 	ui.gridLayout_widget->addWidget(qvtkWidget_1, 0, 0);
 
+	layoutStatus = 1;
+	OutputTextEditFinished("Layout_1 initialization finished;");
+	return;
 }
 
 void MeshSubdivision_Debug::ChangeToLayout_2() {
@@ -39,8 +42,11 @@ void MeshSubdivision_Debug::ChangeToLayout_2() {
 
 		InitializeQVTKWidget_1();
 		InitializeQVTKWidget_2();
-
 	}
+
+	layoutStatus = 2;
+	OutputTextEditFinished("Layout_2 initialization finished;");
+	return;
 }
 
 void MeshSubdivision_Debug::ChangeToLayout_4() {
@@ -56,5 +62,7 @@ void MeshSubdivision_Debug::ChangeToLayout_4() {
 	ui.gridLayout_widget->addWidget(qvtkWidget_3, 1, 0);
 	ui.gridLayout_widget->addWidget(qvtkWidget_4, 1, 1);
 
-	
+	layoutStatus = 4;
+	OutputTextEditFinished("Layout_4 initialization finished;");
+	return;
 }

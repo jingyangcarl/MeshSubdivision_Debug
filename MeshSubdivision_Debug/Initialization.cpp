@@ -38,6 +38,7 @@ void MeshSubdivision_Debug::InitializeQVTKWidget_2() {
 	viewer_2->setupInteractor(qvtkWidget_2->GetInteractor(), qvtkWidget_2->GetRenderWindow());
 	qvtkWidget_2->update();
 
+	OutputTextEditFinished("QVTKWidget_2 initialization finished;");
 	return;
 }
 
@@ -50,6 +51,7 @@ void MeshSubdivision_Debug::InitializeQVTKWidget_3() {
 	viewer_3->setupInteractor(qvtkWidget_3->GetInteractor(), qvtkWidget_3->GetRenderWindow());
 	qvtkWidget_3->update();
 
+	OutputTextEditFinished("QVTKWidget_3 initialization finished;");
 	return;
 }
 
@@ -62,6 +64,7 @@ void MeshSubdivision_Debug::InitializeQVTKWidget_4() {
 	viewer_4->setupInteractor(qvtkWidget_4->GetInteractor(), qvtkWidget_4->GetRenderWindow());
 	qvtkWidget_4->update();
 
+	OutputTextEditFinished("QVTKWidget_4 initialization finished;");
 	return;
 }
 
@@ -87,5 +90,16 @@ void MeshSubdivision_Debug::InitializeTextEdit_CMD() {
 
 void MeshSubdivision_Debug::InitializeSlotSignal() {
 	// Carl: initialize connections between slot and signals;
-	connect(commandProcessor, SIGNAL(MsgSignalFinished(QString)), this, SLOT(OutputTextEditFinished(QString)));
+
+	// Carl: connection for OutputTextEdit
+	connect(commandProcessor, SIGNAL(SignalOutputTextEditFinished(QString)), this, SLOT(OutputTextEditFinished(QString)));
+	connect(commandProcessor, SIGNAL(SignalOutputTextEditError(QString)), this, SLOT(OutputTextEditError(QString)));
+
+	// Carl: connection for LoadMesh
+	connect(commandProcessor, SIGNAL(SignalLoadMesh_1()), this, SLOT(LoadMesh_1()));
+
+	// Carl: connection for ChangeToLayout
+	connect(commandProcessor, SIGNAL(SignalChangeToLayout_1()), this, SLOT(ChangeToLayout_1()));
+	connect(commandProcessor, SIGNAL(SignalChangeToLayout_2()), this, SLOT(ChangeToLayout_2()));
+	connect(commandProcessor, SIGNAL(SignalChangeToLayout_4()), this, SLOT(ChangeToLayout_4()));
 }
