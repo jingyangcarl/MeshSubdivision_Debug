@@ -92,7 +92,6 @@ void MeshSubdivision_Debug::InitializeMesh_1() {
 
 	if (!mesh_1.cloud.data.empty()) {
 		// Carl: read mesh succeed
-		OutputTextEditFinished("Mesh_1 loaded finished;");
 
 		// Carl: initialize cloud
 		cloud_1.reset(new pcl::PointCloud <pcl::PointXYZRGBA>);
@@ -105,8 +104,9 @@ void MeshSubdivision_Debug::InitializeMesh_1() {
 			cloud_1->points[i].b = colorCloud_1.blue();
 		}
 
+		OutputTextEditFinished("Mesh_1 load finished;");
 	}
-	else OutputTextEditError("Mesh_1 loaded failed;");
+	else OutputTextEditError("Mesh_1 load failed;");
 }
 
 

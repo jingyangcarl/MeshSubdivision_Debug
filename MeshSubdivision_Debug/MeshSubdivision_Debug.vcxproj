@@ -122,6 +122,7 @@
     <ClCompile Include="Initialization.cpp" />
     <ClCompile Include="LoadMesh.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MeshLoader.cpp" />
     <ClCompile Include="MeshSubdivision_Debug.cpp" />
     <ClCompile Include="OutputTextEdit.cpp" />
     <ClCompile Include="ShowOrClear.cpp" />
@@ -138,6 +139,7 @@
   <ItemGroup>
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommandAnalyser.h" />
+    <QtMoc Include="MeshLoader.h" />
     <QtMoc Include="CommandProcessor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

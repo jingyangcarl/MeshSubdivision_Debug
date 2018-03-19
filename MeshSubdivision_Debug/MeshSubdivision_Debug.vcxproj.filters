@@ -69,6 +69,9 @@
     <ClCompile Include="ShowOrClear.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MeshLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MeshSubdivision_Debug.h">
@@ -76,6 +79,9 @@
     </QtMoc>
     <QtMoc Include="CommandProcessor.h">
       <Filter>Header Files\Command</Filter>
+    </QtMoc>
+    <QtMoc Include="MeshLoader.h">
+      <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

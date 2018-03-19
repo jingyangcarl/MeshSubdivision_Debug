@@ -1,7 +1,5 @@
-﻿  Initialization.cpp
+﻿  MeshLoader.cpp
 C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl/point_traits.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl/visualization/interactor_style.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-C:\Program Files\PCL 1.8.0\include\pcl-1.8\pcl\visualization\pcl_visualizer.h(1618): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
 C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory(102): warning C4996: 'std::uninitialized_copy::_Unchecked_iterators::_Deprecate': Call to 'std::uninitialized_copy' with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
   C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xmemory(102): note: 参见“std::uninitialized_copy::_Unchecked_iterators::_Deprecate”的声明
   C:\Program Files\PCL 1.8.0\3rdParty\Boost\include\boost-1_61\boost/signals2/detail/auto_buffer.hpp(191): note: 参见对正在编译的函数 模板 实例化“_FwdIt *std::uninitialized_copy<I,boost::shared_ptr<void>*>(_InIt,_InIt,_FwdIt)”的引用
