@@ -1,7 +1,7 @@
 #include"Command.h"
 
 // Carl: Predicate can have only one word;
-QStringList Command::dicPredicate = { "load", "show", "change", "clear" };
+QStringList Command::dicPredicate = { "load", "show", "clear" , "change"};
 
 // Carl: Object can have one or two words;
 QStringList Command::dicObject = { "mesh" , "cloud", "keypoint" , "keypoint color" , "text", "layout", "help" };

@@ -27,6 +27,14 @@ signals:
 	void SignalLoadMesh_2();
 	void SignalLoadMesh_3();
 	void SignalLoadMesh_4();
+	void SignalShowMesh_1();
+	void SignalShowMesh_2();
+	void SignalShowMesh_3();
+	void SignalShowMesh_4();
+	void SignalClearMesh_1();
+	void SignalClearMesh_2();
+	void SignalClearMesh_3();
+	void SignalClearMesh_4();
 	void SignalChangeToLayout_1();
 	void SignalChangeToLayout_2();
 	void SignalChangeToLayout_4();

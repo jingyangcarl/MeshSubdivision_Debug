@@ -9,12 +9,15 @@ void MeshSubdivision_Debug::InitializeLayout_1() {
 	InitializeTextEdit_CMD();
 	InitializeQVTKWidget_1();
 	InitializeMesh_1();
+	InitializeMesh_2();
+	InitializeMesh_3();
+	InitializeMesh_4();
 	ShowMesh_1();
 
 	ui.gridLayout_widget->addWidget(qvtkWidget_1, 0, 0);
 	
-	ui.gridLayout->setColumnStretch(0, 6);
-	ui.gridLayout->setColumnStretch(1, 2);
+	ui.gridLayout->setColumnStretch(0, 3);
+	ui.gridLayout->setColumnStretch(1, 1);
 
 	OutputTextEditFinished("Layout_1 initialization finished;");
 	return;
@@ -109,7 +112,116 @@ void MeshSubdivision_Debug::InitializeMesh_1() {
 	else OutputTextEditError("Mesh_1 load failed;");
 }
 
+void MeshSubdivision_Debug::InitializeMesh_2() {
+	// Carl: initialize mesh 1
 
+	pathMesh_2 = "../MeshFile/footbones.ply";
+
+	// Carl: clear the mesh;
+	pcl::PolygonMesh emptyMesh;
+	mesh_2 = emptyMesh;
+
+	// Carl: read mesh from mesh path
+	pcl::io::loadPLYFile(pathMesh_2.toStdString(), mesh_2);
+
+	// Carl: choose a color
+	srand(time(NULL));
+	colorCloud_2.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_2.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_2.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+
+	if (!mesh_2.cloud.data.empty()) {
+		// Carl: read mesh succeed
+
+		// Carl: initialize cloud
+		cloud_2.reset(new pcl::PointCloud <pcl::PointXYZRGBA>);
+		pcl::fromPCLPointCloud2(mesh_2.cloud, *cloud_2);
+
+		// Carl: colored the cloud
+		for (int i = 0; i < cloud_2->points.size(); i++) {
+			cloud_2->points[i].r = colorCloud_2.red();
+			cloud_2->points[i].g = colorCloud_2.green();
+			cloud_2->points[i].b = colorCloud_2.blue();
+		}
+
+		OutputTextEditFinished("Mesh_2 load finished;");
+	}
+	else OutputTextEditError("Mesh_2 load failed;");
+}
+
+void MeshSubdivision_Debug::InitializeMesh_3() {
+	// Carl: initialize mesh 1
+
+	pathMesh_3 = "../MeshFile/footbones.ply";
+
+	// Carl: clear the mesh;
+	pcl::PolygonMesh emptyMesh;
+	mesh_3 = emptyMesh;
+
+	// Carl: read mesh from mesh path
+	pcl::io::loadPLYFile(pathMesh_3.toStdString(), mesh_3);
+
+	// Carl: choose a color
+	srand(time(NULL));
+	colorCloud_3.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_3.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_3.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+
+	if (!mesh_3.cloud.data.empty()) {
+		// Carl: read mesh succeed
+
+		// Carl: initialize cloud
+		cloud_3.reset(new pcl::PointCloud <pcl::PointXYZRGBA>);
+		pcl::fromPCLPointCloud2(mesh_3.cloud, *cloud_3);
+
+		// Carl: colored the cloud
+		for (int i = 0; i < cloud_3->points.size(); i++) {
+			cloud_3->points[i].r = colorCloud_3.red();
+			cloud_3->points[i].g = colorCloud_3.green();
+			cloud_3->points[i].b = colorCloud_3.blue();
+		}
+
+		OutputTextEditFinished("Mesh_3 load finished;");
+	}
+	else OutputTextEditError("Mesh_3 load failed;");
+}
+
+void MeshSubdivision_Debug::InitializeMesh_4() {
+	// Carl: initialize mesh 1
+
+	pathMesh_4 = "../MeshFile/footbones.ply";
+
+	// Carl: clear the mesh;
+	pcl::PolygonMesh emptyMesh;
+	mesh_4 = emptyMesh;
+
+	// Carl: read mesh from mesh path
+	pcl::io::loadPLYFile(pathMesh_4.toStdString(), mesh_4);
+
+	// Carl: choose a color
+	srand(time(NULL));
+	colorCloud_4.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_4.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_4.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+
+	if (!mesh_4.cloud.data.empty()) {
+		// Carl: read mesh succeed
+
+		// Carl: initialize cloud
+		cloud_4.reset(new pcl::PointCloud <pcl::PointXYZRGBA>);
+		pcl::fromPCLPointCloud2(mesh_4.cloud, *cloud_4);
+
+		// Carl: colored the cloud
+		for (int i = 0; i < cloud_4->points.size(); i++) {
+			cloud_4->points[i].r = colorCloud_4.red();
+			cloud_4->points[i].g = colorCloud_4.green();
+			cloud_4->points[i].b = colorCloud_4.blue();
+		}
+
+		OutputTextEditFinished("Mesh_4 load finished;");
+	}
+	else OutputTextEditError("Mesh_4 load failed;");
+}
 
 void MeshSubdivision_Debug::InitializeTextEdit_CMD() {
 	// Carl: initialize the textfield

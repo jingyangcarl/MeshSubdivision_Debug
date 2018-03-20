@@ -48,9 +48,11 @@ void CommandProcessor::run() {
 			}
 			else if (command.complement == "instruction") {
 				emit SignalOutputTextEditHelp("----------- INSTRUCTION -----------");
-				emit SignalOutputTextEditHelp("show help (key\instruction)");
-				emit SignalOutputTextEditHelp("change layout [1\2\4]");
-				emit SignalOutputTextEditHelp("load mesh [1\2\3\4]");
+				emit SignalOutputTextEditHelp("change layout [1/2/4]");
+				emit SignalOutputTextEditHelp("clear mesh [1/2/3/4]");
+				emit SignalOutputTextEditHelp("load mesh [1/2/3/4]");
+				emit SignalOutputTextEditHelp("show help (key/instruction)");
+				emit SignalOutputTextEditHelp("show mesh [1/2/3/4]");
 			}
 			else if (command.complement == "") {
 
@@ -58,6 +60,22 @@ void CommandProcessor::run() {
 			else {
 
 			}
+		}
+		else if (command.object == "mesh") {
+			if (command.complement == "1") emit SignalShowMesh_1();
+			else if (command.complement == "2") emit SignalShowMesh_2();
+			else if (command.complement == "3") emit SignalShowMesh_3();
+			else if (command.complement == "4") emit SignalShowMesh_4();
+			else emit SignalOutputTextEditError("There isn't parameter " + command.complement + " for \"" + command.object + "\"");
+		}
+	}
+	else if (command.predicate == "clear") {
+		if (command.object == "mesh") {
+			if (command.complement == "1") emit SignalClearMesh_1();
+			else if (command.complement == "2")	emit SignalClearMesh_2();
+			else if (command.complement == "3")	emit SignalClearMesh_3();
+			else if (command.complement == "4")	emit SignalClearMesh_4();
+			else emit SignalOutputTextEditError("There isn't parameter " + command.complement + " for \"" + command.object + "\"");
 		}
 	}
 	else if (command.predicate == "change") {

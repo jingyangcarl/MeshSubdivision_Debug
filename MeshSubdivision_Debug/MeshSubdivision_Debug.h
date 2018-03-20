@@ -81,6 +81,9 @@ private slots:
 	void InitializeQVTKWidget_3();
 	void InitializeQVTKWidget_4();
 	void InitializeMesh_1();
+	void InitializeMesh_2();
+	void InitializeMesh_3();
+	void InitializeMesh_4();
 	void InitializeTextEdit_CMD();
 	void InitializeSlotSignal();
 
