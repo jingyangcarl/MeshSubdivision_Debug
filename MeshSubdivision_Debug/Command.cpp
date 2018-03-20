@@ -4,7 +4,7 @@
 QStringList Command::dicPredicate = { "load", "show", "change", "clear" };
 
 // Carl: Object can have one or two words;
-QStringList Command::dicObject = { "mesh" , "cloud", "keypoint" , "keypoint color" , "text", "layout"};
+QStringList Command::dicObject = { "mesh" , "cloud", "keypoint" , "keypoint color" , "text", "layout", "help" };
 
 // Carl: Complement is used for parameters;
 QStringList Command::dicComplement = { "" };
@@ -13,6 +13,9 @@ QStringList Command::dicComplement = { "" };
 /*
 load mesh [No.]
 show help
+show help mouse
+show help key
+show help instruction
 show mesh [No.]
 show cloud [No.]
 show keypoint [No.]

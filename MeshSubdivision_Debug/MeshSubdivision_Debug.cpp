@@ -18,4 +18,7 @@ MeshSubdivision_Debug::MeshSubdivision_Debug(QWidget *parent)
 
 	//ChangeToLayout_2();
 
+	OutputTextEditNotice("Please enter \"show help instruction\"");
+
+
 }

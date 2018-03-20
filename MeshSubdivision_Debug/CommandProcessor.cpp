@@ -28,6 +28,37 @@ void CommandProcessor::run() {
 	}
 	else if (command.predicate == "show") {
 		if (command.object == "error") emit SignalOutputTextEditError(command.complement);
+		else if (command.object == "help") {
+			if (command.complement == "note") {
+				emit SignalOutputTextEditHelp("--------------- NOTE ---------------");
+				emit SignalOutputTextEditHelp("NOTE: () default parameter");
+				emit SignalOutputTextEditHelp("NOTE: [] nondefault parameter");
+			}
+			else if (command.complement == "key") {
+				emit SignalOutputTextEditHelp("--------------- KEY ---------------");
+				emit SignalOutputTextEditHelp("KEY_W :: line mesh mode");
+				emit SignalOutputTextEditHelp("KEY_S :: face mesh mode");
+				emit SignalOutputTextEditHelp("KEY_P :: point cloud mode");
+				emit SignalOutputTextEditHelp("KEY_G :: show coordinate system");
+				emit SignalOutputTextEditHelp("KEY_R :: reset camera");
+				emit SignalOutputTextEditHelp("KEY_F :: focus on the point");
+				emit SignalOutputTextEditHelp("KEY_J :: screenshot");
+				emit SignalOutputTextEditHelp("KEY_+ :: increase point size");
+				emit SignalOutputTextEditHelp("KEY_- :: decrease point size");
+			}
+			else if (command.complement == "instruction") {
+				emit SignalOutputTextEditHelp("----------- INSTRUCTION -----------");
+				emit SignalOutputTextEditHelp("show help (key\instruction)");
+				emit SignalOutputTextEditHelp("change layout [1\2\4]");
+				emit SignalOutputTextEditHelp("load mesh [1\2\3\4]");
+			}
+			else if (command.complement == "") {
+
+			}
+			else {
+
+			}
+		}
 	}
 	else if (command.predicate == "change") {
 		if (command.object == "layout") {

@@ -13,8 +13,8 @@ void MeshSubdivision_Debug::InitializeLayout_1() {
 
 	ui.gridLayout_widget->addWidget(qvtkWidget_1, 0, 0);
 	
-	ui.gridLayout->setColumnStretch(0, 4);
-	ui.gridLayout->setColumnStretch(1, 1);
+	ui.gridLayout->setColumnStretch(0, 6);
+	ui.gridLayout->setColumnStretch(1, 2);
 
 	OutputTextEditFinished("Layout_1 initialization finished;");
 	return;
@@ -137,9 +137,25 @@ void MeshSubdivision_Debug::InitializeSlotSignal() {
 	// Carl: connection for OutputTextEdit
 	connect(commandProcessor, SIGNAL(SignalOutputTextEditFinished(QString)), this, SLOT(OutputTextEditFinished(QString)));
 	connect(commandProcessor, SIGNAL(SignalOutputTextEditError(QString)), this, SLOT(OutputTextEditError(QString)));
+	connect(commandProcessor, SIGNAL(SignalOutputTextEditHelp(QString)), this, SLOT(OutputTextEditHelp(QString)));
 
 	// Carl: connection for LoadMesh
 	connect(commandProcessor, SIGNAL(SignalLoadMesh_1()), this, SLOT(LoadMesh_1()));
+	connect(commandProcessor, SIGNAL(SignalLoadMesh_2()), this, SLOT(LoadMesh_2()));
+	connect(commandProcessor, SIGNAL(SignalLoadMesh_3()), this, SLOT(LoadMesh_3()));
+	connect(commandProcessor, SIGNAL(SignalLoadMesh_4()), this, SLOT(LoadMesh_4()));
+
+	// Carl: connection for ShowMesh
+	connect(commandProcessor, SIGNAL(SignalShowMesh_1()), this, SLOT(ShowMesh_1()));
+	connect(commandProcessor, SIGNAL(SignalShowMesh_2()), this, SLOT(ShowMesh_2()));
+	connect(commandProcessor, SIGNAL(SignalShowMesh_3()), this, SLOT(ShowMesh_3()));
+	connect(commandProcessor, SIGNAL(SignalShowMesh_4()), this, SLOT(ShowMesh_4()));
+
+	// Carl: connection for ClearMesh
+	connect(commandProcessor, SIGNAL(SignalClearMesh_1()), this, SLOT(ClearMesh_1()));
+	connect(commandProcessor, SIGNAL(SignalClearMesh_2()), this, SLOT(ClearMesh_2()));
+	connect(commandProcessor, SIGNAL(SignalClearMesh_3()), this, SLOT(ClearMesh_3()));
+	connect(commandProcessor, SIGNAL(SignalClearMesh_4()), this, SLOT(ClearMesh_4()));
 
 	// Carl: connection for ChangeToLayout
 	connect(commandProcessor, SIGNAL(SignalChangeToLayout_1()), this, SLOT(ChangeToLayout_1()));

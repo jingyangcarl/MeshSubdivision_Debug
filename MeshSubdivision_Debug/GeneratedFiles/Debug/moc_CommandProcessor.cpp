@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_CommandProcessor_t {
-    QByteArrayData data[11];
-    char stringdata0[210];
+    QByteArrayData data[12];
+    char stringdata0[235];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,17 +33,19 @@ QT_MOC_LITERAL(0, 0, 16), // "CommandProcessor"
 QT_MOC_LITERAL(1, 17, 28), // "SignalOutputTextEditFinished"
 QT_MOC_LITERAL(2, 46, 0), // ""
 QT_MOC_LITERAL(3, 47, 25), // "SignalOutputTextEditError"
-QT_MOC_LITERAL(4, 73, 16), // "SignalLoadMesh_1"
-QT_MOC_LITERAL(5, 90, 16), // "SignalLoadMesh_2"
-QT_MOC_LITERAL(6, 107, 16), // "SignalLoadMesh_3"
-QT_MOC_LITERAL(7, 124, 16), // "SignalLoadMesh_4"
-QT_MOC_LITERAL(8, 141, 22), // "SignalChangeToLayout_1"
-QT_MOC_LITERAL(9, 164, 22), // "SignalChangeToLayout_2"
-QT_MOC_LITERAL(10, 187, 22) // "SignalChangeToLayout_4"
+QT_MOC_LITERAL(4, 73, 24), // "SignalOutputTextEditHelp"
+QT_MOC_LITERAL(5, 98, 16), // "SignalLoadMesh_1"
+QT_MOC_LITERAL(6, 115, 16), // "SignalLoadMesh_2"
+QT_MOC_LITERAL(7, 132, 16), // "SignalLoadMesh_3"
+QT_MOC_LITERAL(8, 149, 16), // "SignalLoadMesh_4"
+QT_MOC_LITERAL(9, 166, 22), // "SignalChangeToLayout_1"
+QT_MOC_LITERAL(10, 189, 22), // "SignalChangeToLayout_2"
+QT_MOC_LITERAL(11, 212, 22) // "SignalChangeToLayout_4"
 
     },
     "CommandProcessor\0SignalOutputTextEditFinished\0"
-    "\0SignalOutputTextEditError\0SignalLoadMesh_1\0"
+    "\0SignalOutputTextEditError\0"
+    "SignalOutputTextEditHelp\0SignalLoadMesh_1\0"
     "SignalLoadMesh_2\0SignalLoadMesh_3\0"
     "SignalLoadMesh_4\0SignalChangeToLayout_1\0"
     "SignalChangeToLayout_2\0SignalChangeToLayout_4"
@@ -56,25 +58,27 @@ static const uint qt_meta_data_CommandProcessor[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       9,       // signalCount
+      10,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   59,    2, 0x06 /* Public */,
-       3,    1,   62,    2, 0x06 /* Public */,
-       4,    0,   65,    2, 0x06 /* Public */,
-       5,    0,   66,    2, 0x06 /* Public */,
-       6,    0,   67,    2, 0x06 /* Public */,
-       7,    0,   68,    2, 0x06 /* Public */,
-       8,    0,   69,    2, 0x06 /* Public */,
-       9,    0,   70,    2, 0x06 /* Public */,
-      10,    0,   71,    2, 0x06 /* Public */,
+       1,    1,   64,    2, 0x06 /* Public */,
+       3,    1,   67,    2, 0x06 /* Public */,
+       4,    1,   70,    2, 0x06 /* Public */,
+       5,    0,   73,    2, 0x06 /* Public */,
+       6,    0,   74,    2, 0x06 /* Public */,
+       7,    0,   75,    2, 0x06 /* Public */,
+       8,    0,   76,    2, 0x06 /* Public */,
+       9,    0,   77,    2, 0x06 /* Public */,
+      10,    0,   78,    2, 0x06 /* Public */,
+      11,    0,   79,    2, 0x06 /* Public */,
 
  // signals: parameters
+    QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void,
@@ -96,13 +100,14 @@ void CommandProcessor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         switch (_id) {
         case 0: _t->SignalOutputTextEditFinished((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 1: _t->SignalOutputTextEditError((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 2: _t->SignalLoadMesh_1(); break;
-        case 3: _t->SignalLoadMesh_2(); break;
-        case 4: _t->SignalLoadMesh_3(); break;
-        case 5: _t->SignalLoadMesh_4(); break;
-        case 6: _t->SignalChangeToLayout_1(); break;
-        case 7: _t->SignalChangeToLayout_2(); break;
-        case 8: _t->SignalChangeToLayout_4(); break;
+        case 2: _t->SignalOutputTextEditHelp((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 3: _t->SignalLoadMesh_1(); break;
+        case 4: _t->SignalLoadMesh_2(); break;
+        case 5: _t->SignalLoadMesh_3(); break;
+        case 6: _t->SignalLoadMesh_4(); break;
+        case 7: _t->SignalChangeToLayout_1(); break;
+        case 8: _t->SignalChangeToLayout_2(); break;
+        case 9: _t->SignalChangeToLayout_4(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -123,51 +128,58 @@ void CommandProcessor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
             }
         }
         {
-            typedef void (CommandProcessor::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalLoadMesh_1)) {
+            typedef void (CommandProcessor::*_t)(QString );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalOutputTextEditHelp)) {
                 *result = 2;
                 return;
             }
         }
         {
             typedef void (CommandProcessor::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalLoadMesh_2)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalLoadMesh_1)) {
                 *result = 3;
                 return;
             }
         }
         {
             typedef void (CommandProcessor::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalLoadMesh_3)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalLoadMesh_2)) {
                 *result = 4;
                 return;
             }
         }
         {
             typedef void (CommandProcessor::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalLoadMesh_4)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalLoadMesh_3)) {
                 *result = 5;
                 return;
             }
         }
         {
             typedef void (CommandProcessor::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_1)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalLoadMesh_4)) {
                 *result = 6;
                 return;
             }
         }
         {
             typedef void (CommandProcessor::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_2)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_1)) {
                 *result = 7;
                 return;
             }
         }
         {
             typedef void (CommandProcessor::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_4)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_2)) {
                 *result = 8;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_4)) {
+                *result = 9;
                 return;
             }
         }
@@ -199,13 +211,13 @@ int CommandProcessor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 10)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 10;
     }
     return _id;
 }
@@ -225,44 +237,51 @@ void CommandProcessor::SignalOutputTextEditError(QString _t1)
 }
 
 // SIGNAL 2
-void CommandProcessor::SignalLoadMesh_1()
+void CommandProcessor::SignalOutputTextEditHelp(QString _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 2, Q_NULLPTR);
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 2, _a);
 }
 
 // SIGNAL 3
-void CommandProcessor::SignalLoadMesh_2()
+void CommandProcessor::SignalLoadMesh_1()
 {
     QMetaObject::activate(this, &staticMetaObject, 3, Q_NULLPTR);
 }
 
 // SIGNAL 4
-void CommandProcessor::SignalLoadMesh_3()
+void CommandProcessor::SignalLoadMesh_2()
 {
     QMetaObject::activate(this, &staticMetaObject, 4, Q_NULLPTR);
 }
 
 // SIGNAL 5
-void CommandProcessor::SignalLoadMesh_4()
+void CommandProcessor::SignalLoadMesh_3()
 {
     QMetaObject::activate(this, &staticMetaObject, 5, Q_NULLPTR);
 }
 
 // SIGNAL 6
-void CommandProcessor::SignalChangeToLayout_1()
+void CommandProcessor::SignalLoadMesh_4()
 {
     QMetaObject::activate(this, &staticMetaObject, 6, Q_NULLPTR);
 }
 
 // SIGNAL 7
-void CommandProcessor::SignalChangeToLayout_2()
+void CommandProcessor::SignalChangeToLayout_1()
 {
     QMetaObject::activate(this, &staticMetaObject, 7, Q_NULLPTR);
 }
 
 // SIGNAL 8
-void CommandProcessor::SignalChangeToLayout_4()
+void CommandProcessor::SignalChangeToLayout_2()
 {
     QMetaObject::activate(this, &staticMetaObject, 8, Q_NULLPTR);
+}
+
+// SIGNAL 9
+void CommandProcessor::SignalChangeToLayout_4()
+{
+    QMetaObject::activate(this, &staticMetaObject, 9, Q_NULLPTR);
 }
 QT_END_MOC_NAMESPACE

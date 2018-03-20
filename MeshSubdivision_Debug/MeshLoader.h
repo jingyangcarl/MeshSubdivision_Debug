@@ -26,5 +26,8 @@ protected:
 signals:
 	void SignalOutputTextEditFinished(QString);
 	void SignalOutputTextEditError(QString);
+
+	void SignalShowMesh_1();
+	void SignalClearMesh_1();
 };
 

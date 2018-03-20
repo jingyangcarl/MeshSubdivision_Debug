@@ -22,6 +22,7 @@ protected:
 signals:
 	void SignalOutputTextEditFinished(QString);
 	void SignalOutputTextEditError(QString);
+	void SignalOutputTextEditHelp(QString);
 	void SignalLoadMesh_1();
 	void SignalLoadMesh_2();
 	void SignalLoadMesh_3();

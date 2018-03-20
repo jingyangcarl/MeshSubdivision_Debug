@@ -1,4 +1,5 @@
 #include "MeshSubdivision_Debug.h"
+#include <qscrollbar.h>
 
 void MeshSubdivision_Debug::OutputTextEditFinished(QString output) {
 	// Carl: output finished instructions
@@ -60,7 +61,7 @@ void MeshSubdivision_Debug::OutputTextEditNotice(QString output) {
 	return;
 }
 
-void MeshSubdivision_Debug::OutputTextEditWarning(QString output) {
+void MeshSubdivision_Debug::OutputTextEditHelp(QString output) {
 	// Carl: output warning instructions
 
 	// Carl: move the cursor the the end of the text edit field
@@ -100,7 +101,22 @@ void MeshSubdivision_Debug::OutputTextEditError(QString output) {
 	return;
 }
 
-void MeshSubdivision_Debug::OutputTextEditColoredString(QColor color, QString output) {
+void MeshSubdivision_Debug::OutputTextEditColoredString(QVector<QPair<QColor, QString>> content) {
 	// Carl: output a colored String
+	QTextCursor cursor = ui.textEdit_cmd->textCursor();
+	cursor.movePosition(QTextCursor::End);
+	ui.textEdit_cmd->setTextCursor(cursor);
 
+	for (QVector<QPair<QColor, QString>>::iterator i = content.begin(); i != content.end(); i++) {
+		ui.textEdit_cmd->setTextColor((*i).first);
+		ui.textEdit_cmd->textCursor().insertText((*i).second);
+	}
+	ui.textEdit_cmd->setTextColor(QColor("gray"));
+	ui.textEdit_cmd->textCursor().insertText("\n>> ");
+	textEditRecordLenth = ui.textEdit_cmd->toPlainText().size();
+
+	ui.textEdit_cmd->setTextColor(QColor("white"));
+	ui.textEdit_cmd->verticalScrollBar()->setValue(ui.textEdit_cmd->verticalScrollBar()->maximum());
+
+	return;
 }

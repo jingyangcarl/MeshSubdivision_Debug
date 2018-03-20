@@ -9,6 +9,7 @@
 #include "../../MeshSubdivision_Debug.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
+#include <QtCore/QVector>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'MeshSubdivision_Debug.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
@@ -19,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MeshSubdivision_Debug_t {
-    QByteArrayData data[27];
-    char stringdata0[477];
+    QByteArrayData data[34];
+    char stringdata0[575];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -45,17 +46,24 @@ QT_MOC_LITERAL(12, 229, 16), // "ChangeToLayout_4"
 QT_MOC_LITERAL(13, 246, 22), // "OutputTextEditFinished"
 QT_MOC_LITERAL(14, 269, 24), // "OutputTextEditProcessing"
 QT_MOC_LITERAL(15, 294, 20), // "OutputTextEditNotice"
-QT_MOC_LITERAL(16, 315, 21), // "OutputTextEditWarning"
-QT_MOC_LITERAL(17, 337, 19), // "OutputTextEditError"
-QT_MOC_LITERAL(18, 357, 27), // "OutputTextEditColoredString"
-QT_MOC_LITERAL(19, 385, 10), // "LoadMesh_1"
-QT_MOC_LITERAL(20, 396, 10), // "LoadMesh_2"
-QT_MOC_LITERAL(21, 407, 10), // "LoadMesh_3"
-QT_MOC_LITERAL(22, 418, 10), // "LoadMesh_4"
-QT_MOC_LITERAL(23, 429, 10), // "ShowMesh_1"
-QT_MOC_LITERAL(24, 440, 11), // "ClearMesh_1"
-QT_MOC_LITERAL(25, 452, 11), // "ShowCloud_1"
-QT_MOC_LITERAL(26, 464, 12) // "ClearCloud_1"
+QT_MOC_LITERAL(16, 315, 18), // "OutputTextEditHelp"
+QT_MOC_LITERAL(17, 334, 19), // "OutputTextEditError"
+QT_MOC_LITERAL(18, 354, 27), // "OutputTextEditColoredString"
+QT_MOC_LITERAL(19, 382, 31), // "QVector<QPair<QColor,QString> >"
+QT_MOC_LITERAL(20, 414, 10), // "LoadMesh_1"
+QT_MOC_LITERAL(21, 425, 10), // "LoadMesh_2"
+QT_MOC_LITERAL(22, 436, 10), // "LoadMesh_3"
+QT_MOC_LITERAL(23, 447, 10), // "LoadMesh_4"
+QT_MOC_LITERAL(24, 458, 10), // "ShowMesh_1"
+QT_MOC_LITERAL(25, 469, 10), // "ShowMesh_2"
+QT_MOC_LITERAL(26, 480, 10), // "ShowMesh_3"
+QT_MOC_LITERAL(27, 491, 10), // "ShowMesh_4"
+QT_MOC_LITERAL(28, 502, 11), // "ClearMesh_1"
+QT_MOC_LITERAL(29, 514, 11), // "ClearMesh_2"
+QT_MOC_LITERAL(30, 526, 11), // "ClearMesh_3"
+QT_MOC_LITERAL(31, 538, 11), // "ClearMesh_4"
+QT_MOC_LITERAL(32, 550, 11), // "ShowCloud_1"
+QT_MOC_LITERAL(33, 562, 12) // "ClearCloud_1"
 
     },
     "MeshSubdivision_Debug\0InitializeLayout_1\0"
@@ -65,10 +73,13 @@ QT_MOC_LITERAL(26, 464, 12) // "ClearCloud_1"
     "InitializeSlotSignal\0ChangeToLayout_1\0"
     "ChangeToLayout_2\0ChangeToLayout_4\0"
     "OutputTextEditFinished\0OutputTextEditProcessing\0"
-    "OutputTextEditNotice\0OutputTextEditWarning\0"
+    "OutputTextEditNotice\0OutputTextEditHelp\0"
     "OutputTextEditError\0OutputTextEditColoredString\0"
+    "QVector<QPair<QColor,QString> >\0"
     "LoadMesh_1\0LoadMesh_2\0LoadMesh_3\0"
-    "LoadMesh_4\0ShowMesh_1\0ClearMesh_1\0"
+    "LoadMesh_4\0ShowMesh_1\0ShowMesh_2\0"
+    "ShowMesh_3\0ShowMesh_4\0ClearMesh_1\0"
+    "ClearMesh_2\0ClearMesh_3\0ClearMesh_4\0"
     "ShowCloud_1\0ClearCloud_1"
 };
 #undef QT_MOC_LITERAL
@@ -79,7 +90,7 @@ static const uint qt_meta_data_MeshSubdivision_Debug[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      25,   14, // methods
+      31,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -87,31 +98,37 @@ static const uint qt_meta_data_MeshSubdivision_Debug[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  139,    2, 0x08 /* Private */,
-       3,    0,  140,    2, 0x08 /* Private */,
-       4,    0,  141,    2, 0x08 /* Private */,
-       5,    0,  142,    2, 0x08 /* Private */,
-       6,    0,  143,    2, 0x08 /* Private */,
-       7,    0,  144,    2, 0x08 /* Private */,
-       8,    0,  145,    2, 0x08 /* Private */,
-       9,    0,  146,    2, 0x08 /* Private */,
-      10,    0,  147,    2, 0x08 /* Private */,
-      11,    0,  148,    2, 0x08 /* Private */,
-      12,    0,  149,    2, 0x08 /* Private */,
-      13,    1,  150,    2, 0x08 /* Private */,
-      14,    1,  153,    2, 0x08 /* Private */,
-      15,    1,  156,    2, 0x08 /* Private */,
-      16,    1,  159,    2, 0x08 /* Private */,
-      17,    1,  162,    2, 0x08 /* Private */,
-      18,    2,  165,    2, 0x08 /* Private */,
-      19,    0,  170,    2, 0x08 /* Private */,
-      20,    0,  171,    2, 0x08 /* Private */,
-      21,    0,  172,    2, 0x08 /* Private */,
-      22,    0,  173,    2, 0x08 /* Private */,
-      23,    0,  174,    2, 0x08 /* Private */,
-      24,    0,  175,    2, 0x08 /* Private */,
-      25,    0,  176,    2, 0x08 /* Private */,
-      26,    0,  177,    2, 0x08 /* Private */,
+       1,    0,  169,    2, 0x08 /* Private */,
+       3,    0,  170,    2, 0x08 /* Private */,
+       4,    0,  171,    2, 0x08 /* Private */,
+       5,    0,  172,    2, 0x08 /* Private */,
+       6,    0,  173,    2, 0x08 /* Private */,
+       7,    0,  174,    2, 0x08 /* Private */,
+       8,    0,  175,    2, 0x08 /* Private */,
+       9,    0,  176,    2, 0x08 /* Private */,
+      10,    0,  177,    2, 0x08 /* Private */,
+      11,    0,  178,    2, 0x08 /* Private */,
+      12,    0,  179,    2, 0x08 /* Private */,
+      13,    1,  180,    2, 0x08 /* Private */,
+      14,    1,  183,    2, 0x08 /* Private */,
+      15,    1,  186,    2, 0x08 /* Private */,
+      16,    1,  189,    2, 0x08 /* Private */,
+      17,    1,  192,    2, 0x08 /* Private */,
+      18,    1,  195,    2, 0x08 /* Private */,
+      20,    0,  198,    2, 0x08 /* Private */,
+      21,    0,  199,    2, 0x08 /* Private */,
+      22,    0,  200,    2, 0x08 /* Private */,
+      23,    0,  201,    2, 0x08 /* Private */,
+      24,    0,  202,    2, 0x08 /* Private */,
+      25,    0,  203,    2, 0x08 /* Private */,
+      26,    0,  204,    2, 0x08 /* Private */,
+      27,    0,  205,    2, 0x08 /* Private */,
+      28,    0,  206,    2, 0x08 /* Private */,
+      29,    0,  207,    2, 0x08 /* Private */,
+      30,    0,  208,    2, 0x08 /* Private */,
+      31,    0,  209,    2, 0x08 /* Private */,
+      32,    0,  210,    2, 0x08 /* Private */,
+      33,    0,  211,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -130,7 +147,13 @@ static const uint qt_meta_data_MeshSubdivision_Debug[] = {
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::QString,    2,
-    QMetaType::Void, QMetaType::QColor, QMetaType::QString,    2,    2,
+    QMetaType::Void, 0x80000000 | 19,    2,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -163,17 +186,23 @@ void MeshSubdivision_Debug::qt_static_metacall(QObject *_o, QMetaObject::Call _c
         case 11: _t->OutputTextEditFinished((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 12: _t->OutputTextEditProcessing((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 13: _t->OutputTextEditNotice((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 14: _t->OutputTextEditWarning((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 14: _t->OutputTextEditHelp((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 15: _t->OutputTextEditError((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 16: _t->OutputTextEditColoredString((*reinterpret_cast< QColor(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 16: _t->OutputTextEditColoredString((*reinterpret_cast< QVector<QPair<QColor,QString> >(*)>(_a[1]))); break;
         case 17: _t->LoadMesh_1(); break;
         case 18: _t->LoadMesh_2(); break;
         case 19: _t->LoadMesh_3(); break;
         case 20: _t->LoadMesh_4(); break;
         case 21: _t->ShowMesh_1(); break;
-        case 22: _t->ClearMesh_1(); break;
-        case 23: _t->ShowCloud_1(); break;
-        case 24: _t->ClearCloud_1(); break;
+        case 22: _t->ShowMesh_2(); break;
+        case 23: _t->ShowMesh_3(); break;
+        case 24: _t->ShowMesh_4(); break;
+        case 25: _t->ClearMesh_1(); break;
+        case 26: _t->ClearMesh_2(); break;
+        case 27: _t->ClearMesh_3(); break;
+        case 28: _t->ClearMesh_4(); break;
+        case 29: _t->ShowCloud_1(); break;
+        case 30: _t->ClearCloud_1(); break;
         default: ;
         }
     }
@@ -204,13 +233,13 @@ int MeshSubdivision_Debug::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 25)
+        if (_id < 31)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 25;
+        _id -= 31;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 25)
+        if (_id < 31)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 25;
+        _id -= 31;
     }
     return _id;
 }

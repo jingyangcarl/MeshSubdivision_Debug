@@ -93,9 +93,9 @@ private slots:
 	void OutputTextEditFinished(QString);		// Carl: grey
 	void OutputTextEditProcessing(QString);		// Carl: blue
 	void OutputTextEditNotice(QString);			// Carl: green
-	void OutputTextEditWarning(QString);		// Carl: orange
+	void OutputTextEditHelp(QString);			// Carl: orange
 	void OutputTextEditError(QString);			// Carl: red
-	void OutputTextEditColoredString(QColor, QString);
+	void OutputTextEditColoredString(QVector<QPair<QColor, QString>>);
 
 	/******************** LoadMesh.cpp ********************/
 	void LoadMesh_1();
@@ -105,7 +105,13 @@ private slots:
 
 	/******************** ShowOrClear.cpp ********************/
 	void ShowMesh_1();
+	void ShowMesh_2();
+	void ShowMesh_3();
+	void ShowMesh_4();
 	void ClearMesh_1();
+	void ClearMesh_2();
+	void ClearMesh_3();
+	void ClearMesh_4();
 	void ShowCloud_1();
 	void ClearCloud_1();
 
