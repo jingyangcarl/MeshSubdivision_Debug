@@ -6,12 +6,6 @@
 void MeshSubdivision_Debug::InitializeLayout_1() {
 	// Carl: initialize the framework including 1 QVTKWidget
 
-	InitializeTextEdit_CMD();
-	InitializeQVTKWidget_1();
-	InitializeMesh_1();
-	InitializeMesh_2();
-	InitializeMesh_3();
-	InitializeMesh_4();
 	ShowMesh_1();
 
 	ui.gridLayout_widget->addWidget(qvtkWidget_1, 0, 0);
@@ -20,6 +14,17 @@ void MeshSubdivision_Debug::InitializeLayout_1() {
 	ui.gridLayout->setColumnStretch(1, 1);
 
 	OutputTextEditFinished("Layout_1 initialization finished;");
+	return;
+}
+
+void MeshSubdivision_Debug::InitializeQVTKWidget() {
+	// Carl: initialzie all QVTKWidget
+
+	InitializeQVTKWidget_1();
+	InitializeQVTKWidget_2();
+	InitializeQVTKWidget_3();
+	InitializeQVTKWidget_4();
+
 	return;
 }
 
@@ -72,6 +77,17 @@ void MeshSubdivision_Debug::InitializeQVTKWidget_4() {
 	qvtkWidget_4->update();
 
 	OutputTextEditFinished("QVTKWidget_4 initialization finished;");
+	return;
+}
+
+void MeshSubdivision_Debug::InitializeMesh() {
+	// Carl: initialize meshes
+
+	InitializeMesh_1();
+	InitializeMesh_2();
+	InitializeMesh_3();
+	InitializeMesh_4();
+
 	return;
 }
 
@@ -240,6 +256,18 @@ void MeshSubdivision_Debug::InitializeTextEdit_CMD() {
 	textEditRecordLenth += 3;
 
 	OutputTextEditFinished("TextEdit_CMD initialization finished;");
+	return;
+}
+
+void MeshSubdivision_Debug::InitializeEventFilter() {
+	// Carl: initialize eventfilter for widgets;
+
+	ui.textEdit_cmd->installEventFilter(this);
+	qvtkWidget_1->installEventFilter(this);
+	qvtkWidget_2->installEventFilter(this);
+	qvtkWidget_3->installEventFilter(this);
+	qvtkWidget_4->installEventFilter(this);
+
 	return;
 }
 

@@ -34,24 +34,18 @@
     <Filter Include="Source Files\Command">
       <UniqueIdentifier>{13c975db-092d-47e5-941c-ea84109df097}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\MeshSubdivision_Debug">
+      <UniqueIdentifier>{49568739-da1c-4465-b2ce-1d67a37b3d26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MeshLoader">
+      <UniqueIdentifier>{6973e32e-cd71-4330-8133-a3acfe7b22d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MeshLoader">
+      <UniqueIdentifier>{9068ba3c-cf00-4c91-bd84-2d7b5b570ff4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MeshSubdivision_Debug.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EventFilter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Initialization.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ChangeLayout.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="OutputTextEdit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CommandAnalyser.cpp">
@@ -60,17 +54,35 @@
     <ClCompile Include="CommandProcessor.cpp">
       <Filter>Source Files\Command</Filter>
     </ClCompile>
-    <ClCompile Include="LoadMesh.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ShowOrClear.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MeshLoader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Command.cpp">
       <Filter>Source Files\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Initialization.cpp">
+      <Filter>Source Files\MeshSubdivision_Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeLayout.cpp">
+      <Filter>Source Files\MeshSubdivision_Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="OutputTextEdit.cpp">
+      <Filter>Source Files\MeshSubdivision_Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadMesh.cpp">
+      <Filter>Source Files\MeshSubdivision_Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowOrClear.cpp">
+      <Filter>Source Files\MeshSubdivision_Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshSubdivision_Debug.cpp">
+      <Filter>Source Files\MeshSubdivision_Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshLoader.cpp">
+      <Filter>Source Files\MeshLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="EventFilter.cpp">
+      <Filter>Source Files\MeshSubdivision_Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraSynchronization.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -81,7 +93,7 @@
       <Filter>Header Files\Command</Filter>
     </QtMoc>
     <QtMoc Include="MeshLoader.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\MeshLoader</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

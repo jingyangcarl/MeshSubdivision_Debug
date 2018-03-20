@@ -25,6 +25,7 @@ void MeshSubdivision_Debug::ChangeToLayout_1() {
 	ui.gridLayout_widget->removeWidget(qvtkWidget_4);
 
 	InitializeQVTKWidget_1();
+	InitializeEventFilter();
 
 	ui.gridLayout_widget->addWidget(qvtkWidget_1, 0, 0);
 
@@ -62,6 +63,7 @@ void MeshSubdivision_Debug::ChangeToLayout_2() {
 
 	InitializeQVTKWidget_1();
 	InitializeQVTKWidget_2();
+	InitializeEventFilter();
 
 	ui.gridLayout_widget->addWidget(qvtkWidget_1, 0, 0);
 	ui.gridLayout_widget->addWidget(qvtkWidget_2, 0, 1);
@@ -103,6 +105,7 @@ void MeshSubdivision_Debug::ChangeToLayout_4() {
 	InitializeQVTKWidget_2();
 	InitializeQVTKWidget_3();
 	InitializeQVTKWidget_4();
+	InitializeEventFilter();
 
 	ui.gridLayout_widget->addWidget(qvtkWidget_1, 0, 0);
 	ui.gridLayout_widget->addWidget(qvtkWidget_2, 0, 1);

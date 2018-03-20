@@ -76,15 +76,18 @@ private:
 private slots:
 	/******************** Initialization.cpp ********************/
 	void InitializeLayout_1();
+	void InitializeQVTKWidget();
 	void InitializeQVTKWidget_1();
 	void InitializeQVTKWidget_2();
 	void InitializeQVTKWidget_3();
 	void InitializeQVTKWidget_4();
+	void InitializeMesh();
 	void InitializeMesh_1();
 	void InitializeMesh_2();
 	void InitializeMesh_3();
 	void InitializeMesh_4();
 	void InitializeTextEdit_CMD();
+	void InitializeEventFilter();
 	void InitializeSlotSignal();
 
 	/******************** ChangeLayout.cpp ********************/
@@ -117,5 +120,11 @@ private slots:
 	void ClearMesh_4();
 	void ShowCloud_1();
 	void ClearCloud_1();
+
+	/******************** CameraSynchronization.cpp ********************/
+	void CameraSynToQVTKWidget_1();
+	/*void CameraSynToQVTKWidget_2();
+	void CameraSynToQVTKWidget_3();
+	void CameraSynToQVTKWidget_4();*/
 
 };

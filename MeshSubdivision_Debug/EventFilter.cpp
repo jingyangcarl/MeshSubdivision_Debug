@@ -133,6 +133,22 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 		}
 
 	}
+	else if (e->type() == QEvent::MouseMove) {
+
+		if (object == qvtkWidget_1) {
+			CameraSynToQVTKWidget_1();
+		}
+		else if (object == qvtkWidget_2) {
+			CameraSynToQVTKWidget_2();
+		}
+		else if (object == qvtkWidget_3) {
+			CameraSynToQVTKWidget_3();
+		}
+		else if (object == qvtkWidget_4) {
+			CameraSynToQVTKWidget_4();
+		}
+		return false;
+	}
 	
 	return false;
 }
