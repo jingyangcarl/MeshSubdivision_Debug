@@ -32,6 +32,7 @@ void MeshSubdivision_Debug::ChangeToLayout_1() {
 	// Carl: update
 	ShowMesh_1();
 
+	
 	layoutStatus = 1;
 	OutputTextEditFinished("Layout_1 initialization finished;");
 	return;

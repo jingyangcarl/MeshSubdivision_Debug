@@ -20,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MeshSubdivision_Debug_t {
-    QByteArrayData data[41];
-    char stringdata0[708];
+    QByteArrayData data[44];
+    char stringdata0[780];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -70,7 +70,10 @@ QT_MOC_LITERAL(36, 635, 11), // "ClearMesh_3"
 QT_MOC_LITERAL(37, 647, 11), // "ClearMesh_4"
 QT_MOC_LITERAL(38, 659, 11), // "ShowCloud_1"
 QT_MOC_LITERAL(39, 671, 12), // "ClearCloud_1"
-QT_MOC_LITERAL(40, 684, 23) // "CameraSynToQVTKWidget_1"
+QT_MOC_LITERAL(40, 684, 23), // "CameraSynToQVTKWidget_1"
+QT_MOC_LITERAL(41, 708, 23), // "CameraSynToQVTKWidget_2"
+QT_MOC_LITERAL(42, 732, 23), // "CameraSynToQVTKWidget_3"
+QT_MOC_LITERAL(43, 756, 23) // "CameraSynToQVTKWidget_4"
 
     },
     "MeshSubdivision_Debug\0InitializeLayout_1\0"
@@ -91,7 +94,8 @@ QT_MOC_LITERAL(40, 684, 23) // "CameraSynToQVTKWidget_1"
     "ShowMesh_3\0ShowMesh_4\0ClearMesh_1\0"
     "ClearMesh_2\0ClearMesh_3\0ClearMesh_4\0"
     "ShowCloud_1\0ClearCloud_1\0"
-    "CameraSynToQVTKWidget_1"
+    "CameraSynToQVTKWidget_1\0CameraSynToQVTKWidget_2\0"
+    "CameraSynToQVTKWidget_3\0CameraSynToQVTKWidget_4"
 };
 #undef QT_MOC_LITERAL
 
@@ -101,7 +105,7 @@ static const uint qt_meta_data_MeshSubdivision_Debug[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      38,   14, // methods
+      41,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -109,44 +113,47 @@ static const uint qt_meta_data_MeshSubdivision_Debug[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  204,    2, 0x08 /* Private */,
-       3,    0,  205,    2, 0x08 /* Private */,
-       4,    0,  206,    2, 0x08 /* Private */,
-       5,    0,  207,    2, 0x08 /* Private */,
-       6,    0,  208,    2, 0x08 /* Private */,
-       7,    0,  209,    2, 0x08 /* Private */,
-       8,    0,  210,    2, 0x08 /* Private */,
-       9,    0,  211,    2, 0x08 /* Private */,
-      10,    0,  212,    2, 0x08 /* Private */,
-      11,    0,  213,    2, 0x08 /* Private */,
-      12,    0,  214,    2, 0x08 /* Private */,
-      13,    0,  215,    2, 0x08 /* Private */,
-      14,    0,  216,    2, 0x08 /* Private */,
-      15,    0,  217,    2, 0x08 /* Private */,
-      16,    0,  218,    2, 0x08 /* Private */,
-      17,    0,  219,    2, 0x08 /* Private */,
-      18,    0,  220,    2, 0x08 /* Private */,
-      19,    1,  221,    2, 0x08 /* Private */,
-      20,    1,  224,    2, 0x08 /* Private */,
-      21,    1,  227,    2, 0x08 /* Private */,
-      22,    1,  230,    2, 0x08 /* Private */,
-      23,    1,  233,    2, 0x08 /* Private */,
-      24,    1,  236,    2, 0x08 /* Private */,
-      26,    0,  239,    2, 0x08 /* Private */,
-      27,    0,  240,    2, 0x08 /* Private */,
-      28,    0,  241,    2, 0x08 /* Private */,
-      29,    0,  242,    2, 0x08 /* Private */,
-      30,    0,  243,    2, 0x08 /* Private */,
-      31,    0,  244,    2, 0x08 /* Private */,
-      32,    0,  245,    2, 0x08 /* Private */,
-      33,    0,  246,    2, 0x08 /* Private */,
-      34,    0,  247,    2, 0x08 /* Private */,
-      35,    0,  248,    2, 0x08 /* Private */,
-      36,    0,  249,    2, 0x08 /* Private */,
-      37,    0,  250,    2, 0x08 /* Private */,
-      38,    0,  251,    2, 0x08 /* Private */,
-      39,    0,  252,    2, 0x08 /* Private */,
-      40,    0,  253,    2, 0x08 /* Private */,
+       1,    0,  219,    2, 0x08 /* Private */,
+       3,    0,  220,    2, 0x08 /* Private */,
+       4,    0,  221,    2, 0x08 /* Private */,
+       5,    0,  222,    2, 0x08 /* Private */,
+       6,    0,  223,    2, 0x08 /* Private */,
+       7,    0,  224,    2, 0x08 /* Private */,
+       8,    0,  225,    2, 0x08 /* Private */,
+       9,    0,  226,    2, 0x08 /* Private */,
+      10,    0,  227,    2, 0x08 /* Private */,
+      11,    0,  228,    2, 0x08 /* Private */,
+      12,    0,  229,    2, 0x08 /* Private */,
+      13,    0,  230,    2, 0x08 /* Private */,
+      14,    0,  231,    2, 0x08 /* Private */,
+      15,    0,  232,    2, 0x08 /* Private */,
+      16,    0,  233,    2, 0x08 /* Private */,
+      17,    0,  234,    2, 0x08 /* Private */,
+      18,    0,  235,    2, 0x08 /* Private */,
+      19,    1,  236,    2, 0x08 /* Private */,
+      20,    1,  239,    2, 0x08 /* Private */,
+      21,    1,  242,    2, 0x08 /* Private */,
+      22,    1,  245,    2, 0x08 /* Private */,
+      23,    1,  248,    2, 0x08 /* Private */,
+      24,    1,  251,    2, 0x08 /* Private */,
+      26,    0,  254,    2, 0x08 /* Private */,
+      27,    0,  255,    2, 0x08 /* Private */,
+      28,    0,  256,    2, 0x08 /* Private */,
+      29,    0,  257,    2, 0x08 /* Private */,
+      30,    0,  258,    2, 0x08 /* Private */,
+      31,    0,  259,    2, 0x08 /* Private */,
+      32,    0,  260,    2, 0x08 /* Private */,
+      33,    0,  261,    2, 0x08 /* Private */,
+      34,    0,  262,    2, 0x08 /* Private */,
+      35,    0,  263,    2, 0x08 /* Private */,
+      36,    0,  264,    2, 0x08 /* Private */,
+      37,    0,  265,    2, 0x08 /* Private */,
+      38,    0,  266,    2, 0x08 /* Private */,
+      39,    0,  267,    2, 0x08 /* Private */,
+      40,    0,  268,    2, 0x08 /* Private */,
+      41,    0,  269,    2, 0x08 /* Private */,
+      42,    0,  270,    2, 0x08 /* Private */,
+      43,    0,  271,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -172,6 +179,9 @@ static const uint qt_meta_data_MeshSubdivision_Debug[] = {
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, 0x80000000 | 25,    2,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -235,6 +245,9 @@ void MeshSubdivision_Debug::qt_static_metacall(QObject *_o, QMetaObject::Call _c
         case 35: _t->ShowCloud_1(); break;
         case 36: _t->ClearCloud_1(); break;
         case 37: _t->CameraSynToQVTKWidget_1(); break;
+        case 38: _t->CameraSynToQVTKWidget_2(); break;
+        case 39: _t->CameraSynToQVTKWidget_3(); break;
+        case 40: _t->CameraSynToQVTKWidget_4(); break;
         default: ;
         }
     }
@@ -265,13 +278,13 @@ int MeshSubdivision_Debug::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 38)
+        if (_id < 41)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 38;
+        _id -= 41;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 38)
+        if (_id < 41)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 38;
+        _id -= 41;
     }
     return _id;
 }

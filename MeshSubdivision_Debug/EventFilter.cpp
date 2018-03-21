@@ -140,13 +140,34 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 		}
 		else if (object == qvtkWidget_2) {
 			CameraSynToQVTKWidget_2();
+			if (layoutStatus == 4) {
+				qvtkWidget_3->resize(qvtkWidget_2->size());
+				qvtkWidget_4->resize(qvtkWidget_2->size());
+			}
 		}
 		else if (object == qvtkWidget_3) {
 			CameraSynToQVTKWidget_3();
 		}
 		else if (object == qvtkWidget_4) {
 			CameraSynToQVTKWidget_4();
+			if (layoutStatus == 4) {
+				qvtkWidget_1->resize(qvtkWidget_4->size());
+				qvtkWidget_2->resize(qvtkWidget_4->size());
+			}
 		}
+		return false;
+	}
+	else if (e->type() == QEvent::Wheel) {
+
+		if (object == qvtkWidget_1)
+			CameraSynToQVTKWidget_1();
+		else if (object == qvtkWidget_2)
+			CameraSynToQVTKWidget_2();
+		else if (object == qvtkWidget_3)
+			CameraSynToQVTKWidget_3();
+		else if (object == qvtkWidget_4)
+			CameraSynToQVTKWidget_4();
+
 		return false;
 	}
 	

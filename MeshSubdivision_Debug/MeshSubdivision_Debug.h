@@ -68,6 +68,7 @@ private:
 
 	// Carl: layout status
 	int layoutStatus = 1;
+	QSize layoutSize;
 
 	// Carl: command analyser and processor
 	CommandAnalyser *commandAnalyser = new CommandAnalyser();
@@ -123,8 +124,8 @@ private slots:
 
 	/******************** CameraSynchronization.cpp ********************/
 	void CameraSynToQVTKWidget_1();
-	/*void CameraSynToQVTKWidget_2();
+	void CameraSynToQVTKWidget_2();
 	void CameraSynToQVTKWidget_3();
-	void CameraSynToQVTKWidget_4();*/
+	void CameraSynToQVTKWidget_4();
 
 };
