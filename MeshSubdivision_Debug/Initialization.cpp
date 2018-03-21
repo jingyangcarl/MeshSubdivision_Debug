@@ -297,6 +297,18 @@ void MeshSubdivision_Debug::InitializeSlotSignal() {
 	connect(commandProcessor, SIGNAL(SignalClearMesh_3()), this, SLOT(ClearMesh_3()));
 	connect(commandProcessor, SIGNAL(SignalClearMesh_4()), this, SLOT(ClearMesh_4()));
 
+	// Carl: connection for ShowCloud
+	connect(commandProcessor, SIGNAL(SignalShowCloud_1()), this, SLOT(ShowCloud_1()));
+	connect(commandProcessor, SIGNAL(SignalShowCloud_2()), this, SLOT(ShowCloud_2()));
+	connect(commandProcessor, SIGNAL(SignalShowCloud_3()), this, SLOT(ShowCloud_3()));
+	connect(commandProcessor, SIGNAL(SignalShowCloud_4()), this, SLOT(ShowCloud_4()));
+
+	// Carl: connection for ClearCloud
+	connect(commandProcessor, SIGNAL(SignalClearCloud_1()), this, SLOT(ClearCloud_1()));
+	connect(commandProcessor, SIGNAL(SignalClearCloud_2()), this, SLOT(ClearCloud_2()));
+	connect(commandProcessor, SIGNAL(SignalClearCloud_3()), this, SLOT(ClearCloud_3()));
+	connect(commandProcessor, SIGNAL(SignalClearCloud_4()), this, SLOT(ClearCloud_4()));
+
 	// Carl: connection for ChangeToLayout
 	connect(commandProcessor, SIGNAL(SignalChangeToLayout_1()), this, SLOT(ChangeToLayout_1()));
 	connect(commandProcessor, SIGNAL(SignalChangeToLayout_2()), this, SLOT(ChangeToLayout_2()));

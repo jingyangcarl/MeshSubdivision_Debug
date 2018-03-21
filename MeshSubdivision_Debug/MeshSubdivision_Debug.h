@@ -120,7 +120,13 @@ private slots:
 	void ClearMesh_3();
 	void ClearMesh_4();
 	void ShowCloud_1();
+	void ShowCloud_2();
+	void ShowCloud_3();
+	void ShowCloud_4();
 	void ClearCloud_1();
+	void ClearCloud_2();
+	void ClearCloud_3();
+	void ClearCloud_4();
 
 	/******************** CameraSynchronization.cpp ********************/
 	void CameraSynToQVTKWidget_1();

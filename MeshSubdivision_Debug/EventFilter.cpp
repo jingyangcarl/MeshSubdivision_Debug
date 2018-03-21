@@ -1,4 +1,5 @@
 #include "MeshSubdivision_Debug.h"
+#include <qscrollbar.h>
 #include <QtGui>
 
 bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
@@ -24,6 +25,7 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 			}
 
 			ui.textEdit_cmd->setTextColor(QColor("white"));
+			ui.textEdit_cmd->verticalScrollBar()->setValue(ui.textEdit_cmd->verticalScrollBar()->maximum());
 			return true;
 		}
 		else if (keyEvent->key() == Qt::Key_Backspace) {

@@ -4,18 +4,20 @@ void MeshSubdivision_Debug::ChangeToLayout_1() {
 	// Carl: change to layout with one QVTKWidget and one TextEdit
 
 	// Carl: clear background
-	if (layoutStatus == 1) {
-		ClearMesh_1();
-	}
-	else if (layoutStatus == 2) {
-		ClearMesh_1();
-		ClearMesh_2();
-	}
-	else if (layoutStatus == 4) {
-		ClearMesh_1();
-		ClearMesh_2();
+	switch (layoutStatus) {
+	case 4:
 		ClearMesh_3();
 		ClearMesh_4();
+		ClearCloud_3();
+		ClearCloud_4();
+	case 2:
+		ClearMesh_2();
+		ClearCloud_2();
+	case 1:
+		ClearMesh_1();
+		ClearCloud_1();
+	default:
+		break;
 	}
 
 	// Carl: rebuild layout
@@ -30,10 +32,9 @@ void MeshSubdivision_Debug::ChangeToLayout_1() {
 	ui.gridLayout_widget->addWidget(qvtkWidget_1, 0, 0);
 
 	// Carl: update
-	ShowMesh_1();
-
-	
 	layoutStatus = 1;
+	ShowMesh_1();
+	
 	OutputTextEditFinished("Layout_1 initialization finished;");
 	return;
 }
@@ -42,18 +43,20 @@ void MeshSubdivision_Debug::ChangeToLayout_2() {
 	// Carl: change to layout with two QVTKWidget and one TextEdit
 
 	// Carl: clear background
-	if (layoutStatus == 1) {
-		ClearMesh_1();
-	}
-	else if (layoutStatus == 2) {
-		ClearMesh_1();
-		ClearMesh_2();
-	}
-	else if (layoutStatus == 4) {
-		ClearMesh_1();
-		ClearMesh_2();
+	switch (layoutStatus) {
+	case 4:
 		ClearMesh_3();
 		ClearMesh_4();
+		ClearCloud_3();
+		ClearCloud_4();
+	case 2:
+		ClearMesh_2();
+		ClearCloud_2();
+	case 1:
+		ClearMesh_1();
+		ClearCloud_1();
+	default:
+		break;
 	}
 
 	// Carl: rebuild layout
@@ -70,10 +73,10 @@ void MeshSubdivision_Debug::ChangeToLayout_2() {
 	ui.gridLayout_widget->addWidget(qvtkWidget_2, 0, 1);
 
 	// Carl: update
+	layoutStatus = 2;
 	ShowMesh_1();
 	ShowMesh_2();
 
-	layoutStatus = 2;
 	OutputTextEditFinished("Layout_2 initialization finished;");
 	return;
 }
@@ -82,18 +85,20 @@ void MeshSubdivision_Debug::ChangeToLayout_4() {
 	// Carl: change to layout with four QVTKWidget and one TextEdit
 
 	// Carl: clear background
-	if (layoutStatus == 1) {
-		ClearMesh_1();
-	}
-	else if (layoutStatus == 2) {
-		ClearMesh_1();
-		ClearMesh_2();
-	}
-	else if (layoutStatus == 4) {
-		ClearMesh_1();
-		ClearMesh_2();
+	switch (layoutStatus) {
+	case 4:
 		ClearMesh_3();
 		ClearMesh_4();
+		ClearCloud_3();
+		ClearCloud_4();
+	case 2:
+		ClearMesh_2();
+		ClearCloud_2();
+	case 1:
+		ClearMesh_1();
+		ClearCloud_1();
+	default:
+		break;
 	}
 
 	// Carl: rebuild layout
@@ -114,12 +119,12 @@ void MeshSubdivision_Debug::ChangeToLayout_4() {
 	ui.gridLayout_widget->addWidget(qvtkWidget_4, 1, 1);
 
 	// Carl: update
+	layoutStatus = 4;
 	ShowMesh_1();
 	ShowMesh_2();
 	ShowMesh_3();
 	ShowMesh_4();
 
-	layoutStatus = 4;
 	OutputTextEditFinished("Layout_4 initialization finished;");
 	return;
 }

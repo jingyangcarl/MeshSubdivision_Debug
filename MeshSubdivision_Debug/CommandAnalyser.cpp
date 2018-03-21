@@ -33,7 +33,7 @@ Command CommandAnalyser::Analyse() {
 	else {
 		command.predicate = "show";
 		command.object = "error";
-		command.complement = "No such instruction, please check your input at " + inputWords.at(0);
+		command.complement = "No such instruction, please check your input at \"" + inputWords.at(0) + "\"";
 
 		return command;
 	}
@@ -54,7 +54,7 @@ Command CommandAnalyser::Analyse() {
 		command.complement = command.complement.simplified();
 	}
 	else {
-		command.complement = "No such instruction, please check your input after " + command.predicate;
+		command.complement = "No such instruction, please check your input after \"" + command.predicate + "\"";
 		command.predicate = "show";
 		command.object = "error";
 

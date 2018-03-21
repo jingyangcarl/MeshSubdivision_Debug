@@ -194,9 +194,189 @@ void MeshSubdivision_Debug::LoadMesh_2() {
 }
 
 void MeshSubdivision_Debug::LoadMesh_3() {
+	if (layoutStatus >= 3) {
 
+		// Carl: clear mesh
+		ClearMesh_3();
+
+		// Carl: open the file
+		QString tempPath = pathMesh_3;
+		pathMesh_3 = QFileDialog::getOpenFileName(this, tr("Select Mesh File for Mesh 1"), "../MeshFile", tr("Mesh Files(*.ply *.obj *.off)"));
+
+		pcl::PolygonMesh tempMesh, empty;
+		tempMesh = mesh_3;
+		mesh_3 = empty;
+
+		// Carl: initialization
+		MeshLoader meshLoader(pathMesh_3, mesh_3, cloud_3, colorCloud_3);
+
+		// Carl: set timer
+		clock_t start, stop;
+		start = clock();
+		meshLoader.start();
+
+		// Carl: lock textEdit and update info
+		ui.textEdit_cmd->setEnabled(false);
+		QTextCursor cursor = ui.textEdit_cmd->textCursor();
+		ui.textEdit_cmd->setTextColor(QColor("green"));
+
+		QString processInfo = "Mesh Loader Running - -";
+		ui.textEdit_cmd->textCursor().insertText(processInfo);
+		ui.textEdit_cmd->verticalScrollBar()->setValue(ui.textEdit_cmd->verticalScrollBar()->maximum());
+
+		// Carl: loader will call run() as a thread;
+		int timer(0), changeTime(30);
+		while (meshLoader.isRunning() && ++timer) {
+			// Carl: update processing information;
+			cursor.deletePreviousChar();
+			cursor.deletePreviousChar();
+			cursor.deletePreviousChar();
+			if ((timer % (4 * changeTime)) / changeTime == 0)
+				cursor.insertText("- -");
+			else if ((timer % (4 * changeTime)) / changeTime == 1)
+				cursor.insertText("\\ \\");
+			else if ((timer % (4 * changeTime)) / changeTime == 2)
+				cursor.insertText("| |");
+			else if ((timer % (4 * changeTime)) / changeTime == 3)
+				cursor.insertText("/ /");
+
+			// Carl: call event process;
+			QCoreApplication::processEvents();
+		}
+
+		// Carl: eliminate processing information
+		for (int i = 0; i < processInfo.size(); i++)
+			cursor.deletePreviousChar();
+
+		// Carl: wait for the thread;
+		stop = clock();
+		meshLoader.wait();
+
+		// Carl: output information
+		if (!mesh_3.cloud.data.empty()) {
+			// Carl: output timer
+			QVector<QPair<QColor, QString>> output;
+			output.append(QPair<QColor, QString>(QColor("gray"), "Mesh Loader running finished: "));
+			output.append(QPair<QColor, QString>(QColor("green"), "[" + QString::number((double)(stop - start) / 1000) + "s]  "));
+			OutputTextEditColoredString(output);
+			output.clear();
+
+			output.append(QPair<QColor, QString>(QColor("gray"), "Mesh Info: "));
+			output.append(QPair<QColor, QString>(QColor("yellow"), "[Points: " + QString::number(mesh_3.cloud.height*mesh_3.cloud.width) + "] "));
+			output.append(QPair<QColor, QString>(QColor("yellow"), "[Faces: " + QString::number(mesh_3.polygons.size()) + "] "));
+			OutputTextEditColoredString(output);
+			output.clear();
+
+			output.append(QPair<QColor, QString>(QColor("gray"), "Mesh_3 Load finished: "));
+			output.append(QPair<QColor, QString>(QColor("gray"), "[" + pathMesh_3 + "]"));
+			OutputTextEditColoredString(output);
+		}
+		else {
+			OutputTextEditError("Mesh_3 Load failed: [" + pathMesh_3 + "]");
+			mesh_3 = tempMesh;
+			pathMesh_3 = tempPath;
+		}
+
+		ui.textEdit_cmd->setEnabled(true);
+
+		// Carl: show mesh
+		ShowMesh_3();
+	}
+	else OutputTextEditError("QVTKWidget_3 hasn't been initialized;");
+
+	return;
 }
 
 void MeshSubdivision_Debug::LoadMesh_4() {
+	if (layoutStatus >= 4) {
 
+		// Carl: clear mesh
+		ClearMesh_4();
+
+		// Carl: open the file
+		QString tempPath = pathMesh_4;
+		pathMesh_4 = QFileDialog::getOpenFileName(this, tr("Select Mesh File for Mesh 1"), "../MeshFile", tr("Mesh Files(*.ply *.obj *.off)"));
+
+		pcl::PolygonMesh tempMesh, empty;
+		tempMesh = mesh_4;
+		mesh_4 = empty;
+
+		// Carl: initialization
+		MeshLoader meshLoader(pathMesh_4, mesh_4, cloud_4, colorCloud_4);
+
+		// Carl: set timer
+		clock_t start, stop;
+		start = clock();
+		meshLoader.start();
+
+		// Carl: lock textEdit and update info
+		ui.textEdit_cmd->setEnabled(false);
+		QTextCursor cursor = ui.textEdit_cmd->textCursor();
+		ui.textEdit_cmd->setTextColor(QColor("green"));
+
+		QString processInfo = "Mesh Loader Running - -";
+		ui.textEdit_cmd->textCursor().insertText(processInfo);
+		ui.textEdit_cmd->verticalScrollBar()->setValue(ui.textEdit_cmd->verticalScrollBar()->maximum());
+
+		// Carl: loader will call run() as a thread;
+		int timer(0), changeTime(30);
+		while (meshLoader.isRunning() && ++timer) {
+			// Carl: update processing information;
+			cursor.deletePreviousChar();
+			cursor.deletePreviousChar();
+			cursor.deletePreviousChar();
+			if ((timer % (4 * changeTime)) / changeTime == 0)
+				cursor.insertText("- -");
+			else if ((timer % (4 * changeTime)) / changeTime == 1)
+				cursor.insertText("\\ \\");
+			else if ((timer % (4 * changeTime)) / changeTime == 2)
+				cursor.insertText("| |");
+			else if ((timer % (4 * changeTime)) / changeTime == 3)
+				cursor.insertText("/ /");
+
+			// Carl: call event process;
+			QCoreApplication::processEvents();
+		}
+
+		// Carl: eliminate processing information
+		for (int i = 0; i < processInfo.size(); i++)
+			cursor.deletePreviousChar();
+
+		// Carl: wait for the thread;
+		stop = clock();
+		meshLoader.wait();
+
+		// Carl: output information
+		if (!mesh_4.cloud.data.empty()) {
+			// Carl: output timer
+			QVector<QPair<QColor, QString>> output;
+			output.append(QPair<QColor, QString>(QColor("gray"), "Mesh Loader running finished: "));
+			output.append(QPair<QColor, QString>(QColor("green"), "[" + QString::number((double)(stop - start) / 1000) + "s]  "));
+			OutputTextEditColoredString(output);
+			output.clear();
+
+			output.append(QPair<QColor, QString>(QColor("gray"), "Mesh Info: "));
+			output.append(QPair<QColor, QString>(QColor("yellow"), "[Points: " + QString::number(mesh_4.cloud.height*mesh_4.cloud.width) + "] "));
+			output.append(QPair<QColor, QString>(QColor("yellow"), "[Faces: " + QString::number(mesh_4.polygons.size()) + "] "));
+			OutputTextEditColoredString(output);
+			output.clear();
+
+			output.append(QPair<QColor, QString>(QColor("gray"), "Mesh_4 Load finished: "));
+			output.append(QPair<QColor, QString>(QColor("gray"), "[" + pathMesh_4 + "]"));
+			OutputTextEditColoredString(output);
+		}
+		else {
+			OutputTextEditError("Mesh_4 Load failed: [" + pathMesh_4 + "]");
+			mesh_4 = tempMesh;
+			pathMesh_4 = tempPath;
+		}
+
+		ui.textEdit_cmd->setEnabled(true);
+
+		// Carl: show mesh
+		ShowMesh_4();
+	}
+	else OutputTextEditError("QVTKWidget_4 hasn't been initialized;");
+
+	return;
 }

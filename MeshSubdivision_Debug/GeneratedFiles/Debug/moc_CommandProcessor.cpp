@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_CommandProcessor_t {
-    QByteArrayData data[20];
-    char stringdata0[375];
+    QByteArrayData data[28];
+    char stringdata0[523];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -46,9 +46,17 @@ QT_MOC_LITERAL(13, 234, 17), // "SignalClearMesh_1"
 QT_MOC_LITERAL(14, 252, 17), // "SignalClearMesh_2"
 QT_MOC_LITERAL(15, 270, 17), // "SignalClearMesh_3"
 QT_MOC_LITERAL(16, 288, 17), // "SignalClearMesh_4"
-QT_MOC_LITERAL(17, 306, 22), // "SignalChangeToLayout_1"
-QT_MOC_LITERAL(18, 329, 22), // "SignalChangeToLayout_2"
-QT_MOC_LITERAL(19, 352, 22) // "SignalChangeToLayout_4"
+QT_MOC_LITERAL(17, 306, 17), // "SignalShowCloud_1"
+QT_MOC_LITERAL(18, 324, 17), // "SignalShowCloud_2"
+QT_MOC_LITERAL(19, 342, 17), // "SignalShowCloud_3"
+QT_MOC_LITERAL(20, 360, 17), // "SignalShowCloud_4"
+QT_MOC_LITERAL(21, 378, 18), // "SignalClearCloud_1"
+QT_MOC_LITERAL(22, 397, 18), // "SignalClearCloud_2"
+QT_MOC_LITERAL(23, 416, 18), // "SignalClearCloud_3"
+QT_MOC_LITERAL(24, 435, 18), // "SignalClearCloud_4"
+QT_MOC_LITERAL(25, 454, 22), // "SignalChangeToLayout_1"
+QT_MOC_LITERAL(26, 477, 22), // "SignalChangeToLayout_2"
+QT_MOC_LITERAL(27, 500, 22) // "SignalChangeToLayout_4"
 
     },
     "CommandProcessor\0SignalOutputTextEditFinished\0"
@@ -59,7 +67,11 @@ QT_MOC_LITERAL(19, 352, 22) // "SignalChangeToLayout_4"
     "SignalShowMesh_2\0SignalShowMesh_3\0"
     "SignalShowMesh_4\0SignalClearMesh_1\0"
     "SignalClearMesh_2\0SignalClearMesh_3\0"
-    "SignalClearMesh_4\0SignalChangeToLayout_1\0"
+    "SignalClearMesh_4\0SignalShowCloud_1\0"
+    "SignalShowCloud_2\0SignalShowCloud_3\0"
+    "SignalShowCloud_4\0SignalClearCloud_1\0"
+    "SignalClearCloud_2\0SignalClearCloud_3\0"
+    "SignalClearCloud_4\0SignalChangeToLayout_1\0"
     "SignalChangeToLayout_2\0SignalChangeToLayout_4"
 };
 #undef QT_MOC_LITERAL
@@ -70,37 +82,53 @@ static const uint qt_meta_data_CommandProcessor[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
+      26,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-      18,       // signalCount
+      26,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  104,    2, 0x06 /* Public */,
-       3,    1,  107,    2, 0x06 /* Public */,
-       4,    1,  110,    2, 0x06 /* Public */,
-       5,    0,  113,    2, 0x06 /* Public */,
-       6,    0,  114,    2, 0x06 /* Public */,
-       7,    0,  115,    2, 0x06 /* Public */,
-       8,    0,  116,    2, 0x06 /* Public */,
-       9,    0,  117,    2, 0x06 /* Public */,
-      10,    0,  118,    2, 0x06 /* Public */,
-      11,    0,  119,    2, 0x06 /* Public */,
-      12,    0,  120,    2, 0x06 /* Public */,
-      13,    0,  121,    2, 0x06 /* Public */,
-      14,    0,  122,    2, 0x06 /* Public */,
-      15,    0,  123,    2, 0x06 /* Public */,
-      16,    0,  124,    2, 0x06 /* Public */,
-      17,    0,  125,    2, 0x06 /* Public */,
-      18,    0,  126,    2, 0x06 /* Public */,
-      19,    0,  127,    2, 0x06 /* Public */,
+       1,    1,  144,    2, 0x06 /* Public */,
+       3,    1,  147,    2, 0x06 /* Public */,
+       4,    1,  150,    2, 0x06 /* Public */,
+       5,    0,  153,    2, 0x06 /* Public */,
+       6,    0,  154,    2, 0x06 /* Public */,
+       7,    0,  155,    2, 0x06 /* Public */,
+       8,    0,  156,    2, 0x06 /* Public */,
+       9,    0,  157,    2, 0x06 /* Public */,
+      10,    0,  158,    2, 0x06 /* Public */,
+      11,    0,  159,    2, 0x06 /* Public */,
+      12,    0,  160,    2, 0x06 /* Public */,
+      13,    0,  161,    2, 0x06 /* Public */,
+      14,    0,  162,    2, 0x06 /* Public */,
+      15,    0,  163,    2, 0x06 /* Public */,
+      16,    0,  164,    2, 0x06 /* Public */,
+      17,    0,  165,    2, 0x06 /* Public */,
+      18,    0,  166,    2, 0x06 /* Public */,
+      19,    0,  167,    2, 0x06 /* Public */,
+      20,    0,  168,    2, 0x06 /* Public */,
+      21,    0,  169,    2, 0x06 /* Public */,
+      22,    0,  170,    2, 0x06 /* Public */,
+      23,    0,  171,    2, 0x06 /* Public */,
+      24,    0,  172,    2, 0x06 /* Public */,
+      25,    0,  173,    2, 0x06 /* Public */,
+      26,    0,  174,    2, 0x06 /* Public */,
+      27,    0,  175,    2, 0x06 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -141,9 +169,17 @@ void CommandProcessor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         case 12: _t->SignalClearMesh_2(); break;
         case 13: _t->SignalClearMesh_3(); break;
         case 14: _t->SignalClearMesh_4(); break;
-        case 15: _t->SignalChangeToLayout_1(); break;
-        case 16: _t->SignalChangeToLayout_2(); break;
-        case 17: _t->SignalChangeToLayout_4(); break;
+        case 15: _t->SignalShowCloud_1(); break;
+        case 16: _t->SignalShowCloud_2(); break;
+        case 17: _t->SignalShowCloud_3(); break;
+        case 18: _t->SignalShowCloud_4(); break;
+        case 19: _t->SignalClearCloud_1(); break;
+        case 20: _t->SignalClearCloud_2(); break;
+        case 21: _t->SignalClearCloud_3(); break;
+        case 22: _t->SignalClearCloud_4(); break;
+        case 23: _t->SignalChangeToLayout_1(); break;
+        case 24: _t->SignalChangeToLayout_2(); break;
+        case 25: _t->SignalChangeToLayout_4(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -256,22 +292,78 @@ void CommandProcessor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         }
         {
             typedef void (CommandProcessor::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_1)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalShowCloud_1)) {
                 *result = 15;
                 return;
             }
         }
         {
             typedef void (CommandProcessor::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_2)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalShowCloud_2)) {
                 *result = 16;
                 return;
             }
         }
         {
             typedef void (CommandProcessor::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_4)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalShowCloud_3)) {
                 *result = 17;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalShowCloud_4)) {
+                *result = 18;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalClearCloud_1)) {
+                *result = 19;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalClearCloud_2)) {
+                *result = 20;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalClearCloud_3)) {
+                *result = 21;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalClearCloud_4)) {
+                *result = 22;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_1)) {
+                *result = 23;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_2)) {
+                *result = 24;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_4)) {
+                *result = 25;
                 return;
             }
         }
@@ -303,13 +395,13 @@ int CommandProcessor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 26)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 26;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
+        if (_id < 26)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 18;
+        _id -= 26;
     }
     return _id;
 }
@@ -408,20 +500,68 @@ void CommandProcessor::SignalClearMesh_4()
 }
 
 // SIGNAL 15
-void CommandProcessor::SignalChangeToLayout_1()
+void CommandProcessor::SignalShowCloud_1()
 {
     QMetaObject::activate(this, &staticMetaObject, 15, Q_NULLPTR);
 }
 
 // SIGNAL 16
-void CommandProcessor::SignalChangeToLayout_2()
+void CommandProcessor::SignalShowCloud_2()
 {
     QMetaObject::activate(this, &staticMetaObject, 16, Q_NULLPTR);
 }
 
 // SIGNAL 17
-void CommandProcessor::SignalChangeToLayout_4()
+void CommandProcessor::SignalShowCloud_3()
 {
     QMetaObject::activate(this, &staticMetaObject, 17, Q_NULLPTR);
+}
+
+// SIGNAL 18
+void CommandProcessor::SignalShowCloud_4()
+{
+    QMetaObject::activate(this, &staticMetaObject, 18, Q_NULLPTR);
+}
+
+// SIGNAL 19
+void CommandProcessor::SignalClearCloud_1()
+{
+    QMetaObject::activate(this, &staticMetaObject, 19, Q_NULLPTR);
+}
+
+// SIGNAL 20
+void CommandProcessor::SignalClearCloud_2()
+{
+    QMetaObject::activate(this, &staticMetaObject, 20, Q_NULLPTR);
+}
+
+// SIGNAL 21
+void CommandProcessor::SignalClearCloud_3()
+{
+    QMetaObject::activate(this, &staticMetaObject, 21, Q_NULLPTR);
+}
+
+// SIGNAL 22
+void CommandProcessor::SignalClearCloud_4()
+{
+    QMetaObject::activate(this, &staticMetaObject, 22, Q_NULLPTR);
+}
+
+// SIGNAL 23
+void CommandProcessor::SignalChangeToLayout_1()
+{
+    QMetaObject::activate(this, &staticMetaObject, 23, Q_NULLPTR);
+}
+
+// SIGNAL 24
+void CommandProcessor::SignalChangeToLayout_2()
+{
+    QMetaObject::activate(this, &staticMetaObject, 24, Q_NULLPTR);
+}
+
+// SIGNAL 25
+void CommandProcessor::SignalChangeToLayout_4()
+{
+    QMetaObject::activate(this, &staticMetaObject, 25, Q_NULLPTR);
 }
 QT_END_MOC_NAMESPACE

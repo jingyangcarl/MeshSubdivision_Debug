@@ -35,6 +35,14 @@ signals:
 	void SignalClearMesh_2();
 	void SignalClearMesh_3();
 	void SignalClearMesh_4();
+	void SignalShowCloud_1();
+	void SignalShowCloud_2();
+	void SignalShowCloud_3();
+	void SignalShowCloud_4();
+	void SignalClearCloud_1();
+	void SignalClearCloud_2();
+	void SignalClearCloud_3();
+	void SignalClearCloud_4();
 	void SignalChangeToLayout_1();
 	void SignalChangeToLayout_2();
 	void SignalChangeToLayout_4();
