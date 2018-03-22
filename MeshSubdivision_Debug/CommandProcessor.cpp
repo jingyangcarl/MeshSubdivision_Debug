@@ -21,6 +21,7 @@ void CommandProcessor::run() {
 			if (command.complement == "1") emit SignalChangeToLayout_1();
 			else if (command.complement == "2") emit SignalChangeToLayout_2();
 			else if (command.complement == "4") emit SignalChangeToLayout_4();
+			else if (command.complement == "6") emit SignalChangeToLayout_6();
 			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
 		}
 		else emit SignalOutputTextEditError("There isn't parameter \"" + command.object + "\" for \"" + command.predicate +"\"");

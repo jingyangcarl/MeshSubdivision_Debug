@@ -46,6 +46,7 @@ signals:
 	void SignalChangeToLayout_1();
 	void SignalChangeToLayout_2();
 	void SignalChangeToLayout_4();
+	void SignalChangeToLayout_6();
 
 };
 

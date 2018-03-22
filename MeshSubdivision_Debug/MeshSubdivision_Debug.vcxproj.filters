@@ -82,7 +82,7 @@
       <Filter>Source Files\MeshSubdivision_Debug</Filter>
     </ClCompile>
     <ClCompile Include="CameraSynchronization.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\MeshSubdivision_Debug</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

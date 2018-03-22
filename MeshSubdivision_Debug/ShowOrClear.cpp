@@ -40,7 +40,6 @@ void MeshSubdivision_Debug::ShowMesh_3() {
 	return;
 }
 
-
 void MeshSubdivision_Debug::ShowMesh_4() {
 	// Carl: show mesh_4 to QVTKWidget
 	if (layoutStatus >= 4) {
@@ -51,6 +50,32 @@ void MeshSubdivision_Debug::ShowMesh_4() {
 		OutputTextEditFinished("Show Mesh_4 finished;");
 	}
 	else OutputTextEditError("QVTKWidget_4 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ShowMesh_5() {
+	// Carl: show mesh_5 to QVTKWidget
+	if (layoutStatus >= 4) {
+		viewer_5->addPolygonMesh(mesh_5, "mesh_5");
+		viewer_5->resetCamera();
+		qvtkWidget_5->update();
+
+		OutputTextEditFinished("Show Mesh_5 finished;");
+	}
+	else OutputTextEditError("QVTKWidget_5 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ShowMesh_6() {
+	// Carl: show mesh_6 to QVTKWidget
+	if (layoutStatus >= 4) {
+		viewer_6->addPolygonMesh(mesh_6, "mesh_6");
+		viewer_6->resetCamera();
+		qvtkWidget_6->update();
+
+		OutputTextEditFinished("Show Mesh_6 finished;");
+	}
+	else OutputTextEditError("QVTKWidget_6 hasn't been initialized;");
 	return;
 }
 
@@ -107,6 +132,32 @@ void MeshSubdivision_Debug::ClearMesh_4() {
 	return;
 }
 
+void MeshSubdivision_Debug::ClearMesh_5() {
+	// Carl: clear mesh_5 to QVTKWidget
+	if (layoutStatus >= 4) {
+		viewer_5->removePolygonMesh("mesh_5");
+		viewer_5->updateCamera();
+		qvtkWidget_5->update();
+
+		OutputTextEditFinished("Clear Mesh_5 finished;");
+	}
+	else OutputTextEditError("QVTKWidget_5 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ClearMesh_6() {
+	// Carl: clear mesh_6 to QVTKWidget
+	if (layoutStatus >= 4) {
+		viewer_6->removePolygonMesh("mesh_6");
+		viewer_6->updateCamera();
+		qvtkWidget_6->update();
+
+		OutputTextEditFinished("Clear Mesh_6 finished;");
+	}
+	else OutputTextEditError("QVTKWidget_6 hasn't been initialized;");
+	return;
+}
+
 void MeshSubdivision_Debug::ShowCloud_1() {
 	// Carl: show cloud_1 to QVTKWidget
 	if (layoutStatus >= 1) {
@@ -159,6 +210,32 @@ void MeshSubdivision_Debug::ShowCloud_4() {
 	return;
 }
 
+void MeshSubdivision_Debug::ShowCloud_5() {
+	// Carl: show cloud_5 to QVTKWidget
+	if (layoutStatus >= 1) {
+		viewer_5->addPointCloud(cloud_5, "cloud_5");
+		viewer_5->resetCamera();
+		qvtkWidget_5->update();
+
+		OutputTextEditFinished("Show Cloud_5 finished;");
+	}
+	else OutputTextEditError("QVTKWidget_5 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ShowCloud_6() {
+	// Carl: show cloud_6 to QVTKWidget
+	if (layoutStatus >= 1) {
+		viewer_6->addPointCloud(cloud_6, "cloud_6");
+		viewer_6->resetCamera();
+		qvtkWidget_6->update();
+
+		OutputTextEditFinished("Show Cloud_6 finished;");
+	}
+	else OutputTextEditError("QVTKWidget_6 hasn't been initialized;");
+	return;
+}
+
 void MeshSubdivision_Debug::ClearCloud_1() {
 	// Carl: clear cloud_1 to QVTKWidget
 	if (layoutStatus >= 1) {
@@ -208,5 +285,31 @@ void MeshSubdivision_Debug::ClearCloud_4() {
 		OutputTextEditFinished("Clear Cloud_4 finished;");
 	}
 	else OutputTextEditError("QVTKWidget_4 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ClearCloud_5() {
+	// Carl: clear cloud_5 to QVTKWidget
+	if (layoutStatus >= 1) {
+		viewer_5->removePointCloud("cloud_5");
+		viewer_5->updateCamera();
+		qvtkWidget_5->update();
+
+		OutputTextEditFinished("Clear Cloud_5 finished;");
+	}
+	else OutputTextEditError("QVTKWidget_5 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ClearCloud_6() {
+	// Carl: clear cloud_6 to QVTKWidget
+	if (layoutStatus >= 1) {
+		viewer_6->removePointCloud("cloud_6");
+		viewer_6->updateCamera();
+		qvtkWidget_6->update();
+
+		OutputTextEditFinished("Clear Cloud_6 finished;");
+	}
+	else OutputTextEditError("QVTKWidget_6 hasn't been initialized;");
 	return;
 }

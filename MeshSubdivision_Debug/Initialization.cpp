@@ -24,6 +24,8 @@ void MeshSubdivision_Debug::InitializeQVTKWidget() {
 	InitializeQVTKWidget_2();
 	InitializeQVTKWidget_3();
 	InitializeQVTKWidget_4();
+	InitializeQVTKWidget_5();
+	InitializeQVTKWidget_6();
 
 	return;
 }
@@ -80,6 +82,32 @@ void MeshSubdivision_Debug::InitializeQVTKWidget_4() {
 	return;
 }
 
+void MeshSubdivision_Debug::InitializeQVTKWidget_5() {
+	// Carl: initialize the QVTKWidget_5
+
+	qvtkWidget_5 = new QVTKWidget();
+	viewer_5.reset(new pcl::visualization::PCLVisualizer("Viewer_5", false));
+	qvtkWidget_5->SetRenderWindow(viewer_5->getRenderWindow());
+	viewer_5->setupInteractor(qvtkWidget_5->GetInteractor(), qvtkWidget_5->GetRenderWindow());
+	qvtkWidget_5->update();
+
+	OutputTextEditFinished("QVTKWidget_5 initialization finished;");
+	return;
+}
+
+void MeshSubdivision_Debug::InitializeQVTKWidget_6() {
+	// Carl: initialize the QVTKWidget_6
+
+	qvtkWidget_6 = new QVTKWidget();
+	viewer_6.reset(new pcl::visualization::PCLVisualizer("Viewer_6", false));
+	qvtkWidget_6->SetRenderWindow(viewer_6->getRenderWindow());
+	viewer_6->setupInteractor(qvtkWidget_6->GetInteractor(), qvtkWidget_6->GetRenderWindow());
+	qvtkWidget_6->update();
+
+	OutputTextEditFinished("QVTKWidget_6 initialization finished;");
+	return;
+}
+
 void MeshSubdivision_Debug::InitializeMesh() {
 	// Carl: initialize meshes
 
@@ -87,6 +115,8 @@ void MeshSubdivision_Debug::InitializeMesh() {
 	InitializeMesh_2();
 	InitializeMesh_3();
 	InitializeMesh_4();
+	InitializeMesh_5();
+	InitializeMesh_6();
 
 	return;
 }
@@ -239,6 +269,80 @@ void MeshSubdivision_Debug::InitializeMesh_4() {
 	else OutputTextEditError("Mesh_4 load failed;");
 }
 
+void MeshSubdivision_Debug::InitializeMesh_5() {
+	// Carl: initialize mesh 1
+
+	pathMesh_5 = "../MeshFile/footbones.ply";
+
+	// Carl: clear the mesh;
+	pcl::PolygonMesh emptyMesh;
+	mesh_5 = emptyMesh;
+
+	// Carl: read mesh from mesh path
+	pcl::io::loadPLYFile(pathMesh_5.toStdString(), mesh_5);
+
+	// Carl: choose a color
+	srand(time(NULL));
+	colorCloud_5.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_5.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_5.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+
+	if (!mesh_5.cloud.data.empty()) {
+		// Carl: read mesh succeed
+
+		// Carl: initialize cloud
+		cloud_5.reset(new pcl::PointCloud <pcl::PointXYZRGBA>);
+		pcl::fromPCLPointCloud2(mesh_5.cloud, *cloud_5);
+
+		// Carl: colored the cloud
+		for (int i = 0; i < cloud_5->points.size(); i++) {
+			cloud_5->points[i].r = colorCloud_5.red();
+			cloud_5->points[i].g = colorCloud_5.green();
+			cloud_5->points[i].b = colorCloud_5.blue();
+		}
+
+		OutputTextEditFinished("Mesh_5 load finished;");
+	}
+	else OutputTextEditError("Mesh_5 load failed;");
+}
+
+void MeshSubdivision_Debug::InitializeMesh_6() {
+	// Carl: initialize mesh 1
+
+	pathMesh_6 = "../MeshFile/footbones.ply";
+
+	// Carl: clear the mesh;
+	pcl::PolygonMesh emptyMesh;
+	mesh_6 = emptyMesh;
+
+	// Carl: read mesh from mesh path
+	pcl::io::loadPLYFile(pathMesh_6.toStdString(), mesh_6);
+
+	// Carl: choose a color
+	srand(time(NULL));
+	colorCloud_6.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_6.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_6.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+
+	if (!mesh_6.cloud.data.empty()) {
+		// Carl: read mesh succeed
+
+		// Carl: initialize cloud
+		cloud_6.reset(new pcl::PointCloud <pcl::PointXYZRGBA>);
+		pcl::fromPCLPointCloud2(mesh_6.cloud, *cloud_6);
+
+		// Carl: colored the cloud
+		for (int i = 0; i < cloud_6->points.size(); i++) {
+			cloud_6->points[i].r = colorCloud_6.red();
+			cloud_6->points[i].g = colorCloud_6.green();
+			cloud_6->points[i].b = colorCloud_6.blue();
+		}
+
+		OutputTextEditFinished("Mesh_6 load finished;");
+	}
+	else OutputTextEditError("Mesh_6 load failed;");
+}
+
 void MeshSubdivision_Debug::InitializeTextEdit_CMD() {
 	// Carl: initialize the textfield
 
@@ -267,6 +371,8 @@ void MeshSubdivision_Debug::InitializeEventFilter() {
 	qvtkWidget_2->installEventFilter(this);
 	qvtkWidget_3->installEventFilter(this);
 	qvtkWidget_4->installEventFilter(this);
+	qvtkWidget_5->installEventFilter(this);
+	qvtkWidget_6->installEventFilter(this);
 
 	return;
 }
@@ -313,4 +419,5 @@ void MeshSubdivision_Debug::InitializeSlotSignal() {
 	connect(commandProcessor, SIGNAL(SignalChangeToLayout_1()), this, SLOT(ChangeToLayout_1()));
 	connect(commandProcessor, SIGNAL(SignalChangeToLayout_2()), this, SLOT(ChangeToLayout_2()));
 	connect(commandProcessor, SIGNAL(SignalChangeToLayout_4()), this, SLOT(ChangeToLayout_4()));
+	connect(commandProcessor, SIGNAL(SignalChangeToLayout_6()), this, SLOT(ChangeToLayout_6()));
 }

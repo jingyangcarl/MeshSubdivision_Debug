@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_CommandProcessor_t {
-    QByteArrayData data[28];
-    char stringdata0[523];
+    QByteArrayData data[29];
+    char stringdata0[546];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -56,7 +56,8 @@ QT_MOC_LITERAL(23, 416, 18), // "SignalClearCloud_3"
 QT_MOC_LITERAL(24, 435, 18), // "SignalClearCloud_4"
 QT_MOC_LITERAL(25, 454, 22), // "SignalChangeToLayout_1"
 QT_MOC_LITERAL(26, 477, 22), // "SignalChangeToLayout_2"
-QT_MOC_LITERAL(27, 500, 22) // "SignalChangeToLayout_4"
+QT_MOC_LITERAL(27, 500, 22), // "SignalChangeToLayout_4"
+QT_MOC_LITERAL(28, 523, 22) // "SignalChangeToLayout_6"
 
     },
     "CommandProcessor\0SignalOutputTextEditFinished\0"
@@ -72,7 +73,8 @@ QT_MOC_LITERAL(27, 500, 22) // "SignalChangeToLayout_4"
     "SignalShowCloud_4\0SignalClearCloud_1\0"
     "SignalClearCloud_2\0SignalClearCloud_3\0"
     "SignalClearCloud_4\0SignalChangeToLayout_1\0"
-    "SignalChangeToLayout_2\0SignalChangeToLayout_4"
+    "SignalChangeToLayout_2\0SignalChangeToLayout_4\0"
+    "SignalChangeToLayout_6"
 };
 #undef QT_MOC_LITERAL
 
@@ -82,45 +84,47 @@ static const uint qt_meta_data_CommandProcessor[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      26,   14, // methods
+      27,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-      26,       // signalCount
+      27,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  144,    2, 0x06 /* Public */,
-       3,    1,  147,    2, 0x06 /* Public */,
-       4,    1,  150,    2, 0x06 /* Public */,
-       5,    0,  153,    2, 0x06 /* Public */,
-       6,    0,  154,    2, 0x06 /* Public */,
-       7,    0,  155,    2, 0x06 /* Public */,
-       8,    0,  156,    2, 0x06 /* Public */,
-       9,    0,  157,    2, 0x06 /* Public */,
-      10,    0,  158,    2, 0x06 /* Public */,
-      11,    0,  159,    2, 0x06 /* Public */,
-      12,    0,  160,    2, 0x06 /* Public */,
-      13,    0,  161,    2, 0x06 /* Public */,
-      14,    0,  162,    2, 0x06 /* Public */,
-      15,    0,  163,    2, 0x06 /* Public */,
-      16,    0,  164,    2, 0x06 /* Public */,
-      17,    0,  165,    2, 0x06 /* Public */,
-      18,    0,  166,    2, 0x06 /* Public */,
-      19,    0,  167,    2, 0x06 /* Public */,
-      20,    0,  168,    2, 0x06 /* Public */,
-      21,    0,  169,    2, 0x06 /* Public */,
-      22,    0,  170,    2, 0x06 /* Public */,
-      23,    0,  171,    2, 0x06 /* Public */,
-      24,    0,  172,    2, 0x06 /* Public */,
-      25,    0,  173,    2, 0x06 /* Public */,
-      26,    0,  174,    2, 0x06 /* Public */,
-      27,    0,  175,    2, 0x06 /* Public */,
+       1,    1,  149,    2, 0x06 /* Public */,
+       3,    1,  152,    2, 0x06 /* Public */,
+       4,    1,  155,    2, 0x06 /* Public */,
+       5,    0,  158,    2, 0x06 /* Public */,
+       6,    0,  159,    2, 0x06 /* Public */,
+       7,    0,  160,    2, 0x06 /* Public */,
+       8,    0,  161,    2, 0x06 /* Public */,
+       9,    0,  162,    2, 0x06 /* Public */,
+      10,    0,  163,    2, 0x06 /* Public */,
+      11,    0,  164,    2, 0x06 /* Public */,
+      12,    0,  165,    2, 0x06 /* Public */,
+      13,    0,  166,    2, 0x06 /* Public */,
+      14,    0,  167,    2, 0x06 /* Public */,
+      15,    0,  168,    2, 0x06 /* Public */,
+      16,    0,  169,    2, 0x06 /* Public */,
+      17,    0,  170,    2, 0x06 /* Public */,
+      18,    0,  171,    2, 0x06 /* Public */,
+      19,    0,  172,    2, 0x06 /* Public */,
+      20,    0,  173,    2, 0x06 /* Public */,
+      21,    0,  174,    2, 0x06 /* Public */,
+      22,    0,  175,    2, 0x06 /* Public */,
+      23,    0,  176,    2, 0x06 /* Public */,
+      24,    0,  177,    2, 0x06 /* Public */,
+      25,    0,  178,    2, 0x06 /* Public */,
+      26,    0,  179,    2, 0x06 /* Public */,
+      27,    0,  180,    2, 0x06 /* Public */,
+      28,    0,  181,    2, 0x06 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -180,6 +184,7 @@ void CommandProcessor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         case 23: _t->SignalChangeToLayout_1(); break;
         case 24: _t->SignalChangeToLayout_2(); break;
         case 25: _t->SignalChangeToLayout_4(); break;
+        case 26: _t->SignalChangeToLayout_6(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -367,6 +372,13 @@ void CommandProcessor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
                 return;
             }
         }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_6)) {
+                *result = 26;
+                return;
+            }
+        }
     }
 }
 
@@ -395,13 +407,13 @@ int CommandProcessor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 26)
+        if (_id < 27)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 26;
+        _id -= 27;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 26)
+        if (_id < 27)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 26;
+        _id -= 27;
     }
     return _id;
 }
@@ -563,5 +575,11 @@ void CommandProcessor::SignalChangeToLayout_2()
 void CommandProcessor::SignalChangeToLayout_4()
 {
     QMetaObject::activate(this, &staticMetaObject, 25, Q_NULLPTR);
+}
+
+// SIGNAL 26
+void CommandProcessor::SignalChangeToLayout_6()
+{
+    QMetaObject::activate(this, &staticMetaObject, 26, Q_NULLPTR);
 }
 QT_END_MOC_NAMESPACE

@@ -138,24 +138,66 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 	else if (e->type() == QEvent::MouseMove) {
 
 		if (object == qvtkWidget_1) {
+			layoutSize = qvtkWidget_1->size();
 			CameraSynToQVTKWidget_1();
+			qvtkWidget_2->resize(layoutSize);
+			qvtkWidget_3->resize(layoutSize);
+			qvtkWidget_4->resize(layoutSize);
+			qvtkWidget_5->resize(layoutSize);
+			qvtkWidget_6->resize(layoutSize);
 		}
 		else if (object == qvtkWidget_2) {
+			layoutSize = qvtkWidget_2->size();
 			CameraSynToQVTKWidget_2();
-			if (layoutStatus == 4) {
+			qvtkWidget_1->resize(layoutSize);
+			qvtkWidget_3->resize(layoutSize);
+			qvtkWidget_4->resize(layoutSize);
+			qvtkWidget_5->resize(layoutSize);
+			qvtkWidget_6->resize(layoutSize);
+			/*if (layoutStatus == 4) {
 				qvtkWidget_3->resize(qvtkWidget_2->size());
 				qvtkWidget_4->resize(qvtkWidget_2->size());
-			}
+			}*/
 		}
 		else if (object == qvtkWidget_3) {
+			layoutSize = qvtkWidget_3->size();
 			CameraSynToQVTKWidget_3();
+			qvtkWidget_1->resize(layoutSize);
+			qvtkWidget_2->resize(layoutSize);
+			qvtkWidget_4->resize(layoutSize);
+			qvtkWidget_5->resize(layoutSize);
+			qvtkWidget_6->resize(layoutSize);
 		}
 		else if (object == qvtkWidget_4) {
+			layoutSize = qvtkWidget_4->size();
 			CameraSynToQVTKWidget_4();
-			if (layoutStatus == 4) {
+			qvtkWidget_1->resize(layoutSize);
+			qvtkWidget_2->resize(layoutSize);
+			qvtkWidget_3->resize(layoutSize);
+			qvtkWidget_5->resize(layoutSize);
+			qvtkWidget_6->resize(layoutSize);
+			/*if (layoutStatus == 4) {
 				qvtkWidget_1->resize(qvtkWidget_4->size());
 				qvtkWidget_2->resize(qvtkWidget_4->size());
-			}
+			}*/
+		}
+		else if (object == qvtkWidget_5) {
+			layoutSize = qvtkWidget_5->size();
+			CameraSynToQVTKWidget_5();
+			qvtkWidget_1->resize(layoutSize);
+			qvtkWidget_2->resize(layoutSize);
+			qvtkWidget_3->resize(layoutSize);
+			qvtkWidget_4->resize(layoutSize);
+			qvtkWidget_6->resize(layoutSize);
+		}
+		else if (object == qvtkWidget_6) {
+			layoutSize = qvtkWidget_6->size();
+			CameraSynToQVTKWidget_6();
+			qvtkWidget_1->resize(layoutSize);
+			qvtkWidget_2->resize(layoutSize);
+			qvtkWidget_3->resize(layoutSize);
+			qvtkWidget_4->resize(layoutSize);
+			qvtkWidget_5->resize(layoutSize);
 		}
 		return false;
 	}
