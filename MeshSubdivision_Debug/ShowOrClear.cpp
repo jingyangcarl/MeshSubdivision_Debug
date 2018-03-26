@@ -55,7 +55,7 @@ void MeshSubdivision_Debug::ShowMesh_4() {
 
 void MeshSubdivision_Debug::ShowMesh_5() {
 	// Carl: show mesh_5 to QVTKWidget
-	if (layoutStatus >= 4) {
+	if (layoutStatus >= 5) {
 		viewer_5->addPolygonMesh(mesh_5, "mesh_5");
 		viewer_5->resetCamera();
 		qvtkWidget_5->update();
@@ -68,7 +68,7 @@ void MeshSubdivision_Debug::ShowMesh_5() {
 
 void MeshSubdivision_Debug::ShowMesh_6() {
 	// Carl: show mesh_6 to QVTKWidget
-	if (layoutStatus >= 4) {
+	if (layoutStatus >= 6) {
 		viewer_6->addPolygonMesh(mesh_6, "mesh_6");
 		viewer_6->resetCamera();
 		qvtkWidget_6->update();
@@ -134,7 +134,7 @@ void MeshSubdivision_Debug::ClearMesh_4() {
 
 void MeshSubdivision_Debug::ClearMesh_5() {
 	// Carl: clear mesh_5 to QVTKWidget
-	if (layoutStatus >= 4) {
+	if (layoutStatus >= 5) {
 		viewer_5->removePolygonMesh("mesh_5");
 		viewer_5->updateCamera();
 		qvtkWidget_5->update();
@@ -147,7 +147,7 @@ void MeshSubdivision_Debug::ClearMesh_5() {
 
 void MeshSubdivision_Debug::ClearMesh_6() {
 	// Carl: clear mesh_6 to QVTKWidget
-	if (layoutStatus >= 4) {
+	if (layoutStatus >= 6) {
 		viewer_6->removePolygonMesh("mesh_6");
 		viewer_6->updateCamera();
 		qvtkWidget_6->update();
@@ -173,7 +173,7 @@ void MeshSubdivision_Debug::ShowCloud_1() {
 
 void MeshSubdivision_Debug::ShowCloud_2() {
 	// Carl: show cloud_2 to QVTKWidget
-	if (layoutStatus >= 1) {
+	if (layoutStatus >= 2) {
 		viewer_2->addPointCloud(cloud_2, "cloud_2");
 		viewer_2->resetCamera();
 		qvtkWidget_2->update();
@@ -186,7 +186,7 @@ void MeshSubdivision_Debug::ShowCloud_2() {
 
 void MeshSubdivision_Debug::ShowCloud_3() {
 	// Carl: show cloud_3 to QVTKWidget
-	if (layoutStatus >= 1) {
+	if (layoutStatus >= 3) {
 		viewer_3->addPointCloud(cloud_3, "cloud_3");
 		viewer_3->resetCamera();
 		qvtkWidget_3->update();
@@ -199,7 +199,7 @@ void MeshSubdivision_Debug::ShowCloud_3() {
 
 void MeshSubdivision_Debug::ShowCloud_4() {
 	// Carl: show cloud_4 to QVTKWidget
-	if (layoutStatus >= 1) {
+	if (layoutStatus >= 4) {
 		viewer_4->addPointCloud(cloud_4, "cloud_4");
 		viewer_4->resetCamera();
 		qvtkWidget_4->update();
@@ -212,7 +212,7 @@ void MeshSubdivision_Debug::ShowCloud_4() {
 
 void MeshSubdivision_Debug::ShowCloud_5() {
 	// Carl: show cloud_5 to QVTKWidget
-	if (layoutStatus >= 1) {
+	if (layoutStatus >= 5) {
 		viewer_5->addPointCloud(cloud_5, "cloud_5");
 		viewer_5->resetCamera();
 		qvtkWidget_5->update();
@@ -225,7 +225,7 @@ void MeshSubdivision_Debug::ShowCloud_5() {
 
 void MeshSubdivision_Debug::ShowCloud_6() {
 	// Carl: show cloud_6 to QVTKWidget
-	if (layoutStatus >= 1) {
+	if (layoutStatus >= 6) {
 		viewer_6->addPointCloud(cloud_6, "cloud_6");
 		viewer_6->resetCamera();
 		qvtkWidget_6->update();
@@ -251,7 +251,7 @@ void MeshSubdivision_Debug::ClearCloud_1() {
 
 void MeshSubdivision_Debug::ClearCloud_2() {
 	// Carl: clear cloud_2 to QVTKWidget
-	if (layoutStatus >= 1) {
+	if (layoutStatus >= 2) {
 		viewer_2->removePointCloud("cloud_2");
 		viewer_2->updateCamera();
 		qvtkWidget_2->update();
@@ -264,7 +264,7 @@ void MeshSubdivision_Debug::ClearCloud_2() {
 
 void MeshSubdivision_Debug::ClearCloud_3() {
 	// Carl: clear cloud_3 to QVTKWidget
-	if (layoutStatus >= 1) {
+	if (layoutStatus >= 3) {
 		viewer_3->removePointCloud("cloud_3");
 		viewer_3->updateCamera();
 		qvtkWidget_3->update();
@@ -277,7 +277,7 @@ void MeshSubdivision_Debug::ClearCloud_3() {
 
 void MeshSubdivision_Debug::ClearCloud_4() {
 	// Carl: clear cloud_4 to QVTKWidget
-	if (layoutStatus >= 1) {
+	if (layoutStatus >= 4) {
 		viewer_4->removePointCloud("cloud_4");
 		viewer_4->updateCamera();
 		qvtkWidget_4->update();
@@ -290,7 +290,7 @@ void MeshSubdivision_Debug::ClearCloud_4() {
 
 void MeshSubdivision_Debug::ClearCloud_5() {
 	// Carl: clear cloud_5 to QVTKWidget
-	if (layoutStatus >= 1) {
+	if (layoutStatus >= 5) {
 		viewer_5->removePointCloud("cloud_5");
 		viewer_5->updateCamera();
 		qvtkWidget_5->update();
@@ -303,7 +303,7 @@ void MeshSubdivision_Debug::ClearCloud_5() {
 
 void MeshSubdivision_Debug::ClearCloud_6() {
 	// Carl: clear cloud_6 to QVTKWidget
-	if (layoutStatus >= 1) {
+	if (layoutStatus >= 6) {
 		viewer_6->removePointCloud("cloud_6");
 		viewer_6->updateCamera();
 		qvtkWidget_6->update();

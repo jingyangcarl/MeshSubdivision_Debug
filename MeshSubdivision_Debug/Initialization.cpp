@@ -390,30 +390,40 @@ void MeshSubdivision_Debug::InitializeSlotSignal() {
 	connect(commandProcessor, SIGNAL(SignalLoadMesh_2()), this, SLOT(LoadMesh_2()));
 	connect(commandProcessor, SIGNAL(SignalLoadMesh_3()), this, SLOT(LoadMesh_3()));
 	connect(commandProcessor, SIGNAL(SignalLoadMesh_4()), this, SLOT(LoadMesh_4()));
+	connect(commandProcessor, SIGNAL(SignalLoadMesh_5()), this, SLOT(LoadMesh_5()));
+	connect(commandProcessor, SIGNAL(SignalLoadMesh_6()), this, SLOT(LoadMesh_6()));
 
 	// Carl: connection for ShowMesh
 	connect(commandProcessor, SIGNAL(SignalShowMesh_1()), this, SLOT(ShowMesh_1()));
 	connect(commandProcessor, SIGNAL(SignalShowMesh_2()), this, SLOT(ShowMesh_2()));
 	connect(commandProcessor, SIGNAL(SignalShowMesh_3()), this, SLOT(ShowMesh_3()));
 	connect(commandProcessor, SIGNAL(SignalShowMesh_4()), this, SLOT(ShowMesh_4()));
+	connect(commandProcessor, SIGNAL(SignalShowMesh_5()), this, SLOT(ShowMesh_5()));
+	connect(commandProcessor, SIGNAL(SignalShowMesh_6()), this, SLOT(ShowMesh_6()));
 
 	// Carl: connection for ClearMesh
 	connect(commandProcessor, SIGNAL(SignalClearMesh_1()), this, SLOT(ClearMesh_1()));
 	connect(commandProcessor, SIGNAL(SignalClearMesh_2()), this, SLOT(ClearMesh_2()));
 	connect(commandProcessor, SIGNAL(SignalClearMesh_3()), this, SLOT(ClearMesh_3()));
 	connect(commandProcessor, SIGNAL(SignalClearMesh_4()), this, SLOT(ClearMesh_4()));
+	connect(commandProcessor, SIGNAL(SignalClearMesh_5()), this, SLOT(ClearMesh_5()));
+	connect(commandProcessor, SIGNAL(SignalClearMesh_6()), this, SLOT(ClearMesh_6()));
 
 	// Carl: connection for ShowCloud
 	connect(commandProcessor, SIGNAL(SignalShowCloud_1()), this, SLOT(ShowCloud_1()));
 	connect(commandProcessor, SIGNAL(SignalShowCloud_2()), this, SLOT(ShowCloud_2()));
 	connect(commandProcessor, SIGNAL(SignalShowCloud_3()), this, SLOT(ShowCloud_3()));
 	connect(commandProcessor, SIGNAL(SignalShowCloud_4()), this, SLOT(ShowCloud_4()));
+	connect(commandProcessor, SIGNAL(SignalShowCloud_5()), this, SLOT(ShowCloud_5()));
+	connect(commandProcessor, SIGNAL(SignalShowCloud_6()), this, SLOT(ShowCloud_6()));
 
 	// Carl: connection for ClearCloud
 	connect(commandProcessor, SIGNAL(SignalClearCloud_1()), this, SLOT(ClearCloud_1()));
 	connect(commandProcessor, SIGNAL(SignalClearCloud_2()), this, SLOT(ClearCloud_2()));
 	connect(commandProcessor, SIGNAL(SignalClearCloud_3()), this, SLOT(ClearCloud_3()));
 	connect(commandProcessor, SIGNAL(SignalClearCloud_4()), this, SLOT(ClearCloud_4()));
+	connect(commandProcessor, SIGNAL(SignalClearCloud_5()), this, SLOT(ClearCloud_5()));
+	connect(commandProcessor, SIGNAL(SignalClearCloud_6()), this, SLOT(ClearCloud_6()));
 
 	// Carl: connection for ChangeToLayout
 	connect(commandProcessor, SIGNAL(SignalChangeToLayout_1()), this, SLOT(ChangeToLayout_1()));

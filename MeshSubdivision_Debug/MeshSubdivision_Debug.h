@@ -126,6 +126,8 @@ private slots:
 	void LoadMesh_2();
 	void LoadMesh_3();
 	void LoadMesh_4();
+	void LoadMesh_5();
+	void LoadMesh_6();
 
 	/******************** ShowOrClear.cpp ********************/
 	void ShowMesh_1();

@@ -32,6 +32,8 @@ void CommandProcessor::run() {
 			else if (command.complement == "2")	emit SignalClearMesh_2();
 			else if (command.complement == "3")	emit SignalClearMesh_3();
 			else if (command.complement == "4")	emit SignalClearMesh_4();
+			else if (command.complement == "5") emit SignalClearMesh_5();
+			else if (command.complement == "6") emit SignalClearMesh_6();
 			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
 		}
 		else if (command.object == "cloud") {
@@ -39,6 +41,8 @@ void CommandProcessor::run() {
 			else if (command.complement == "2") emit SignalClearCloud_2();
 			else if (command.complement == "3") emit SignalClearCloud_3();
 			else if (command.complement == "4") emit SignalClearCloud_4();
+			else if (command.complement == "5") emit SignalClearCloud_5();
+			else if (command.complement == "6") emit SignalClearCloud_6();
 			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
 		}
 		else emit SignalOutputTextEditError("There isn't parameter \"" + command.object + "\" for \"" + command.predicate + "\"");
@@ -49,6 +53,8 @@ void CommandProcessor::run() {
 			else if (command.complement == "2") emit SignalLoadMesh_2();
 			else if (command.complement == "3") emit SignalLoadMesh_3();
 			else if (command.complement == "4") emit SignalLoadMesh_4();
+			else if (command.complement == "5")	emit SignalLoadMesh_5();
+			else if (command.complement == "6")	emit SignalLoadMesh_6();
 			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
 		}
 		else emit SignalOutputTextEditError("There isn't parameter \"" + command.object + "\" for \"" + command.predicate + "\"");
@@ -60,6 +66,8 @@ void CommandProcessor::run() {
 			else if (command.complement == "2") emit SignalShowCloud_2();
 			else if (command.complement == "3") emit SignalShowCloud_3();
 			else if (command.complement == "4") emit SignalShowCloud_4();
+			else if (command.complement == "5") emit SignalShowCloud_5();
+			else if (command.complement == "6") emit SignalShowCloud_6();
 			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
 		}
 		else if (command.object == "error") emit SignalOutputTextEditError(command.complement);
@@ -67,12 +75,12 @@ void CommandProcessor::run() {
 			if (command.complement == "instruction") {
 				emit SignalOutputTextEditHelp("----------- INSTRUCTION -----------");
 				emit SignalOutputTextEditHelp("change layout [1/2/4]");
-				emit SignalOutputTextEditHelp("clear cloud [1/2/3/4]");
-				emit SignalOutputTextEditHelp("clear mesh [1/2/3/4]");
-				emit SignalOutputTextEditHelp("load mesh [1/2/3/4]");
+				emit SignalOutputTextEditHelp("clear cloud [1/2/3/4/5/6]");
+				emit SignalOutputTextEditHelp("clear mesh [1/2/3/4/5/6]");
+				emit SignalOutputTextEditHelp("load mesh [1/2/3/4/5/6]");
 				emit SignalOutputTextEditHelp("show help (instruction/key/note)");
-				emit SignalOutputTextEditHelp("show cloud [1/2/3/4]");
-				emit SignalOutputTextEditHelp("show mesh [1/2/3/4]");
+				emit SignalOutputTextEditHelp("show cloud [1/2/3/4/5/6]");
+				emit SignalOutputTextEditHelp("show mesh [1/2/3/4/5/6]");
 			}
 			else if (command.complement == "key") {
 				emit SignalOutputTextEditHelp("--------------- KEY ---------------");
@@ -101,6 +109,8 @@ void CommandProcessor::run() {
 			else if (command.complement == "2") emit SignalShowMesh_2();
 			else if (command.complement == "3") emit SignalShowMesh_3();
 			else if (command.complement == "4") emit SignalShowMesh_4();
+			else if (command.complement == "5") emit SignalShowMesh_5();
+			else if (command.complement == "6") emit SignalShowMesh_6();
 			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
 		}
 		else emit SignalOutputTextEditError("There isn't parameter \"" + command.object + "\" for \"" + command.predicate + "\"");
