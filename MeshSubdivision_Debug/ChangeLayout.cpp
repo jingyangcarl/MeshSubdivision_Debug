@@ -30,11 +30,19 @@ void MeshSubdivision_Debug::ChangeToLayout_1() {
 	ui.gridLayout_widget->removeWidget(qvtkWidget_2);
 	ui.gridLayout_widget->removeWidget(qvtkWidget_3);
 	ui.gridLayout_widget->removeWidget(qvtkWidget_4);
+	ui.gridLayout_widget->removeWidget(qvtkWidget_5);
+	ui.gridLayout_widget->removeWidget(qvtkWidget_6);
+	qvtkWidget_2->hide();
+	qvtkWidget_3->hide();
+	qvtkWidget_4->hide();
+	qvtkWidget_5->hide();
+	qvtkWidget_6->hide();
 
 	InitializeQVTKWidget_1();
 	InitializeEventFilter();
 
 	ui.gridLayout_widget->addWidget(qvtkWidget_1, 0, 0);
+	ui.gridLayout_widget->update();
 
 	// Carl: update
 	layoutStatus = 1;
@@ -74,6 +82,12 @@ void MeshSubdivision_Debug::ChangeToLayout_2() {
 	ui.gridLayout_widget->removeWidget(qvtkWidget_2);
 	ui.gridLayout_widget->removeWidget(qvtkWidget_3);
 	ui.gridLayout_widget->removeWidget(qvtkWidget_4);
+	ui.gridLayout_widget->removeWidget(qvtkWidget_5);
+	ui.gridLayout_widget->removeWidget(qvtkWidget_6);
+	qvtkWidget_3->hide();
+	qvtkWidget_4->hide();
+	qvtkWidget_5->hide();
+	qvtkWidget_6->hide();
 
 	InitializeQVTKWidget_1();
 	InitializeQVTKWidget_2();
@@ -81,6 +95,7 @@ void MeshSubdivision_Debug::ChangeToLayout_2() {
 
 	ui.gridLayout_widget->addWidget(qvtkWidget_1, 0, 0);
 	ui.gridLayout_widget->addWidget(qvtkWidget_2, 0, 1);
+	ui.gridLayout_widget->update();
 
 	// Carl: update
 	layoutStatus = 2;
@@ -121,6 +136,14 @@ void MeshSubdivision_Debug::ChangeToLayout_4() {
 	ui.gridLayout_widget->removeWidget(qvtkWidget_2);
 	ui.gridLayout_widget->removeWidget(qvtkWidget_3);
 	ui.gridLayout_widget->removeWidget(qvtkWidget_4);
+	ui.gridLayout_widget->removeWidget(qvtkWidget_5);
+	ui.gridLayout_widget->removeWidget(qvtkWidget_6);
+	qvtkWidget_5->hide();
+	qvtkWidget_6->hide();
+
+	for (int i = 0; i < ui.gridLayout_widget->count(); i++) {
+		delete ui.gridLayout_widget->itemAt(i);
+	}
 
 	InitializeQVTKWidget_1();
 	InitializeQVTKWidget_2();
@@ -132,6 +155,7 @@ void MeshSubdivision_Debug::ChangeToLayout_4() {
 	ui.gridLayout_widget->addWidget(qvtkWidget_2, 0, 1);
 	ui.gridLayout_widget->addWidget(qvtkWidget_3, 1, 0);
 	ui.gridLayout_widget->addWidget(qvtkWidget_4, 1, 1);
+	ui.gridLayout_widget->update();
 
 	// Carl: update
 	layoutStatus = 4;
@@ -191,6 +215,7 @@ void MeshSubdivision_Debug::ChangeToLayout_6() {
 	ui.gridLayout_widget->addWidget(qvtkWidget_4, 1, 0);
 	ui.gridLayout_widget->addWidget(qvtkWidget_5, 1, 1);
 	ui.gridLayout_widget->addWidget(qvtkWidget_6, 1, 2);
+	ui.gridLayout_widget->update();
 
 	// Carl: update
 	layoutStatus = 6;

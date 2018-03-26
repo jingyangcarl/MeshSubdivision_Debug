@@ -137,68 +137,18 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 	}
 	else if (e->type() == QEvent::MouseMove) {
 
-		if (object == qvtkWidget_1) {
-			layoutSize = qvtkWidget_1->size();
+		if (object == qvtkWidget_1)
 			CameraSynToQVTKWidget_1();
-			qvtkWidget_2->resize(layoutSize);
-			qvtkWidget_3->resize(layoutSize);
-			qvtkWidget_4->resize(layoutSize);
-			qvtkWidget_5->resize(layoutSize);
-			qvtkWidget_6->resize(layoutSize);
-		}
-		else if (object == qvtkWidget_2) {
-			layoutSize = qvtkWidget_2->size();
+		else if (object == qvtkWidget_2)
 			CameraSynToQVTKWidget_2();
-			qvtkWidget_1->resize(layoutSize);
-			qvtkWidget_3->resize(layoutSize);
-			qvtkWidget_4->resize(layoutSize);
-			qvtkWidget_5->resize(layoutSize);
-			qvtkWidget_6->resize(layoutSize);
-			/*if (layoutStatus == 4) {
-				qvtkWidget_3->resize(qvtkWidget_2->size());
-				qvtkWidget_4->resize(qvtkWidget_2->size());
-			}*/
-		}
-		else if (object == qvtkWidget_3) {
-			layoutSize = qvtkWidget_3->size();
+		else if (object == qvtkWidget_3)
 			CameraSynToQVTKWidget_3();
-			qvtkWidget_1->resize(layoutSize);
-			qvtkWidget_2->resize(layoutSize);
-			qvtkWidget_4->resize(layoutSize);
-			qvtkWidget_5->resize(layoutSize);
-			qvtkWidget_6->resize(layoutSize);
-		}
-		else if (object == qvtkWidget_4) {
-			layoutSize = qvtkWidget_4->size();
+		else if (object == qvtkWidget_4)
 			CameraSynToQVTKWidget_4();
-			qvtkWidget_1->resize(layoutSize);
-			qvtkWidget_2->resize(layoutSize);
-			qvtkWidget_3->resize(layoutSize);
-			qvtkWidget_5->resize(layoutSize);
-			qvtkWidget_6->resize(layoutSize);
-			/*if (layoutStatus == 4) {
-				qvtkWidget_1->resize(qvtkWidget_4->size());
-				qvtkWidget_2->resize(qvtkWidget_4->size());
-			}*/
-		}
-		else if (object == qvtkWidget_5) {
-			layoutSize = qvtkWidget_5->size();
+		else if (object == qvtkWidget_5)
 			CameraSynToQVTKWidget_5();
-			qvtkWidget_1->resize(layoutSize);
-			qvtkWidget_2->resize(layoutSize);
-			qvtkWidget_3->resize(layoutSize);
-			qvtkWidget_4->resize(layoutSize);
-			qvtkWidget_6->resize(layoutSize);
-		}
-		else if (object == qvtkWidget_6) {
-			layoutSize = qvtkWidget_6->size();
+		else if (object == qvtkWidget_6)
 			CameraSynToQVTKWidget_6();
-			qvtkWidget_1->resize(layoutSize);
-			qvtkWidget_2->resize(layoutSize);
-			qvtkWidget_3->resize(layoutSize);
-			qvtkWidget_4->resize(layoutSize);
-			qvtkWidget_5->resize(layoutSize);
-		}
 		return false;
 	}
 	else if (e->type() == QEvent::Wheel) {
