@@ -84,6 +84,9 @@
     <ClCompile Include="CameraSynchronization.cpp">
       <Filter>Source Files\MeshSubdivision_Debug</Filter>
     </ClCompile>
+    <ClCompile Include="ThreadDataCommunication.cpp">
+      <Filter>Source Files\MeshSubdivision_Debug</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MeshSubdivision_Debug.h">

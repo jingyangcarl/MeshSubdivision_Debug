@@ -1,0 +1,64 @@
+﻿  KeypointDetector.cpp
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\numeric(110): warning C4996: 'std::inner_product::_Unchecked_iterators::_Deprecate': Call to 'std::inner_product' with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\numeric(110): note: 参见“std::inner_product::_Unchecked_iterators::_Deprecate”的声明
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\numeric(139): note: 参见对正在编译的函数 模板 实例化“_Ty std::inner_product<_InIt1,_InIt2,_Ty,std::plus<void>,std::multiplies<void>>(_InIt1,_InIt1,_InIt2,_Ty,_Fn21,_Fn22)”的引用
+          with
+          [
+              _Ty=float,
+              _InIt1=const float *,
+              _InIt2=const float *,
+              _Fn21=std::plus<void>,
+              _Fn22=std::multiplies<void>
+          ]
+  c:\program files\openmesh 6.3\include\openmesh\core\geometry\Vector11T.hh(386): note: 参见对正在编译的函数 模板 实例化“_Ty std::inner_product<const Scalar*,const Scalar*,Scalar>(_InIt1,_InIt1,_InIt2,_Ty)”的引用
+          with
+          [
+              _Ty=float,
+              Scalar=float,
+              _InIt1=const float *,
+              _InIt2=const float *
+          ]
+  c:\program files\openmesh 6.3\include\openmesh\core\geometry\Vector11T.hh(700): note: 参见对正在编译的函数 模板 实例化“Scalar OpenMesh::VectorT<Scalar,3>::operator |<float>(const OpenMesh::VectorT<Scalar,3> &) const”的引用
+          with
+          [
+              Scalar=float
+          ]
+  c:\program files\openmesh 6.3\include\openmesh\core\geometry\Vector11T.hh(700): note: 参见对正在编译的函数 模板 实例化“Scalar OpenMesh::VectorT<Scalar,3>::operator |<float>(const OpenMesh::VectorT<Scalar,3> &) const”的引用
+          with
+          [
+              Scalar=float
+          ]
+  c:\program files\openmesh 6.3\include\openmesh\core\mesh\PolyMeshT.cc(363): note: 参见对正在编译的函数 模板 实例化“Scalar OpenMesh::dot<float,3>(const OpenMesh::VectorT<Scalar,3> &,const OpenMesh::VectorT<Scalar,3> &)”的引用
+          with
+          [
+              Scalar=float
+          ]
+  c:\program files\openmesh 6.3\include\openmesh\core\mesh\PolyMeshT.cc(343): note: 编译类 模板 成员函数“bool OpenMesh::PolyMeshT<Kernel>::is_estimated_feature_edge(OpenMesh::HalfedgeHandle,const double) const”时
+          with
+          [
+              Kernel=OpenMesh::AttribKernelT<OpenMesh::FinalMeshItemsT<OpenMesh::DefaultTraits,true>,OpenMesh::TriConnectivity>
+          ]
+  c:\program files\openmesh 6.3\include\openmesh\core\mesh\PolyMeshT.cc(300): note: 参见对正在编译的函数 模板 实例化“bool OpenMesh::PolyMeshT<Kernel>::is_estimated_feature_edge(OpenMesh::HalfedgeHandle,const double) const”的引用
+          with
+          [
+              Kernel=OpenMesh::AttribKernelT<OpenMesh::FinalMeshItemsT<OpenMesh::DefaultTraits,true>,OpenMesh::TriConnectivity>
+          ]
+  c:\program files\openmesh 6.3\include\openmesh\core\mesh\TriMeshT.cc(80): note: 编译类 模板 成员函数“OpenMesh::VectorT<float,3> OpenMesh::TriMeshT<OpenMesh::AttribKernelT<OpenMesh::FinalMeshItemsT<Traits,true>,OpenMesh::TriConnectivity>>::calc_face_normal(OpenMesh::FaceHandle) const”时
+          with
+          [
+              Traits=OpenMesh::DefaultTraits
+          ]
+  KeypointDetector.cpp(183): note: 参见对正在编译的函数 模板 实例化“OpenMesh::VectorT<float,3> OpenMesh::TriMeshT<OpenMesh::AttribKernelT<OpenMesh::FinalMeshItemsT<Traits,true>,OpenMesh::TriConnectivity>>::calc_face_normal(OpenMesh::FaceHandle) const”的引用
+          with
+          [
+              Traits=OpenMesh::DefaultTraits
+          ]
+  C:\Program Files\OpenMesh 6.3\include\OpenMesh\Core\Mesh\TriMesh_ArrayKernelT.hh(100): note: 参见对正在编译的类 模板 实例化“OpenMesh::TriMeshT<OpenMesh::AttribKernelT<OpenMesh::FinalMeshItemsT<Traits,true>,OpenMesh::TriConnectivity>>”的引用
+          with
+          [
+              Traits=OpenMesh::DefaultTraits
+          ]
+  d:\visual studio 2015\meshsubdivision_debug\keypointdetector\KeypointDetector.h(21): note: 参见对正在编译的类 模板 实例化“OpenMesh::TriMesh_ArrayKernelT<OpenMesh::DefaultTraits>”的引用
+    正在创建库 D:\Visual Studio 2015\MeshSubdivision_Debug\x64\Debug\KeypointDetector.lib 和对象 D:\Visual Studio 2015\MeshSubdivision_Debug\x64\Debug\KeypointDetector.exp
+  KeypointDetector.vcxproj -> D:\Visual Studio 2015\MeshSubdivision_Debug\x64\Debug\KeypointDetector.dll
+  KeypointDetector.vcxproj -> D:\Visual Studio 2015\MeshSubdivision_Debug\x64\Debug\KeypointDetector.pdb (Full PDB)

@@ -15,13 +15,21 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 			// Carl: enter key events
 			QString input = ui.textEdit_cmd->toPlainText().right(ui.textEdit_cmd->toPlainText().size() - textEditRecordLenth);
 			OutputTextEditFinished("");
+
 			if (input.size()) {
 				// deal with the command;
 				commandAnalyser = new CommandAnalyser(input);
 				commandProcessor->SetCommand(commandAnalyser->Analyse());
-				commandProcessor->start();
 
-				//commandProcessor->wait();
+				commandProcessor->start();
+				ui.textEdit_cmd->setEnabled(false);
+
+				while (commandProcessor->isRunning())
+					QCoreApplication::processEvents();
+
+				commandProcessor->wait();
+				ui.textEdit_cmd->setEnabled(true);
+				ui.textEdit_cmd->setFocus();
 			}
 
 			ui.textEdit_cmd->setTextColor(QColor("white"));
@@ -137,18 +145,60 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 	}
 	else if (e->type() == QEvent::MouseMove) {
 
-		if (object == qvtkWidget_1)
+		if (object == qvtkWidget_1) {
+			layoutSize = qvtkWidget_1->size();
 			CameraSynToQVTKWidget_1();
-		else if (object == qvtkWidget_2)
+			qvtkWidget_2->resize(layoutSize);
+			qvtkWidget_3->resize(layoutSize);
+			qvtkWidget_4->resize(layoutSize);
+			qvtkWidget_5->resize(layoutSize);
+			qvtkWidget_6->resize(layoutSize);
+		}
+		else if (object == qvtkWidget_2) {
+			layoutSize = qvtkWidget_2->size();
 			CameraSynToQVTKWidget_2();
-		else if (object == qvtkWidget_3)
+			qvtkWidget_1->resize(layoutSize);
+			qvtkWidget_3->resize(layoutSize);
+			qvtkWidget_4->resize(layoutSize);
+			qvtkWidget_5->resize(layoutSize);
+			qvtkWidget_6->resize(layoutSize);
+		}
+		else if (object == qvtkWidget_3) {
+			layoutSize = qvtkWidget_3->size();
 			CameraSynToQVTKWidget_3();
-		else if (object == qvtkWidget_4)
+			qvtkWidget_1->resize(layoutSize);
+			qvtkWidget_2->resize(layoutSize);
+			qvtkWidget_4->resize(layoutSize);
+			qvtkWidget_5->resize(layoutSize);
+			qvtkWidget_6->resize(layoutSize);
+		}
+		else if (object == qvtkWidget_4) {
+			layoutSize = qvtkWidget_4->size();
 			CameraSynToQVTKWidget_4();
-		else if (object == qvtkWidget_5)
+			qvtkWidget_1->resize(layoutSize);
+			qvtkWidget_2->resize(layoutSize);
+			qvtkWidget_3->resize(layoutSize);
+			qvtkWidget_5->resize(layoutSize);
+			qvtkWidget_6->resize(layoutSize);
+		}
+		else if (object == qvtkWidget_5) {
+			layoutSize = qvtkWidget_5->size();
 			CameraSynToQVTKWidget_5();
-		else if (object == qvtkWidget_6)
+			qvtkWidget_1->resize(layoutSize);
+			qvtkWidget_2->resize(layoutSize);
+			qvtkWidget_3->resize(layoutSize);
+			qvtkWidget_4->resize(layoutSize);
+			qvtkWidget_6->resize(layoutSize);
+		}
+		else if (object == qvtkWidget_6){
+			layoutSize = qvtkWidget_6->size();
 			CameraSynToQVTKWidget_6();
+			qvtkWidget_1->resize(layoutSize);
+			qvtkWidget_2->resize(layoutSize);
+			qvtkWidget_3->resize(layoutSize);
+			qvtkWidget_4->resize(layoutSize);
+			qvtkWidget_5->resize(layoutSize);
+		}
 		return false;
 	}
 	else if (e->type() == QEvent::Wheel) {
@@ -165,5 +215,6 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 		return false;
 	}
 	
+	ui.textEdit_cmd->verticalScrollBar()->setValue(ui.textEdit_cmd->verticalScrollBar()->maximum());
 	return false;
 }

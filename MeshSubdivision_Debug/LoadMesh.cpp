@@ -19,7 +19,7 @@ void MeshSubdivision_Debug::LoadMesh_1() {
 		mesh_1 = empty;
 
 		// Carl: initialization
-		MeshLoader meshLoader(pathMesh_1, mesh_1, cloud_1, colorCloud_1);
+		MeshLoader meshLoader(pathMesh_1, mesh_1, cloud_1);
 
 		// Carl: set timer
 		clock_t start, stop;
@@ -114,7 +114,7 @@ void MeshSubdivision_Debug::LoadMesh_2() {
 		mesh_2 = empty;
 
 		// Carl: initialization
-		MeshLoader meshLoader(pathMesh_2, mesh_2, cloud_2, colorCloud_2);
+		MeshLoader meshLoader(pathMesh_2, mesh_2, cloud_2);
 
 		// Carl: set timer
 		clock_t start, stop;
@@ -208,7 +208,7 @@ void MeshSubdivision_Debug::LoadMesh_3() {
 		mesh_3 = empty;
 
 		// Carl: initialization
-		MeshLoader meshLoader(pathMesh_3, mesh_3, cloud_3, colorCloud_3);
+		MeshLoader meshLoader(pathMesh_3, mesh_3, cloud_3);
 
 		// Carl: set timer
 		clock_t start, stop;
@@ -302,7 +302,7 @@ void MeshSubdivision_Debug::LoadMesh_4() {
 		mesh_4 = empty;
 
 		// Carl: initialization
-		MeshLoader meshLoader(pathMesh_4, mesh_4, cloud_4, colorCloud_4);
+		MeshLoader meshLoader(pathMesh_4, mesh_4, cloud_4);
 
 		// Carl: set timer
 		clock_t start, stop;
@@ -396,7 +396,7 @@ void MeshSubdivision_Debug::LoadMesh_5() {
 		mesh_5 = empty;
 
 		// Carl: initialization
-		MeshLoader meshLoader(pathMesh_5, mesh_5, cloud_5, colorCloud_5);
+		MeshLoader meshLoader(pathMesh_5, mesh_5, cloud_5);
 
 		// Carl: set timer
 		clock_t start, stop;
@@ -490,7 +490,7 @@ void MeshSubdivision_Debug::LoadMesh_6() {
 		mesh_6 = empty;
 
 		// Carl: initialization
-		MeshLoader meshLoader(pathMesh_6, mesh_6, cloud_6, colorCloud_6);
+		MeshLoader meshLoader(pathMesh_6, mesh_6, cloud_6);
 
 		// Carl: set timer
 		clock_t start, stop;

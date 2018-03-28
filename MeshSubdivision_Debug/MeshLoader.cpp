@@ -5,8 +5,8 @@ MeshLoader::~MeshLoader() {
 
 }
 
-MeshLoader::MeshLoader(QString meshPath, pcl::PolygonMesh & mesh, pcl::PointCloud<pcl::PointXYZRGBA>::Ptr &meshCloud, QColor cloudColor)
-	: meshPath(meshPath), mesh(mesh), meshCloud(meshCloud), cloudColor(cloudColor) {
+MeshLoader::MeshLoader(QString meshPath, pcl::PolygonMesh & mesh, pcl::PointCloud<pcl::PointXYZRGBA>::Ptr &meshCloud)
+	: meshPath(meshPath), mesh(mesh), meshCloud(meshCloud) {
 
 }
 
@@ -21,12 +21,13 @@ void MeshLoader::run() {
 	if (!mesh.cloud.data.empty()) {
 		meshCloud.reset(new pcl::PointCloud<pcl::PointXYZRGBA>);
 		pcl::fromPCLPointCloud2(mesh.cloud, *meshCloud);
+		// Carl: colored the cloud
 		for (int i = 0; i < meshCloud->points.size(); i++) {
-			meshCloud->points[i].r = cloudColor.red();
-			meshCloud->points[i].g = cloudColor.green();
-			meshCloud->points[i].b = cloudColor.blue();
+			meshCloud->points[i].r = 255;
+			meshCloud->points[i].g = 255;
+			meshCloud->points[i].b = 255;
+			meshCloud->points[i].a = 255;
 		}
-
 		emit SignalOutputTextEditFinished("Mesh load finished;");
 	}
 	else emit SignalOutputTextEditError("Mesh load failed");

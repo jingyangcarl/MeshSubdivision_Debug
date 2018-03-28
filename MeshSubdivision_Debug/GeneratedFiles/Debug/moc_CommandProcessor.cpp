@@ -9,6 +9,7 @@
 #include "../../CommandProcessor.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
+#include <QtCore/QVector>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'CommandProcessor.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
@@ -19,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_CommandProcessor_t {
-    QByteArrayData data[39];
-    char stringdata0[724];
+    QByteArrayData data[60];
+    char stringdata0[1176];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -64,10 +65,31 @@ QT_MOC_LITERAL(31, 556, 18), // "SignalClearCloud_3"
 QT_MOC_LITERAL(32, 575, 18), // "SignalClearCloud_4"
 QT_MOC_LITERAL(33, 594, 18), // "SignalClearCloud_5"
 QT_MOC_LITERAL(34, 613, 18), // "SignalClearCloud_6"
-QT_MOC_LITERAL(35, 632, 22), // "SignalChangeToLayout_1"
-QT_MOC_LITERAL(36, 655, 22), // "SignalChangeToLayout_2"
-QT_MOC_LITERAL(37, 678, 22), // "SignalChangeToLayout_4"
-QT_MOC_LITERAL(38, 701, 22) // "SignalChangeToLayout_6"
+QT_MOC_LITERAL(35, 632, 20), // "SignalShowKeypoint_1"
+QT_MOC_LITERAL(36, 653, 20), // "SignalShowKeypoint_2"
+QT_MOC_LITERAL(37, 674, 20), // "SignalShowKeypoint_3"
+QT_MOC_LITERAL(38, 695, 20), // "SignalShowKeypoint_4"
+QT_MOC_LITERAL(39, 716, 20), // "SignalShowKeypoint_5"
+QT_MOC_LITERAL(40, 737, 20), // "SignalShowKeypoint_6"
+QT_MOC_LITERAL(41, 758, 21), // "SignalClearKeypoint_1"
+QT_MOC_LITERAL(42, 780, 21), // "SignalClearKeypoint_2"
+QT_MOC_LITERAL(43, 802, 21), // "SignalClearKeypoint_3"
+QT_MOC_LITERAL(44, 824, 21), // "SignalClearKeypoint_4"
+QT_MOC_LITERAL(45, 846, 21), // "SignalClearKeypoint_5"
+QT_MOC_LITERAL(46, 868, 21), // "SignalClearKeypoint_6"
+QT_MOC_LITERAL(47, 890, 22), // "SignalChangeToLayout_1"
+QT_MOC_LITERAL(48, 913, 22), // "SignalChangeToLayout_2"
+QT_MOC_LITERAL(49, 936, 22), // "SignalChangeToLayout_4"
+QT_MOC_LITERAL(50, 959, 22), // "SignalChangeToLayout_6"
+QT_MOC_LITERAL(51, 982, 17), // "SignalGetMeshPath"
+QT_MOC_LITERAL(52, 1000, 24), // "SignalSendKeypointList_1"
+QT_MOC_LITERAL(53, 1025, 13), // "QVector<bool>"
+QT_MOC_LITERAL(54, 1039, 24), // "SignalSendKeypointList_2"
+QT_MOC_LITERAL(55, 1064, 24), // "SignalSendKeypointList_3"
+QT_MOC_LITERAL(56, 1089, 24), // "SignalSendKeypointList_4"
+QT_MOC_LITERAL(57, 1114, 24), // "SignalSendKeypointList_5"
+QT_MOC_LITERAL(58, 1139, 24), // "SignalSendKeypointList_6"
+QT_MOC_LITERAL(59, 1164, 11) // "GetMeshPath"
 
     },
     "CommandProcessor\0SignalOutputTextEditFinished\0"
@@ -87,9 +109,21 @@ QT_MOC_LITERAL(38, 701, 22) // "SignalChangeToLayout_6"
     "SignalShowCloud_6\0SignalClearCloud_1\0"
     "SignalClearCloud_2\0SignalClearCloud_3\0"
     "SignalClearCloud_4\0SignalClearCloud_5\0"
-    "SignalClearCloud_6\0SignalChangeToLayout_1\0"
+    "SignalClearCloud_6\0SignalShowKeypoint_1\0"
+    "SignalShowKeypoint_2\0SignalShowKeypoint_3\0"
+    "SignalShowKeypoint_4\0SignalShowKeypoint_5\0"
+    "SignalShowKeypoint_6\0SignalClearKeypoint_1\0"
+    "SignalClearKeypoint_2\0SignalClearKeypoint_3\0"
+    "SignalClearKeypoint_4\0SignalClearKeypoint_5\0"
+    "SignalClearKeypoint_6\0SignalChangeToLayout_1\0"
     "SignalChangeToLayout_2\0SignalChangeToLayout_4\0"
-    "SignalChangeToLayout_6"
+    "SignalChangeToLayout_6\0SignalGetMeshPath\0"
+    "SignalSendKeypointList_1\0QVector<bool>\0"
+    "SignalSendKeypointList_2\0"
+    "SignalSendKeypointList_3\0"
+    "SignalSendKeypointList_4\0"
+    "SignalSendKeypointList_5\0"
+    "SignalSendKeypointList_6\0GetMeshPath"
 };
 #undef QT_MOC_LITERAL
 
@@ -99,51 +133,73 @@ static const uint qt_meta_data_CommandProcessor[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      37,   14, // methods
+      57,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-      37,       // signalCount
+      56,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  199,    2, 0x06 /* Public */,
-       3,    1,  202,    2, 0x06 /* Public */,
-       4,    1,  205,    2, 0x06 /* Public */,
-       5,    0,  208,    2, 0x06 /* Public */,
-       6,    0,  209,    2, 0x06 /* Public */,
-       7,    0,  210,    2, 0x06 /* Public */,
-       8,    0,  211,    2, 0x06 /* Public */,
-       9,    0,  212,    2, 0x06 /* Public */,
-      10,    0,  213,    2, 0x06 /* Public */,
-      11,    0,  214,    2, 0x06 /* Public */,
-      12,    0,  215,    2, 0x06 /* Public */,
-      13,    0,  216,    2, 0x06 /* Public */,
-      14,    0,  217,    2, 0x06 /* Public */,
-      15,    0,  218,    2, 0x06 /* Public */,
-      16,    0,  219,    2, 0x06 /* Public */,
-      17,    0,  220,    2, 0x06 /* Public */,
-      18,    0,  221,    2, 0x06 /* Public */,
-      19,    0,  222,    2, 0x06 /* Public */,
-      20,    0,  223,    2, 0x06 /* Public */,
-      21,    0,  224,    2, 0x06 /* Public */,
-      22,    0,  225,    2, 0x06 /* Public */,
-      23,    0,  226,    2, 0x06 /* Public */,
-      24,    0,  227,    2, 0x06 /* Public */,
-      25,    0,  228,    2, 0x06 /* Public */,
-      26,    0,  229,    2, 0x06 /* Public */,
-      27,    0,  230,    2, 0x06 /* Public */,
-      28,    0,  231,    2, 0x06 /* Public */,
-      29,    0,  232,    2, 0x06 /* Public */,
-      30,    0,  233,    2, 0x06 /* Public */,
-      31,    0,  234,    2, 0x06 /* Public */,
-      32,    0,  235,    2, 0x06 /* Public */,
-      33,    0,  236,    2, 0x06 /* Public */,
-      34,    0,  237,    2, 0x06 /* Public */,
-      35,    0,  238,    2, 0x06 /* Public */,
-      36,    0,  239,    2, 0x06 /* Public */,
-      37,    0,  240,    2, 0x06 /* Public */,
-      38,    0,  241,    2, 0x06 /* Public */,
+       1,    1,  299,    2, 0x06 /* Public */,
+       3,    1,  302,    2, 0x06 /* Public */,
+       4,    1,  305,    2, 0x06 /* Public */,
+       5,    0,  308,    2, 0x06 /* Public */,
+       6,    0,  309,    2, 0x06 /* Public */,
+       7,    0,  310,    2, 0x06 /* Public */,
+       8,    0,  311,    2, 0x06 /* Public */,
+       9,    0,  312,    2, 0x06 /* Public */,
+      10,    0,  313,    2, 0x06 /* Public */,
+      11,    0,  314,    2, 0x06 /* Public */,
+      12,    0,  315,    2, 0x06 /* Public */,
+      13,    0,  316,    2, 0x06 /* Public */,
+      14,    0,  317,    2, 0x06 /* Public */,
+      15,    0,  318,    2, 0x06 /* Public */,
+      16,    0,  319,    2, 0x06 /* Public */,
+      17,    0,  320,    2, 0x06 /* Public */,
+      18,    0,  321,    2, 0x06 /* Public */,
+      19,    0,  322,    2, 0x06 /* Public */,
+      20,    0,  323,    2, 0x06 /* Public */,
+      21,    0,  324,    2, 0x06 /* Public */,
+      22,    0,  325,    2, 0x06 /* Public */,
+      23,    0,  326,    2, 0x06 /* Public */,
+      24,    0,  327,    2, 0x06 /* Public */,
+      25,    0,  328,    2, 0x06 /* Public */,
+      26,    0,  329,    2, 0x06 /* Public */,
+      27,    0,  330,    2, 0x06 /* Public */,
+      28,    0,  331,    2, 0x06 /* Public */,
+      29,    0,  332,    2, 0x06 /* Public */,
+      30,    0,  333,    2, 0x06 /* Public */,
+      31,    0,  334,    2, 0x06 /* Public */,
+      32,    0,  335,    2, 0x06 /* Public */,
+      33,    0,  336,    2, 0x06 /* Public */,
+      34,    0,  337,    2, 0x06 /* Public */,
+      35,    0,  338,    2, 0x06 /* Public */,
+      36,    0,  339,    2, 0x06 /* Public */,
+      37,    0,  340,    2, 0x06 /* Public */,
+      38,    0,  341,    2, 0x06 /* Public */,
+      39,    0,  342,    2, 0x06 /* Public */,
+      40,    0,  343,    2, 0x06 /* Public */,
+      41,    0,  344,    2, 0x06 /* Public */,
+      42,    0,  345,    2, 0x06 /* Public */,
+      43,    0,  346,    2, 0x06 /* Public */,
+      44,    0,  347,    2, 0x06 /* Public */,
+      45,    0,  348,    2, 0x06 /* Public */,
+      46,    0,  349,    2, 0x06 /* Public */,
+      47,    0,  350,    2, 0x06 /* Public */,
+      48,    0,  351,    2, 0x06 /* Public */,
+      49,    0,  352,    2, 0x06 /* Public */,
+      50,    0,  353,    2, 0x06 /* Public */,
+      51,    1,  354,    2, 0x06 /* Public */,
+      52,    1,  357,    2, 0x06 /* Public */,
+      54,    1,  360,    2, 0x06 /* Public */,
+      55,    1,  363,    2, 0x06 /* Public */,
+      56,    1,  366,    2, 0x06 /* Public */,
+      57,    1,  369,    2, 0x06 /* Public */,
+      58,    1,  372,    2, 0x06 /* Public */,
+
+ // slots: name, argc, parameters, tag, flags
+      59,    1,  375,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
@@ -183,6 +239,28 @@ static const uint qt_meta_data_CommandProcessor[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void, 0x80000000 | 53,    2,
+    QMetaType::Void, 0x80000000 | 53,    2,
+    QMetaType::Void, 0x80000000 | 53,    2,
+    QMetaType::Void, 0x80000000 | 53,    2,
+    QMetaType::Void, 0x80000000 | 53,    2,
+    QMetaType::Void, 0x80000000 | 53,    2,
+
+ // slots: parameters
+    QMetaType::Void, QMetaType::QString,    2,
 
        0        // eod
 };
@@ -226,11 +304,77 @@ void CommandProcessor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         case 30: _t->SignalClearCloud_4(); break;
         case 31: _t->SignalClearCloud_5(); break;
         case 32: _t->SignalClearCloud_6(); break;
-        case 33: _t->SignalChangeToLayout_1(); break;
-        case 34: _t->SignalChangeToLayout_2(); break;
-        case 35: _t->SignalChangeToLayout_4(); break;
-        case 36: _t->SignalChangeToLayout_6(); break;
+        case 33: _t->SignalShowKeypoint_1(); break;
+        case 34: _t->SignalShowKeypoint_2(); break;
+        case 35: _t->SignalShowKeypoint_3(); break;
+        case 36: _t->SignalShowKeypoint_4(); break;
+        case 37: _t->SignalShowKeypoint_5(); break;
+        case 38: _t->SignalShowKeypoint_6(); break;
+        case 39: _t->SignalClearKeypoint_1(); break;
+        case 40: _t->SignalClearKeypoint_2(); break;
+        case 41: _t->SignalClearKeypoint_3(); break;
+        case 42: _t->SignalClearKeypoint_4(); break;
+        case 43: _t->SignalClearKeypoint_5(); break;
+        case 44: _t->SignalClearKeypoint_6(); break;
+        case 45: _t->SignalChangeToLayout_1(); break;
+        case 46: _t->SignalChangeToLayout_2(); break;
+        case 47: _t->SignalChangeToLayout_4(); break;
+        case 48: _t->SignalChangeToLayout_6(); break;
+        case 49: _t->SignalGetMeshPath((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 50: _t->SignalSendKeypointList_1((*reinterpret_cast< QVector<bool>(*)>(_a[1]))); break;
+        case 51: _t->SignalSendKeypointList_2((*reinterpret_cast< QVector<bool>(*)>(_a[1]))); break;
+        case 52: _t->SignalSendKeypointList_3((*reinterpret_cast< QVector<bool>(*)>(_a[1]))); break;
+        case 53: _t->SignalSendKeypointList_4((*reinterpret_cast< QVector<bool>(*)>(_a[1]))); break;
+        case 54: _t->SignalSendKeypointList_5((*reinterpret_cast< QVector<bool>(*)>(_a[1]))); break;
+        case 55: _t->SignalSendKeypointList_6((*reinterpret_cast< QVector<bool>(*)>(_a[1]))); break;
+        case 56: _t->GetMeshPath((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
+        }
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+        case 50:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QVector<bool> >(); break;
+            }
+            break;
+        case 51:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QVector<bool> >(); break;
+            }
+            break;
+        case 52:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QVector<bool> >(); break;
+            }
+            break;
+        case 53:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QVector<bool> >(); break;
+            }
+            break;
+        case 54:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QVector<bool> >(); break;
+            }
+            break;
+        case 55:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QVector<bool> >(); break;
+            }
+            break;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
@@ -468,29 +612,162 @@ void CommandProcessor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         }
         {
             typedef void (CommandProcessor::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_1)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalShowKeypoint_1)) {
                 *result = 33;
                 return;
             }
         }
         {
             typedef void (CommandProcessor::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_2)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalShowKeypoint_2)) {
                 *result = 34;
                 return;
             }
         }
         {
             typedef void (CommandProcessor::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_4)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalShowKeypoint_3)) {
                 *result = 35;
                 return;
             }
         }
         {
             typedef void (CommandProcessor::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_6)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalShowKeypoint_4)) {
                 *result = 36;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalShowKeypoint_5)) {
+                *result = 37;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalShowKeypoint_6)) {
+                *result = 38;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalClearKeypoint_1)) {
+                *result = 39;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalClearKeypoint_2)) {
+                *result = 40;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalClearKeypoint_3)) {
+                *result = 41;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalClearKeypoint_4)) {
+                *result = 42;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalClearKeypoint_5)) {
+                *result = 43;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalClearKeypoint_6)) {
+                *result = 44;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_1)) {
+                *result = 45;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_2)) {
+                *result = 46;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_4)) {
+                *result = 47;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalChangeToLayout_6)) {
+                *result = 48;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalGetMeshPath)) {
+                *result = 49;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)(QVector<bool> );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalSendKeypointList_1)) {
+                *result = 50;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)(QVector<bool> );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalSendKeypointList_2)) {
+                *result = 51;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)(QVector<bool> );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalSendKeypointList_3)) {
+                *result = 52;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)(QVector<bool> );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalSendKeypointList_4)) {
+                *result = 53;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)(QVector<bool> );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalSendKeypointList_5)) {
+                *result = 54;
+                return;
+            }
+        }
+        {
+            typedef void (CommandProcessor::*_t)(QVector<bool> );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalSendKeypointList_6)) {
+                *result = 55;
                 return;
             }
         }
@@ -522,13 +799,13 @@ int CommandProcessor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 37)
+        if (_id < 57)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 37;
+        _id -= 57;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 37)
-            *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 37;
+        if (_id < 57)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 57;
     }
     return _id;
 }
@@ -735,26 +1012,147 @@ void CommandProcessor::SignalClearCloud_6()
 }
 
 // SIGNAL 33
-void CommandProcessor::SignalChangeToLayout_1()
+void CommandProcessor::SignalShowKeypoint_1()
 {
     QMetaObject::activate(this, &staticMetaObject, 33, Q_NULLPTR);
 }
 
 // SIGNAL 34
-void CommandProcessor::SignalChangeToLayout_2()
+void CommandProcessor::SignalShowKeypoint_2()
 {
     QMetaObject::activate(this, &staticMetaObject, 34, Q_NULLPTR);
 }
 
 // SIGNAL 35
-void CommandProcessor::SignalChangeToLayout_4()
+void CommandProcessor::SignalShowKeypoint_3()
 {
     QMetaObject::activate(this, &staticMetaObject, 35, Q_NULLPTR);
 }
 
 // SIGNAL 36
-void CommandProcessor::SignalChangeToLayout_6()
+void CommandProcessor::SignalShowKeypoint_4()
 {
     QMetaObject::activate(this, &staticMetaObject, 36, Q_NULLPTR);
+}
+
+// SIGNAL 37
+void CommandProcessor::SignalShowKeypoint_5()
+{
+    QMetaObject::activate(this, &staticMetaObject, 37, Q_NULLPTR);
+}
+
+// SIGNAL 38
+void CommandProcessor::SignalShowKeypoint_6()
+{
+    QMetaObject::activate(this, &staticMetaObject, 38, Q_NULLPTR);
+}
+
+// SIGNAL 39
+void CommandProcessor::SignalClearKeypoint_1()
+{
+    QMetaObject::activate(this, &staticMetaObject, 39, Q_NULLPTR);
+}
+
+// SIGNAL 40
+void CommandProcessor::SignalClearKeypoint_2()
+{
+    QMetaObject::activate(this, &staticMetaObject, 40, Q_NULLPTR);
+}
+
+// SIGNAL 41
+void CommandProcessor::SignalClearKeypoint_3()
+{
+    QMetaObject::activate(this, &staticMetaObject, 41, Q_NULLPTR);
+}
+
+// SIGNAL 42
+void CommandProcessor::SignalClearKeypoint_4()
+{
+    QMetaObject::activate(this, &staticMetaObject, 42, Q_NULLPTR);
+}
+
+// SIGNAL 43
+void CommandProcessor::SignalClearKeypoint_5()
+{
+    QMetaObject::activate(this, &staticMetaObject, 43, Q_NULLPTR);
+}
+
+// SIGNAL 44
+void CommandProcessor::SignalClearKeypoint_6()
+{
+    QMetaObject::activate(this, &staticMetaObject, 44, Q_NULLPTR);
+}
+
+// SIGNAL 45
+void CommandProcessor::SignalChangeToLayout_1()
+{
+    QMetaObject::activate(this, &staticMetaObject, 45, Q_NULLPTR);
+}
+
+// SIGNAL 46
+void CommandProcessor::SignalChangeToLayout_2()
+{
+    QMetaObject::activate(this, &staticMetaObject, 46, Q_NULLPTR);
+}
+
+// SIGNAL 47
+void CommandProcessor::SignalChangeToLayout_4()
+{
+    QMetaObject::activate(this, &staticMetaObject, 47, Q_NULLPTR);
+}
+
+// SIGNAL 48
+void CommandProcessor::SignalChangeToLayout_6()
+{
+    QMetaObject::activate(this, &staticMetaObject, 48, Q_NULLPTR);
+}
+
+// SIGNAL 49
+void CommandProcessor::SignalGetMeshPath(int _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 49, _a);
+}
+
+// SIGNAL 50
+void CommandProcessor::SignalSendKeypointList_1(QVector<bool> _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 50, _a);
+}
+
+// SIGNAL 51
+void CommandProcessor::SignalSendKeypointList_2(QVector<bool> _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 51, _a);
+}
+
+// SIGNAL 52
+void CommandProcessor::SignalSendKeypointList_3(QVector<bool> _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 52, _a);
+}
+
+// SIGNAL 53
+void CommandProcessor::SignalSendKeypointList_4(QVector<bool> _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 53, _a);
+}
+
+// SIGNAL 54
+void CommandProcessor::SignalSendKeypointList_5(QVector<bool> _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 54, _a);
+}
+
+// SIGNAL 55
+void CommandProcessor::SignalSendKeypointList_6(QVector<bool> _t1)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 55, _a);
 }
 QT_END_MOC_NAMESPACE

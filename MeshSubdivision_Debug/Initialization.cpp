@@ -135,9 +135,10 @@ void MeshSubdivision_Debug::InitializeMesh_1() {
 
 	// Carl: choose a color
 	srand(time(NULL));
-	colorCloud_1.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_1.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_1.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_1.setRed(((int)(512 * rand() / (RAND_MAX + 1.0f)) % 16) * ((int)(512 * rand() / (RAND_MAX + 1.0f))));
+	colorCloud_1.setGreen(((int)(512 * rand() / (RAND_MAX + 1.0f)) % 16) * ((int)(512 * rand() / (RAND_MAX + 1.0f))));
+	colorCloud_1.setBlue(((int)(512 * rand() / (RAND_MAX + 1.0f)) % 16) * ((int)(512 * rand() / (RAND_MAX + 1.0f))));
+	colorCloud_1.setAlpha((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 
 	if (!mesh_1.cloud.data.empty()) {
 		// Carl: read mesh succeed
@@ -148,9 +149,10 @@ void MeshSubdivision_Debug::InitializeMesh_1() {
 
 		// Carl: colored the cloud
 		for (int i = 0; i < cloud_1->points.size(); i++) {
-			cloud_1->points[i].r = colorCloud_1.red();
-			cloud_1->points[i].g = colorCloud_1.green();
-			cloud_1->points[i].b = colorCloud_1.blue();
+			cloud_1->points[i].r = 255;
+			cloud_1->points[i].g = 255;
+			cloud_1->points[i].b = 255;
+			cloud_1->points[i].a = 255;
 		}
 
 		OutputTextEditFinished("Mesh_1 load finished;");
@@ -175,6 +177,7 @@ void MeshSubdivision_Debug::InitializeMesh_2() {
 	colorCloud_2.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 	colorCloud_2.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 	colorCloud_2.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_2.setAlpha((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 
 	if (!mesh_2.cloud.data.empty()) {
 		// Carl: read mesh succeed
@@ -185,9 +188,10 @@ void MeshSubdivision_Debug::InitializeMesh_2() {
 
 		// Carl: colored the cloud
 		for (int i = 0; i < cloud_2->points.size(); i++) {
-			cloud_2->points[i].r = colorCloud_2.red();
-			cloud_2->points[i].g = colorCloud_2.green();
-			cloud_2->points[i].b = colorCloud_2.blue();
+			cloud_2->points[i].r = 255;
+			cloud_2->points[i].g = 255;
+			cloud_2->points[i].b = 255;
+			cloud_2->points[i].a = 255;
 		}
 
 		OutputTextEditFinished("Mesh_2 load finished;");
@@ -212,6 +216,7 @@ void MeshSubdivision_Debug::InitializeMesh_3() {
 	colorCloud_3.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 	colorCloud_3.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 	colorCloud_3.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_3.setAlpha((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 
 	if (!mesh_3.cloud.data.empty()) {
 		// Carl: read mesh succeed
@@ -222,9 +227,10 @@ void MeshSubdivision_Debug::InitializeMesh_3() {
 
 		// Carl: colored the cloud
 		for (int i = 0; i < cloud_3->points.size(); i++) {
-			cloud_3->points[i].r = colorCloud_3.red();
-			cloud_3->points[i].g = colorCloud_3.green();
-			cloud_3->points[i].b = colorCloud_3.blue();
+			cloud_3->points[i].r = 255;
+			cloud_3->points[i].g = 255;
+			cloud_3->points[i].b = 255;
+			cloud_3->points[i].a = 255;
 		}
 
 		OutputTextEditFinished("Mesh_3 load finished;");
@@ -249,6 +255,7 @@ void MeshSubdivision_Debug::InitializeMesh_4() {
 	colorCloud_4.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 	colorCloud_4.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 	colorCloud_4.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_4.setAlpha((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 
 	if (!mesh_4.cloud.data.empty()) {
 		// Carl: read mesh succeed
@@ -259,9 +266,10 @@ void MeshSubdivision_Debug::InitializeMesh_4() {
 
 		// Carl: colored the cloud
 		for (int i = 0; i < cloud_4->points.size(); i++) {
-			cloud_4->points[i].r = colorCloud_4.red();
-			cloud_4->points[i].g = colorCloud_4.green();
-			cloud_4->points[i].b = colorCloud_4.blue();
+			cloud_4->points[i].r = 255;
+			cloud_4->points[i].g = 255;
+			cloud_4->points[i].b = 255;
+			cloud_4->points[i].a = 255;
 		}
 
 		OutputTextEditFinished("Mesh_4 load finished;");
@@ -286,6 +294,7 @@ void MeshSubdivision_Debug::InitializeMesh_5() {
 	colorCloud_5.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 	colorCloud_5.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 	colorCloud_5.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_5.setAlpha((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 
 	if (!mesh_5.cloud.data.empty()) {
 		// Carl: read mesh succeed
@@ -296,9 +305,10 @@ void MeshSubdivision_Debug::InitializeMesh_5() {
 
 		// Carl: colored the cloud
 		for (int i = 0; i < cloud_5->points.size(); i++) {
-			cloud_5->points[i].r = colorCloud_5.red();
-			cloud_5->points[i].g = colorCloud_5.green();
-			cloud_5->points[i].b = colorCloud_5.blue();
+			cloud_5->points[i].r = 255;
+			cloud_5->points[i].g = 255;
+			cloud_5->points[i].b = 255;
+			cloud_5->points[i].a = 255;
 		}
 
 		OutputTextEditFinished("Mesh_5 load finished;");
@@ -323,6 +333,7 @@ void MeshSubdivision_Debug::InitializeMesh_6() {
 	colorCloud_6.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 	colorCloud_6.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 	colorCloud_6.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	colorCloud_6.setAlpha((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
 
 	if (!mesh_6.cloud.data.empty()) {
 		// Carl: read mesh succeed
@@ -333,9 +344,10 @@ void MeshSubdivision_Debug::InitializeMesh_6() {
 
 		// Carl: colored the cloud
 		for (int i = 0; i < cloud_6->points.size(); i++) {
-			cloud_6->points[i].r = colorCloud_6.red();
-			cloud_6->points[i].g = colorCloud_6.green();
-			cloud_6->points[i].b = colorCloud_6.blue();
+			cloud_6->points[i].r = 255;
+			cloud_6->points[i].g = 255;
+			cloud_6->points[i].b = 255;
+			cloud_6->points[i].a = 255;
 		}
 
 		OutputTextEditFinished("Mesh_6 load finished;");
@@ -425,9 +437,36 @@ void MeshSubdivision_Debug::InitializeSlotSignal() {
 	connect(commandProcessor, SIGNAL(SignalClearCloud_5()), this, SLOT(ClearCloud_5()));
 	connect(commandProcessor, SIGNAL(SignalClearCloud_6()), this, SLOT(ClearCloud_6()));
 
+	// Carl: connection for ShowKeypoint
+	connect(commandProcessor, SIGNAL(SignalShowKeypoint_1()), this, SLOT(ShowKeypoint_1()));
+	connect(commandProcessor, SIGNAL(SignalShowKeypoint_2()), this, SLOT(ShowKeypoint_2()));
+	connect(commandProcessor, SIGNAL(SignalShowKeypoint_3()), this, SLOT(ShowKeypoint_3()));
+	connect(commandProcessor, SIGNAL(SignalShowKeypoint_4()), this, SLOT(ShowKeypoint_4()));
+	connect(commandProcessor, SIGNAL(SignalShowKeypoint_5()), this, SLOT(ShowKeypoint_5()));
+	connect(commandProcessor, SIGNAL(SignalShowKeypoint_6()), this, SLOT(ShowKeypoint_6()));
+
+	// Carl: connection for ClearKeypoint
+	connect(commandProcessor, SIGNAL(SignalClearKeypoint_1()), this, SLOT(ClearKeypoint_1()));
+	connect(commandProcessor, SIGNAL(SignalClearKeypoint_2()), this, SLOT(ClearKeypoint_2()));
+	connect(commandProcessor, SIGNAL(SignalClearKeypoint_3()), this, SLOT(ClearKeypoint_3()));
+	connect(commandProcessor, SIGNAL(SignalClearKeypoint_4()), this, SLOT(ClearKeypoint_4()));
+	connect(commandProcessor, SIGNAL(SignalClearKeypoint_5()), this, SLOT(ClearKeypoint_5()));
+	connect(commandProcessor, SIGNAL(SignalClearKeypoint_6()), this, SLOT(ClearKeypoint_6()));
+
 	// Carl: connection for ChangeToLayout
 	connect(commandProcessor, SIGNAL(SignalChangeToLayout_1()), this, SLOT(ChangeToLayout_1()));
 	connect(commandProcessor, SIGNAL(SignalChangeToLayout_2()), this, SLOT(ChangeToLayout_2()));
 	connect(commandProcessor, SIGNAL(SignalChangeToLayout_4()), this, SLOT(ChangeToLayout_4()));
 	connect(commandProcessor, SIGNAL(SignalChangeToLayout_6()), this, SLOT(ChangeToLayout_6()));
+
+	// Carl: connection for data
+	// Carl: the parameter Qt::DirectConnection is to make sure the communication between two threads is synchronized
+	connect(commandProcessor, SIGNAL(SignalGetMeshPath(int)), this, SLOT(SendMeshPath(int)), Qt::DirectConnection);
+	connect(this, SIGNAL(SignalSendMeshPath(QString)), commandProcessor, SLOT(GetMeshPath(QString)), Qt::DirectConnection);
+	connect(commandProcessor, SIGNAL(SignalSendKeypointList_1(QVector<bool>)), this, SLOT(GetKeypointList_1(QVector<bool>)), Qt::DirectConnection);
+	connect(commandProcessor, SIGNAL(SignalSendKeypointList_2(QVector<bool>)), this, SLOT(GetKeypointList_2(QVector<bool>)), Qt::DirectConnection);
+	connect(commandProcessor, SIGNAL(SignalSendKeypointList_3(QVector<bool>)), this, SLOT(GetKeypointList_3(QVector<bool>)), Qt::DirectConnection);
+	connect(commandProcessor, SIGNAL(SignalSendKeypointList_4(QVector<bool>)), this, SLOT(GetKeypointList_4(QVector<bool>)), Qt::DirectConnection);
+	connect(commandProcessor, SIGNAL(SignalSendKeypointList_5(QVector<bool>)), this, SLOT(GetKeypointList_5(QVector<bool>)), Qt::DirectConnection);
+	connect(commandProcessor, SIGNAL(SignalSendKeypointList_6(QVector<bool>)), this, SLOT(GetKeypointList_6(QVector<bool>)), Qt::DirectConnection);
 }

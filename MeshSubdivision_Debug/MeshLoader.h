@@ -9,7 +9,7 @@ class MeshLoader : 	public QThread
 	Q_OBJECT
 
 public:
-	MeshLoader(QString, pcl::PolygonMesh &, pcl::PointCloud<pcl::PointXYZRGBA>::Ptr &, QColor);
+	MeshLoader(QString, pcl::PolygonMesh &, pcl::PointCloud<pcl::PointXYZRGBA>::Ptr &);
 	~MeshLoader();
 
 private:
@@ -17,7 +17,6 @@ private:
 	QString meshPath;
 	pcl::PolygonMesh &mesh;
 	pcl::PointCloud<pcl::PointXYZRGBA>::Ptr &meshCloud;
-	QColor cloudColor;
 
 
 protected:

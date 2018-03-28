@@ -56,6 +56,14 @@ private:
 	pcl::PolygonMesh mesh_5;
 	pcl::PolygonMesh mesh_6;
 
+	// Carl: keypoint list
+	QVector<bool> keypointList_1;
+	QVector<bool> keypointList_2;
+	QVector<bool> keypointList_3;
+	QVector<bool> keypointList_4;
+	QVector<bool> keypointList_5;
+	QVector<bool> keypointList_6;
+
 	// Carl: cloud data;
 	pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud_1;
 	pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud_2;
@@ -154,6 +162,18 @@ private slots:
 	void ClearCloud_4();
 	void ClearCloud_5();
 	void ClearCloud_6();
+	void ShowKeypoint_1();
+	void ShowKeypoint_2();
+	void ShowKeypoint_3();
+	void ShowKeypoint_4();
+	void ShowKeypoint_5();
+	void ShowKeypoint_6();
+	void ClearKeypoint_1();
+	void ClearKeypoint_2();
+	void ClearKeypoint_3();
+	void ClearKeypoint_4();
+	void ClearKeypoint_5();
+	void ClearKeypoint_6();
 
 	/******************** CameraSynchronization.cpp ********************/
 	void CameraSynToQVTKWidget_1();
@@ -162,5 +182,17 @@ private slots:
 	void CameraSynToQVTKWidget_4();
 	void CameraSynToQVTKWidget_5();
 	void CameraSynToQVTKWidget_6();
+
+	/******************** ThreadDataCommunication.cpp ********************/
+	void SendMeshPath(int);
+	void GetKeypointList_1(QVector<bool>);
+	void GetKeypointList_2(QVector<bool>);
+	void GetKeypointList_3(QVector<bool>);
+	void GetKeypointList_4(QVector<bool>);
+	void GetKeypointList_5(QVector<bool>);
+	void GetKeypointList_6(QVector<bool>);
+
+signals:
+	void SignalSendMeshPath(QString);
 
 };
