@@ -3,7 +3,7 @@
 #include <qscrollbar.h>
 #include "MeshLoader.h"
 
-void MeshSubdivision_Debug::LoadMesh_1() {
+void MeshSubdivision_Debug::LoadMesh_1(QString pathMesh = "") {
 
 	if (layoutStatus >= 1) {
 
@@ -12,7 +12,8 @@ void MeshSubdivision_Debug::LoadMesh_1() {
 
 		// Carl: open the file
 		QString tempPath = pathMesh_1;
-		pathMesh_1 = QFileDialog::getOpenFileName(this, tr("Select Mesh File for Mesh 1"), "../MeshFile", tr("Mesh Files(*.ply *.obj *.off)"));
+		if (pathMesh == "") pathMesh_1 = QFileDialog::getOpenFileName(this, tr("Select Mesh File for Mesh 1"), "../MeshFile", tr("Mesh Files(*.ply *.obj *.off)"));
+		else pathMesh_1 = pathMesh;
 
 		pcl::PolygonMesh tempMesh, empty;
 		tempMesh = mesh_1;
@@ -98,7 +99,7 @@ void MeshSubdivision_Debug::LoadMesh_1() {
 	return;
 }
 
-void MeshSubdivision_Debug::LoadMesh_2() {
+void MeshSubdivision_Debug::LoadMesh_2(QString pathMesh = "") {
 
 	if (layoutStatus >= 2) {
 
@@ -107,7 +108,8 @@ void MeshSubdivision_Debug::LoadMesh_2() {
 
 		// Carl: open the file
 		QString tempPath = pathMesh_2;
-		pathMesh_2 = QFileDialog::getOpenFileName(this, tr("Select Mesh File for Mesh 2"), "../MeshFile", tr("Mesh Files(*.ply *.obj *.off)"));
+		if (pathMesh == "") pathMesh_2 = QFileDialog::getOpenFileName(this, tr("Select Mesh File for Mesh 2"), "../MeshFile", tr("Mesh Files(*.ply *.obj *.off)"));
+		else pathMesh_2 = pathMesh;
 
 		pcl::PolygonMesh tempMesh, empty;
 		tempMesh = mesh_2;
@@ -193,7 +195,7 @@ void MeshSubdivision_Debug::LoadMesh_2() {
 	return;
 }
 
-void MeshSubdivision_Debug::LoadMesh_3() {
+void MeshSubdivision_Debug::LoadMesh_3(QString pathMesh = "") {
 	if (layoutStatus >= 3) {
 
 		// Carl: clear mesh
@@ -201,7 +203,8 @@ void MeshSubdivision_Debug::LoadMesh_3() {
 
 		// Carl: open the file
 		QString tempPath = pathMesh_3;
-		pathMesh_3 = QFileDialog::getOpenFileName(this, tr("Select Mesh File for Mesh 1"), "../MeshFile", tr("Mesh Files(*.ply *.obj *.off)"));
+		if (pathMesh == "") pathMesh_3 = QFileDialog::getOpenFileName(this, tr("Select Mesh File for Mesh 3"), "../MeshFile", tr("Mesh Files(*.ply *.obj *.off)"));
+		else pathMesh_3 = pathMesh;
 
 		pcl::PolygonMesh tempMesh, empty;
 		tempMesh = mesh_3;
@@ -287,7 +290,7 @@ void MeshSubdivision_Debug::LoadMesh_3() {
 	return;
 }
 
-void MeshSubdivision_Debug::LoadMesh_4() {
+void MeshSubdivision_Debug::LoadMesh_4(QString pathMesh = "") {
 	if (layoutStatus >= 4) {
 
 		// Carl: clear mesh
@@ -295,7 +298,8 @@ void MeshSubdivision_Debug::LoadMesh_4() {
 
 		// Carl: open the file
 		QString tempPath = pathMesh_4;
-		pathMesh_4 = QFileDialog::getOpenFileName(this, tr("Select Mesh File for Mesh 1"), "../MeshFile", tr("Mesh Files(*.ply *.obj *.off)"));
+		if (pathMesh == "") pathMesh_4 = QFileDialog::getOpenFileName(this, tr("Select Mesh File for Mesh 4"), "../MeshFile", tr("Mesh Files(*.ply *.obj *.off)"));
+		else pathMesh_4 = pathMesh;
 
 		pcl::PolygonMesh tempMesh, empty;
 		tempMesh = mesh_4;
@@ -381,15 +385,16 @@ void MeshSubdivision_Debug::LoadMesh_4() {
 	return;
 }
 
-void MeshSubdivision_Debug::LoadMesh_5() {
-	if (layoutStatus >= 4) {
+void MeshSubdivision_Debug::LoadMesh_5(QString pathMesh = "") {
+	if (layoutStatus >= 5) {
 
 		// Carl: clear mesh
 		ClearMesh_5();
 
 		// Carl: open the file
 		QString tempPath = pathMesh_5;
-		pathMesh_5 = QFileDialog::getOpenFileName(this, tr("Select Mesh File for Mesh 1"), "../MeshFile", tr("Mesh Files(*.ply *.obj *.off)"));
+		if (pathMesh == "") pathMesh_5 = QFileDialog::getOpenFileName(this, tr("Select Mesh File for Mesh 1"), "../MeshFile", tr("Mesh Files(*.ply *.obj *.off)"));
+		else pathMesh_5 = pathMesh;
 
 		pcl::PolygonMesh tempMesh, empty;
 		tempMesh = mesh_5;
@@ -475,15 +480,16 @@ void MeshSubdivision_Debug::LoadMesh_5() {
 	return;
 }
 
-void MeshSubdivision_Debug::LoadMesh_6() {
-	if (layoutStatus >= 4) {
+void MeshSubdivision_Debug::LoadMesh_6(QString pathMesh = "") {
+	if (layoutStatus >= 6) {
 
 		// Carl: clear mesh
 		ClearMesh_6();
 
 		// Carl: open the file
 		QString tempPath = pathMesh_6;
-		pathMesh_6 = QFileDialog::getOpenFileName(this, tr("Select Mesh File for Mesh 1"), "../MeshFile", tr("Mesh Files(*.ply *.obj *.off)"));
+		if (pathMesh == "") pathMesh_6 = QFileDialog::getOpenFileName(this, tr("Select Mesh File for Mesh 6"), "../MeshFile", tr("Mesh Files(*.ply *.obj *.off)"));
+		else pathMesh_6 = pathMesh;
 
 		pcl::PolygonMesh tempMesh, empty;
 		tempMesh = mesh_6;

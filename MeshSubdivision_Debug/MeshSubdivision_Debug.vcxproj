@@ -85,7 +85,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(VTK_ROOT)\VTK-debug\include\vtk-7.0;$(PCL_ROOT)\include\pcl-1.8;$(PCL_ROOT)\3rdParty\Boost\include\boost-1_61;$(PCL_ROOT)\3rdParty\Eigen\eigen3;$(PCL_ROOT)\3rdParty\VTK\include\vtk-7.0;$(OpenMesh_Root)\include;..\KeypointDetector;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(VTK_ROOT)\VTK-debug\include\vtk-7.0;$(PCL_ROOT)\include\pcl-1.8;$(PCL_ROOT)\3rdParty\Boost\include\boost-1_61;$(PCL_ROOT)\3rdParty\Eigen\eigen3;$(PCL_ROOT)\3rdParty\VTK\include\vtk-7.0;$(OpenMesh_Root)\include;..\KeypointDetector;..\MeshSubdivisior;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -101,7 +101,7 @@
     <QtMoc>
       <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
-      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(VTK_ROOT)\VTK-debug\include\vtk-7.0;$(PCL_ROOT)\include\pcl-1.8;$(PCL_ROOT)\3rdParty\Boost\include\boost-1_61;$(PCL_ROOT)\3rdParty\Eigen\eigen3;$(PCL_ROOT)\3rdParty\VTK\include\vtk-7.0;$(OpenMesh_Root)\include;.\..\KeypointDetector</IncludePath>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(VTK_ROOT)\VTK-debug\include\vtk-7.0;$(PCL_ROOT)\include\pcl-1.8;$(PCL_ROOT)\3rdParty\Boost\include\boost-1_61;$(PCL_ROOT)\3rdParty\Eigen\eigen3;$(PCL_ROOT)\3rdParty\VTK\include\vtk-7.0;$(OpenMesh_Root)\include;.\..\KeypointDetector;.\..\MeshSubdivisior</IncludePath>
       <Define>UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;_USE_MATH_DEFINES</Define>
     </QtMoc>
     <QtUic>
@@ -147,6 +147,9 @@
   <ItemGroup>
     <ProjectReference Include="..\KeypointDetector\KeypointDetector.vcxproj">
       <Project>{c29f1e0f-e516-4c2d-b31e-e1783618cf42}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\MeshSubdivisior\MeshSubdivisior.vcxproj">
+      <Project>{a9d8002e-839e-4d0a-a74e-4a5a5afe3781}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MeshSubdivision_Debug", "Me
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KeypointDetector", "KeypointDetector\KeypointDetector.vcxproj", "{C29F1E0F-E516-4C2D-B31E-E1783618CF42}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MeshSubdivisior", "MeshSubdivisior\MeshSubdivisior.vcxproj", "{A9D8002E-839E-4D0A-A74E-4A5A5AFE3781}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,10 @@ Global
 		{C29F1E0F-E516-4C2D-B31E-E1783618CF42}.Debug|x64.Build.0 = Debug|x64
 		{C29F1E0F-E516-4C2D-B31E-E1783618CF42}.Release|x64.ActiveCfg = Release|x64
 		{C29F1E0F-E516-4C2D-B31E-E1783618CF42}.Release|x64.Build.0 = Release|x64
+		{A9D8002E-839E-4D0A-A74E-4A5A5AFE3781}.Debug|x64.ActiveCfg = Debug|x64
+		{A9D8002E-839E-4D0A-A74E-4A5A5AFE3781}.Debug|x64.Build.0 = Debug|x64
+		{A9D8002E-839E-4D0A-A74E-4A5A5AFE3781}.Release|x64.ActiveCfg = Release|x64
+		{A9D8002E-839E-4D0A-A74E-4A5A5AFE3781}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

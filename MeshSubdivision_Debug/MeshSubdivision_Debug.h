@@ -130,12 +130,12 @@ private slots:
 	void OutputTextEditColoredString(QVector<QPair<QColor, QString>>);
 
 	/******************** LoadMesh.cpp ********************/
-	void LoadMesh_1();
-	void LoadMesh_2();
-	void LoadMesh_3();
-	void LoadMesh_4();
-	void LoadMesh_5();
-	void LoadMesh_6();
+	void LoadMesh_1(QString);
+	void LoadMesh_2(QString);
+	void LoadMesh_3(QString);
+	void LoadMesh_4(QString);
+	void LoadMesh_5(QString);
+	void LoadMesh_6(QString);
 
 	/******************** ShowOrClear.cpp ********************/
 	void ShowMesh_1();
@@ -191,6 +191,7 @@ private slots:
 	void GetKeypointList_4(QVector<bool>);
 	void GetKeypointList_5(QVector<bool>);
 	void GetKeypointList_6(QVector<bool>);
+	void ProcessCommand(QString);
 
 signals:
 	void SignalSendMeshPath(QString);

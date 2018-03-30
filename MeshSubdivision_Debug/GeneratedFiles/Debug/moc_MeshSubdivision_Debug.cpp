@@ -20,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MeshSubdivision_Debug_t {
-    QByteArrayData data[88];
-    char stringdata0[1458];
+    QByteArrayData data[89];
+    char stringdata0[1473];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -117,7 +117,8 @@ QT_MOC_LITERAL(83, 1368, 17), // "GetKeypointList_2"
 QT_MOC_LITERAL(84, 1386, 17), // "GetKeypointList_3"
 QT_MOC_LITERAL(85, 1404, 17), // "GetKeypointList_4"
 QT_MOC_LITERAL(86, 1422, 17), // "GetKeypointList_5"
-QT_MOC_LITERAL(87, 1440, 17) // "GetKeypointList_6"
+QT_MOC_LITERAL(87, 1440, 17), // "GetKeypointList_6"
+QT_MOC_LITERAL(88, 1458, 14) // "ProcessCommand"
 
     },
     "MeshSubdivision_Debug\0SignalSendMeshPath\0"
@@ -158,7 +159,8 @@ QT_MOC_LITERAL(87, 1440, 17) // "GetKeypointList_6"
     "SendMeshPath\0GetKeypointList_1\0"
     "QVector<bool>\0GetKeypointList_2\0"
     "GetKeypointList_3\0GetKeypointList_4\0"
-    "GetKeypointList_5\0GetKeypointList_6"
+    "GetKeypointList_5\0GetKeypointList_6\0"
+    "ProcessCommand"
 };
 #undef QT_MOC_LITERAL
 
@@ -168,7 +170,7 @@ static const uint qt_meta_data_MeshSubdivision_Debug[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      84,   14, // methods
+      85,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -176,92 +178,93 @@ static const uint qt_meta_data_MeshSubdivision_Debug[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  434,    2, 0x06 /* Public */,
+       1,    1,  439,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,  437,    2, 0x08 /* Private */,
-       4,    0,  438,    2, 0x08 /* Private */,
-       5,    0,  439,    2, 0x08 /* Private */,
-       6,    0,  440,    2, 0x08 /* Private */,
-       7,    0,  441,    2, 0x08 /* Private */,
-       8,    0,  442,    2, 0x08 /* Private */,
-       9,    0,  443,    2, 0x08 /* Private */,
-      10,    0,  444,    2, 0x08 /* Private */,
-      11,    0,  445,    2, 0x08 /* Private */,
-      12,    0,  446,    2, 0x08 /* Private */,
-      13,    0,  447,    2, 0x08 /* Private */,
-      14,    0,  448,    2, 0x08 /* Private */,
-      15,    0,  449,    2, 0x08 /* Private */,
-      16,    0,  450,    2, 0x08 /* Private */,
-      17,    0,  451,    2, 0x08 /* Private */,
-      18,    0,  452,    2, 0x08 /* Private */,
-      19,    0,  453,    2, 0x08 /* Private */,
-      20,    0,  454,    2, 0x08 /* Private */,
-      21,    0,  455,    2, 0x08 /* Private */,
-      22,    0,  456,    2, 0x08 /* Private */,
-      23,    0,  457,    2, 0x08 /* Private */,
-      24,    0,  458,    2, 0x08 /* Private */,
-      25,    1,  459,    2, 0x08 /* Private */,
-      26,    1,  462,    2, 0x08 /* Private */,
-      27,    1,  465,    2, 0x08 /* Private */,
-      28,    1,  468,    2, 0x08 /* Private */,
-      29,    1,  471,    2, 0x08 /* Private */,
-      30,    1,  474,    2, 0x08 /* Private */,
-      32,    0,  477,    2, 0x08 /* Private */,
-      33,    0,  478,    2, 0x08 /* Private */,
-      34,    0,  479,    2, 0x08 /* Private */,
-      35,    0,  480,    2, 0x08 /* Private */,
-      36,    0,  481,    2, 0x08 /* Private */,
-      37,    0,  482,    2, 0x08 /* Private */,
-      38,    0,  483,    2, 0x08 /* Private */,
-      39,    0,  484,    2, 0x08 /* Private */,
-      40,    0,  485,    2, 0x08 /* Private */,
-      41,    0,  486,    2, 0x08 /* Private */,
-      42,    0,  487,    2, 0x08 /* Private */,
-      43,    0,  488,    2, 0x08 /* Private */,
-      44,    0,  489,    2, 0x08 /* Private */,
-      45,    0,  490,    2, 0x08 /* Private */,
-      46,    0,  491,    2, 0x08 /* Private */,
-      47,    0,  492,    2, 0x08 /* Private */,
-      48,    0,  493,    2, 0x08 /* Private */,
-      49,    0,  494,    2, 0x08 /* Private */,
-      50,    0,  495,    2, 0x08 /* Private */,
-      51,    0,  496,    2, 0x08 /* Private */,
-      52,    0,  497,    2, 0x08 /* Private */,
-      53,    0,  498,    2, 0x08 /* Private */,
-      54,    0,  499,    2, 0x08 /* Private */,
-      55,    0,  500,    2, 0x08 /* Private */,
-      56,    0,  501,    2, 0x08 /* Private */,
-      57,    0,  502,    2, 0x08 /* Private */,
-      58,    0,  503,    2, 0x08 /* Private */,
-      59,    0,  504,    2, 0x08 /* Private */,
-      60,    0,  505,    2, 0x08 /* Private */,
-      61,    0,  506,    2, 0x08 /* Private */,
-      62,    0,  507,    2, 0x08 /* Private */,
-      63,    0,  508,    2, 0x08 /* Private */,
-      64,    0,  509,    2, 0x08 /* Private */,
-      65,    0,  510,    2, 0x08 /* Private */,
-      66,    0,  511,    2, 0x08 /* Private */,
-      67,    0,  512,    2, 0x08 /* Private */,
-      68,    0,  513,    2, 0x08 /* Private */,
-      69,    0,  514,    2, 0x08 /* Private */,
-      70,    0,  515,    2, 0x08 /* Private */,
-      71,    0,  516,    2, 0x08 /* Private */,
-      72,    0,  517,    2, 0x08 /* Private */,
-      73,    0,  518,    2, 0x08 /* Private */,
-      74,    0,  519,    2, 0x08 /* Private */,
-      75,    0,  520,    2, 0x08 /* Private */,
-      76,    0,  521,    2, 0x08 /* Private */,
-      77,    0,  522,    2, 0x08 /* Private */,
-      78,    0,  523,    2, 0x08 /* Private */,
-      79,    0,  524,    2, 0x08 /* Private */,
-      80,    1,  525,    2, 0x08 /* Private */,
-      81,    1,  528,    2, 0x08 /* Private */,
-      83,    1,  531,    2, 0x08 /* Private */,
-      84,    1,  534,    2, 0x08 /* Private */,
-      85,    1,  537,    2, 0x08 /* Private */,
-      86,    1,  540,    2, 0x08 /* Private */,
-      87,    1,  543,    2, 0x08 /* Private */,
+       3,    0,  442,    2, 0x08 /* Private */,
+       4,    0,  443,    2, 0x08 /* Private */,
+       5,    0,  444,    2, 0x08 /* Private */,
+       6,    0,  445,    2, 0x08 /* Private */,
+       7,    0,  446,    2, 0x08 /* Private */,
+       8,    0,  447,    2, 0x08 /* Private */,
+       9,    0,  448,    2, 0x08 /* Private */,
+      10,    0,  449,    2, 0x08 /* Private */,
+      11,    0,  450,    2, 0x08 /* Private */,
+      12,    0,  451,    2, 0x08 /* Private */,
+      13,    0,  452,    2, 0x08 /* Private */,
+      14,    0,  453,    2, 0x08 /* Private */,
+      15,    0,  454,    2, 0x08 /* Private */,
+      16,    0,  455,    2, 0x08 /* Private */,
+      17,    0,  456,    2, 0x08 /* Private */,
+      18,    0,  457,    2, 0x08 /* Private */,
+      19,    0,  458,    2, 0x08 /* Private */,
+      20,    0,  459,    2, 0x08 /* Private */,
+      21,    0,  460,    2, 0x08 /* Private */,
+      22,    0,  461,    2, 0x08 /* Private */,
+      23,    0,  462,    2, 0x08 /* Private */,
+      24,    0,  463,    2, 0x08 /* Private */,
+      25,    1,  464,    2, 0x08 /* Private */,
+      26,    1,  467,    2, 0x08 /* Private */,
+      27,    1,  470,    2, 0x08 /* Private */,
+      28,    1,  473,    2, 0x08 /* Private */,
+      29,    1,  476,    2, 0x08 /* Private */,
+      30,    1,  479,    2, 0x08 /* Private */,
+      32,    1,  482,    2, 0x08 /* Private */,
+      33,    1,  485,    2, 0x08 /* Private */,
+      34,    1,  488,    2, 0x08 /* Private */,
+      35,    1,  491,    2, 0x08 /* Private */,
+      36,    1,  494,    2, 0x08 /* Private */,
+      37,    1,  497,    2, 0x08 /* Private */,
+      38,    0,  500,    2, 0x08 /* Private */,
+      39,    0,  501,    2, 0x08 /* Private */,
+      40,    0,  502,    2, 0x08 /* Private */,
+      41,    0,  503,    2, 0x08 /* Private */,
+      42,    0,  504,    2, 0x08 /* Private */,
+      43,    0,  505,    2, 0x08 /* Private */,
+      44,    0,  506,    2, 0x08 /* Private */,
+      45,    0,  507,    2, 0x08 /* Private */,
+      46,    0,  508,    2, 0x08 /* Private */,
+      47,    0,  509,    2, 0x08 /* Private */,
+      48,    0,  510,    2, 0x08 /* Private */,
+      49,    0,  511,    2, 0x08 /* Private */,
+      50,    0,  512,    2, 0x08 /* Private */,
+      51,    0,  513,    2, 0x08 /* Private */,
+      52,    0,  514,    2, 0x08 /* Private */,
+      53,    0,  515,    2, 0x08 /* Private */,
+      54,    0,  516,    2, 0x08 /* Private */,
+      55,    0,  517,    2, 0x08 /* Private */,
+      56,    0,  518,    2, 0x08 /* Private */,
+      57,    0,  519,    2, 0x08 /* Private */,
+      58,    0,  520,    2, 0x08 /* Private */,
+      59,    0,  521,    2, 0x08 /* Private */,
+      60,    0,  522,    2, 0x08 /* Private */,
+      61,    0,  523,    2, 0x08 /* Private */,
+      62,    0,  524,    2, 0x08 /* Private */,
+      63,    0,  525,    2, 0x08 /* Private */,
+      64,    0,  526,    2, 0x08 /* Private */,
+      65,    0,  527,    2, 0x08 /* Private */,
+      66,    0,  528,    2, 0x08 /* Private */,
+      67,    0,  529,    2, 0x08 /* Private */,
+      68,    0,  530,    2, 0x08 /* Private */,
+      69,    0,  531,    2, 0x08 /* Private */,
+      70,    0,  532,    2, 0x08 /* Private */,
+      71,    0,  533,    2, 0x08 /* Private */,
+      72,    0,  534,    2, 0x08 /* Private */,
+      73,    0,  535,    2, 0x08 /* Private */,
+      74,    0,  536,    2, 0x08 /* Private */,
+      75,    0,  537,    2, 0x08 /* Private */,
+      76,    0,  538,    2, 0x08 /* Private */,
+      77,    0,  539,    2, 0x08 /* Private */,
+      78,    0,  540,    2, 0x08 /* Private */,
+      79,    0,  541,    2, 0x08 /* Private */,
+      80,    1,  542,    2, 0x08 /* Private */,
+      81,    1,  545,    2, 0x08 /* Private */,
+      83,    1,  548,    2, 0x08 /* Private */,
+      84,    1,  551,    2, 0x08 /* Private */,
+      85,    1,  554,    2, 0x08 /* Private */,
+      86,    1,  557,    2, 0x08 /* Private */,
+      87,    1,  560,    2, 0x08 /* Private */,
+      88,    1,  563,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
@@ -295,12 +298,12 @@ static const uint qt_meta_data_MeshSubdivision_Debug[] = {
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, 0x80000000 | 31,    2,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -350,6 +353,7 @@ static const uint qt_meta_data_MeshSubdivision_Debug[] = {
     QMetaType::Void, 0x80000000 | 82,    2,
     QMetaType::Void, 0x80000000 | 82,    2,
     QMetaType::Void, 0x80000000 | 82,    2,
+    QMetaType::Void, QMetaType::QString,    2,
 
        0        // eod
 };
@@ -389,12 +393,12 @@ void MeshSubdivision_Debug::qt_static_metacall(QObject *_o, QMetaObject::Call _c
         case 26: _t->OutputTextEditHelp((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 27: _t->OutputTextEditError((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 28: _t->OutputTextEditColoredString((*reinterpret_cast< QVector<QPair<QColor,QString> >(*)>(_a[1]))); break;
-        case 29: _t->LoadMesh_1(); break;
-        case 30: _t->LoadMesh_2(); break;
-        case 31: _t->LoadMesh_3(); break;
-        case 32: _t->LoadMesh_4(); break;
-        case 33: _t->LoadMesh_5(); break;
-        case 34: _t->LoadMesh_6(); break;
+        case 29: _t->LoadMesh_1((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 30: _t->LoadMesh_2((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 31: _t->LoadMesh_3((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 32: _t->LoadMesh_4((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 33: _t->LoadMesh_5((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 34: _t->LoadMesh_6((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 35: _t->ShowMesh_1(); break;
         case 36: _t->ShowMesh_2(); break;
         case 37: _t->ShowMesh_3(); break;
@@ -444,6 +448,7 @@ void MeshSubdivision_Debug::qt_static_metacall(QObject *_o, QMetaObject::Call _c
         case 81: _t->GetKeypointList_4((*reinterpret_cast< QVector<bool>(*)>(_a[1]))); break;
         case 82: _t->GetKeypointList_5((*reinterpret_cast< QVector<bool>(*)>(_a[1]))); break;
         case 83: _t->GetKeypointList_6((*reinterpret_cast< QVector<bool>(*)>(_a[1]))); break;
+        case 84: _t->ProcessCommand((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -530,13 +535,13 @@ int MeshSubdivision_Debug::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 84)
+        if (_id < 85)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 84;
+        _id -= 85;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 84)
+        if (_id < 85)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 84;
+        _id -= 85;
     }
     return _id;
 }

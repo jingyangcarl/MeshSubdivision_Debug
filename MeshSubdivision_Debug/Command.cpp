@@ -1,36 +1,26 @@
 #include"Command.h"
 
 // Carl: Predicate can have only one word;
-QStringList Command::dicPredicate = { "load", "show", "clear" , "change"};
+QStringList Command::dicPredicate = {"change", "clear", "detect", "load", "show" , "subdivide" };
 
 // Carl: Object can have one or two words;
-QStringList Command::dicObject = { "mesh" , "cloud", "keypoint" , "keypoint color" , "text", "layout", "help" };
-
+QStringList Command::dicObject = { "cloud" , "help", "keypoint" , "layout" , "mesh", "catmull", "loop", "butterfly", "sqrt3", "sqrt3lgt"};
 // Carl: Complement is used for parameters;
 QStringList Command::dicComplement = { "" };
 
-// Command list
-/*
-load mesh [No.]
-show help
-show help mouse
-show help key
-show help instruction
-show mesh [No.]
-show cloud [No.]
-show keypoint [No.]
-show keypoint color [No.]
-show mesh status [No.]
-show system status
-*show error []
-clear text
-clear mesh [No.]
-clear cloud [No.]
-clear keypoint [No.]
-clear keypoint color [No.]
-change layout [No.]
-change cloud color [No.]
-change keypoint color [No.]
-detect mesh keypoint [No.] [alg.]
-subdivide mesh [No.] [alg.]
-*/
+// change layout [1/2/4/6]
+// clear cloud [1/2/3/4/5/6]
+// clear keypoint [1/2/3/4/5/6]
+// clear mesh [1/2/3/4/5/6]
+// detect mesh [1/2/3/4/5/6]
+// load mesh [1/2/3/4/5/6]
+// show cloud [1/2/3/4/5/6]
+// show help [instruction/key/note]
+// show keypoint [1/2/3/4/5/6]
+// show mesh [1/2/3/4/5/6]
+// subdivide catmull [1/2/3/4/5/6]
+// subdivide longedge [1/2/3/4/5/6]
+// subdivide loop [1/2/3/4/5/6]
+// subdivide butterfly [1/2/3/4/5/6]
+// subdivide sqrt3 [1/2/3/4/5/6]
+// subdivide sqrt3lgt [1/2/3/4/5/6]

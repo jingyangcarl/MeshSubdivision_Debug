@@ -23,15 +23,16 @@ protected:
 signals:
 	// Carl: signal to output 
 	void SignalOutputTextEditFinished(QString);
+	void SignalOutputTextEditProcessing(QString);
 	void SignalOutputTextEditError(QString);
 	void SignalOutputTextEditHelp(QString);
 	// Carl: signal to load mesh
-	void SignalLoadMesh_1();
-	void SignalLoadMesh_2();
-	void SignalLoadMesh_3();
-	void SignalLoadMesh_4();
-	void SignalLoadMesh_5();
-	void SignalLoadMesh_6();
+	void SignalLoadMesh_1(QString);
+	void SignalLoadMesh_2(QString);
+	void SignalLoadMesh_3(QString);
+	void SignalLoadMesh_4(QString);
+	void SignalLoadMesh_5(QString);
+	void SignalLoadMesh_6(QString);
 	// Carl: signal to show mesh
 	void SignalShowMesh_1();
 	void SignalShowMesh_2();
@@ -88,6 +89,7 @@ signals:
 	void SignalSendKeypointList_4(QVector<bool>);
 	void SignalSendKeypointList_5(QVector<bool>);
 	void SignalSendKeypointList_6(QVector<bool>);
+	void SignalProcessCommand(QString);
 
 private slots:
 	void GetMeshPath(QString);

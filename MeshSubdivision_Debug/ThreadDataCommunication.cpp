@@ -36,3 +36,19 @@ void MeshSubdivision_Debug::GetKeypointList_5(QVector<bool> keypointList) {
 void MeshSubdivision_Debug::GetKeypointList_6(QVector<bool> keypointList) {
 	this->keypointList_6 = keypointList;
 }
+
+void MeshSubdivision_Debug::ProcessCommand(QString input) {
+	// Carl: slot function to deal with instructions
+	commandAnalyser = new CommandAnalyser(input);
+	commandProcessor->SetCommand(commandAnalyser->Analyse());
+	commandProcessor->start();
+	ui.textEdit_cmd->setEnabled(false);
+
+	while (commandProcessor->isRunning())
+		QCoreApplication::processEvents();
+
+	commandProcessor->wait();
+	ui.textEdit_cmd->setEnabled(true);
+	ui.textEdit_cmd->setFocus();
+	return;
+}

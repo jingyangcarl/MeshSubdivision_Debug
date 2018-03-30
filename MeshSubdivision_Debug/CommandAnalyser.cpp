@@ -26,7 +26,8 @@ Command CommandAnalyser::Analyse() {
 	QStringList inputWords = input.split(QRegExp(" "));
 	
 	// Carl: PREDICATE
-	if (inputWords.size() >= 1 && Command::dicPredicate.indexOf(inputWords.at(0)) < Command::dicPredicate.size()) {
+	if (inputWords.size() >= 1 && Command::dicPredicate.indexOf(inputWords.at(0)) != -1) {
+		int a = Command::dicPredicate.indexOf(inputWords.at(0));
 		// Carl: predicate can be found
 		command.predicate = inputWords.at(0);
 	}

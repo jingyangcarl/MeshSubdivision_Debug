@@ -133,12 +133,20 @@ void MeshSubdivision_Debug::InitializeMesh_1() {
 	// Carl: read mesh from mesh path
 	pcl::io::loadPLYFile(pathMesh_1.toStdString(), mesh_1);
 
-	// Carl: choose a color
+	// Carl: choose a high saturation color
 	srand(time(NULL));
-	colorCloud_1.setRed(((int)(512 * rand() / (RAND_MAX + 1.0f)) % 16) * ((int)(512 * rand() / (RAND_MAX + 1.0f))));
-	colorCloud_1.setGreen(((int)(512 * rand() / (RAND_MAX + 1.0f)) % 16) * ((int)(512 * rand() / (RAND_MAX + 1.0f))));
-	colorCloud_1.setBlue(((int)(512 * rand() / (RAND_MAX + 1.0f)) % 16) * ((int)(512 * rand() / (RAND_MAX + 1.0f))));
-	colorCloud_1.setAlpha((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	int r(1), g(1), b(1);
+	int max = r, min = g;
+	while (((max - min) / max) <= 0.8) {
+		r = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		g = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		b = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		max = r > g ? (r > b ? r : b) : (r > b ? g : (g > b ? g : b));
+		min = r < g ? (r < b ? r : b) : (r < b ? g : (g < b ? g : b));
+	}
+	colorCloud_1.setRed(r);
+	colorCloud_1.setGreen(g);
+	colorCloud_1.setBlue(b);
 
 	if (!mesh_1.cloud.data.empty()) {
 		// Carl: read mesh succeed
@@ -172,12 +180,20 @@ void MeshSubdivision_Debug::InitializeMesh_2() {
 	// Carl: read mesh from mesh path
 	pcl::io::loadPLYFile(pathMesh_2.toStdString(), mesh_2);
 
-	// Carl: choose a color
+	// Carl: choose a high saturation color
 	srand(time(NULL));
-	colorCloud_2.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_2.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_2.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_2.setAlpha((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	int r(1), g(1), b(1);
+	int max = r, min = g;
+	while (((max - min) / max) <= 0.8) {
+		r = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		g = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		b = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		max = r > g ? (r > b ? r : b) : (r > b ? g : (g > b ? g : b));
+		min = r < g ? (r < b ? r : b) : (r < b ? g : (g < b ? g : b));
+	}
+	colorCloud_2.setRed(r);
+	colorCloud_2.setGreen(g);
+	colorCloud_2.setBlue(b);
 
 	if (!mesh_2.cloud.data.empty()) {
 		// Carl: read mesh succeed
@@ -212,11 +228,20 @@ void MeshSubdivision_Debug::InitializeMesh_3() {
 	pcl::io::loadPLYFile(pathMesh_3.toStdString(), mesh_3);
 
 	// Carl: choose a color
+	// Carl: choose a high saturation color
 	srand(time(NULL));
-	colorCloud_3.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_3.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_3.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_3.setAlpha((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	int r(1), g(1), b(1);
+	int max = r, min = g;
+	while (((max - min) / max) <= 0.8) {
+		r = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		g = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		b = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		max = r > g ? (r > b ? r : b) : (r > b ? g : (g > b ? g : b));
+		min = r < g ? (r < b ? r : b) : (r < b ? g : (g < b ? g : b));
+	}
+	colorCloud_3.setRed(r);
+	colorCloud_3.setGreen(g);
+	colorCloud_3.setBlue(b);
 
 	if (!mesh_3.cloud.data.empty()) {
 		// Carl: read mesh succeed
@@ -250,12 +275,20 @@ void MeshSubdivision_Debug::InitializeMesh_4() {
 	// Carl: read mesh from mesh path
 	pcl::io::loadPLYFile(pathMesh_4.toStdString(), mesh_4);
 
-	// Carl: choose a color
+	// Carl: choose a high saturation color
 	srand(time(NULL));
-	colorCloud_4.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_4.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_4.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_4.setAlpha((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	int r(1), g(1), b(1);
+	int max = r, min = g;
+	while (((max - min) / max) <= 0.8) {
+		r = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		g = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		b = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		max = r > g ? (r > b ? r : b) : (r > b ? g : (g > b ? g : b));
+		min = r < g ? (r < b ? r : b) : (r < b ? g : (g < b ? g : b));
+	}
+	colorCloud_4.setRed(r);
+	colorCloud_4.setGreen(g);
+	colorCloud_4.setBlue(b);
 
 	if (!mesh_4.cloud.data.empty()) {
 		// Carl: read mesh succeed
@@ -289,12 +322,20 @@ void MeshSubdivision_Debug::InitializeMesh_5() {
 	// Carl: read mesh from mesh path
 	pcl::io::loadPLYFile(pathMesh_5.toStdString(), mesh_5);
 
-	// Carl: choose a color
+	// Carl: choose a high saturation color
 	srand(time(NULL));
-	colorCloud_5.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_5.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_5.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_5.setAlpha((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	int r(1), g(1), b(1);
+	int max = r, min = g;
+	while (((max - min) / max) <= 0.8) {
+		r = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		g = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		b = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		max = r > g ? (r > b ? r : b) : (r > b ? g : (g > b ? g : b));
+		min = r < g ? (r < b ? r : b) : (r < b ? g : (g < b ? g : b));
+	}
+	colorCloud_5.setRed(r);
+	colorCloud_5.setGreen(g);
+	colorCloud_5.setBlue(b);
 
 	if (!mesh_5.cloud.data.empty()) {
 		// Carl: read mesh succeed
@@ -328,12 +369,20 @@ void MeshSubdivision_Debug::InitializeMesh_6() {
 	// Carl: read mesh from mesh path
 	pcl::io::loadPLYFile(pathMesh_6.toStdString(), mesh_6);
 
-	// Carl: choose a color
+	// Carl: choose a high saturation color
 	srand(time(NULL));
-	colorCloud_6.setRed((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_6.setGreen((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_6.setBlue((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
-	colorCloud_6.setAlpha((int)(512 * rand() / (RAND_MAX + 1.0f)) % 128 + 128);
+	int r(1), g(1), b(1);
+	int max = r, min = g;
+	while (((max - min) / max) <= 0.8) {
+		r = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		g = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		b = (int)(512 * rand() / (RAND_MAX + 1.0f)) % 256;
+		max = r > g ? (r > b ? r : b) : (r > b ? g : (g > b ? g : b));
+		min = r < g ? (r < b ? r : b) : (r < b ? g : (g < b ? g : b));
+	}
+	colorCloud_6.setRed(r);
+	colorCloud_6.setGreen(g);
+	colorCloud_6.setBlue(b);
 
 	if (!mesh_6.cloud.data.empty()) {
 		// Carl: read mesh succeed
@@ -394,16 +443,17 @@ void MeshSubdivision_Debug::InitializeSlotSignal() {
 
 	// Carl: connection for OutputTextEdit
 	connect(commandProcessor, SIGNAL(SignalOutputTextEditFinished(QString)), this, SLOT(OutputTextEditFinished(QString)));
+	connect(commandProcessor, SIGNAL(SignalOutputTextEditProcessing(QString)), this, SLOT(OutputTextEditProcessing(QString)));
 	connect(commandProcessor, SIGNAL(SignalOutputTextEditError(QString)), this, SLOT(OutputTextEditError(QString)));
 	connect(commandProcessor, SIGNAL(SignalOutputTextEditHelp(QString)), this, SLOT(OutputTextEditHelp(QString)));
 
 	// Carl: connection for LoadMesh
-	connect(commandProcessor, SIGNAL(SignalLoadMesh_1()), this, SLOT(LoadMesh_1()));
-	connect(commandProcessor, SIGNAL(SignalLoadMesh_2()), this, SLOT(LoadMesh_2()));
-	connect(commandProcessor, SIGNAL(SignalLoadMesh_3()), this, SLOT(LoadMesh_3()));
-	connect(commandProcessor, SIGNAL(SignalLoadMesh_4()), this, SLOT(LoadMesh_4()));
-	connect(commandProcessor, SIGNAL(SignalLoadMesh_5()), this, SLOT(LoadMesh_5()));
-	connect(commandProcessor, SIGNAL(SignalLoadMesh_6()), this, SLOT(LoadMesh_6()));
+	connect(commandProcessor, SIGNAL(SignalLoadMesh_1(QString)), this, SLOT(LoadMesh_1(QString)));
+	connect(commandProcessor, SIGNAL(SignalLoadMesh_2(QString)), this, SLOT(LoadMesh_2(QString)));
+	connect(commandProcessor, SIGNAL(SignalLoadMesh_3(QString)), this, SLOT(LoadMesh_3(QString)));
+	connect(commandProcessor, SIGNAL(SignalLoadMesh_4(QString)), this, SLOT(LoadMesh_4(QString)));
+	connect(commandProcessor, SIGNAL(SignalLoadMesh_5(QString)), this, SLOT(LoadMesh_5(QString)));
+	connect(commandProcessor, SIGNAL(SignalLoadMesh_6(QString)), this, SLOT(LoadMesh_6(QString)));
 
 	// Carl: connection for ShowMesh
 	connect(commandProcessor, SIGNAL(SignalShowMesh_1()), this, SLOT(ShowMesh_1()));
@@ -469,4 +519,6 @@ void MeshSubdivision_Debug::InitializeSlotSignal() {
 	connect(commandProcessor, SIGNAL(SignalSendKeypointList_4(QVector<bool>)), this, SLOT(GetKeypointList_4(QVector<bool>)), Qt::DirectConnection);
 	connect(commandProcessor, SIGNAL(SignalSendKeypointList_5(QVector<bool>)), this, SLOT(GetKeypointList_5(QVector<bool>)), Qt::DirectConnection);
 	connect(commandProcessor, SIGNAL(SignalSendKeypointList_6(QVector<bool>)), this, SLOT(GetKeypointList_6(QVector<bool>)), Qt::DirectConnection);
+	connect(commandProcessor, SIGNAL(SignalProcessCommand(QString)), this, SLOT(ProcessCommand(QString)), Qt::DirectConnection);
+	
 }
