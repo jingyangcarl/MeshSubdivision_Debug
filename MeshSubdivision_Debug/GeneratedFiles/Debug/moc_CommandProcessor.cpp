@@ -21,7 +21,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_CommandProcessor_t {
     QByteArrayData data[62];
-    char stringdata0[1228];
+    char stringdata0[1224];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -90,8 +90,8 @@ QT_MOC_LITERAL(56, 1095, 24), // "SignalSendKeypointList_3"
 QT_MOC_LITERAL(57, 1120, 24), // "SignalSendKeypointList_4"
 QT_MOC_LITERAL(58, 1145, 24), // "SignalSendKeypointList_5"
 QT_MOC_LITERAL(59, 1170, 24), // "SignalSendKeypointList_6"
-QT_MOC_LITERAL(60, 1195, 20), // "SignalProcessCommand"
-QT_MOC_LITERAL(61, 1216, 11) // "GetMeshPath"
+QT_MOC_LITERAL(60, 1195, 16), // "SignalAddCommand"
+QT_MOC_LITERAL(61, 1212, 11) // "GetMeshPath"
 
     },
     "CommandProcessor\0SignalOutputTextEditFinished\0"
@@ -126,7 +126,7 @@ QT_MOC_LITERAL(61, 1216, 11) // "GetMeshPath"
     "SignalSendKeypointList_3\0"
     "SignalSendKeypointList_4\0"
     "SignalSendKeypointList_5\0"
-    "SignalSendKeypointList_6\0SignalProcessCommand\0"
+    "SignalSendKeypointList_6\0SignalAddCommand\0"
     "GetMeshPath"
 };
 #undef QT_MOC_LITERAL
@@ -336,7 +336,7 @@ void CommandProcessor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         case 54: _t->SignalSendKeypointList_4((*reinterpret_cast< QVector<bool>(*)>(_a[1]))); break;
         case 55: _t->SignalSendKeypointList_5((*reinterpret_cast< QVector<bool>(*)>(_a[1]))); break;
         case 56: _t->SignalSendKeypointList_6((*reinterpret_cast< QVector<bool>(*)>(_a[1]))); break;
-        case 57: _t->SignalProcessCommand((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 57: _t->SignalAddCommand((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 58: _t->GetMeshPath((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
@@ -790,7 +790,7 @@ void CommandProcessor::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         }
         {
             typedef void (CommandProcessor::*_t)(QString );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalProcessCommand)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CommandProcessor::SignalAddCommand)) {
                 *result = 57;
                 return;
             }
@@ -1194,7 +1194,7 @@ void CommandProcessor::SignalSendKeypointList_6(QVector<bool> _t1)
 }
 
 // SIGNAL 57
-void CommandProcessor::SignalProcessCommand(QString _t1)
+void CommandProcessor::SignalAddCommand(QString _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 57, _a);

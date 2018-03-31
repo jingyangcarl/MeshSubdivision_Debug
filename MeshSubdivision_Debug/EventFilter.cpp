@@ -18,18 +18,25 @@ bool MeshSubdivision_Debug::eventFilter(QObject *object, QEvent *e) {
 
 			if (input.size()) {
 				// deal with the command;
-				commandAnalyser = new CommandAnalyser(input);
-				commandProcessor->SetCommand(commandAnalyser->Analyse());
+				commandList.push_back(input);
 
-				commandProcessor->start();
-				ui.textEdit_cmd->setEnabled(false);
+				while (currentCommandIndex < commandList.size()) {
 
-				while (commandProcessor->isRunning())
-					QCoreApplication::processEvents();
+					commandAnalyser = new CommandAnalyser(commandList.at(currentCommandIndex));
+					commandProcessor->SetCommand(commandAnalyser->Analyse());
 
-				commandProcessor->wait();
-				ui.textEdit_cmd->setEnabled(true);
-				ui.textEdit_cmd->setFocus();
+					commandProcessor->start();
+					ui.textEdit_cmd->setEnabled(false);
+
+					while (commandProcessor->isRunning())
+						QCoreApplication::processEvents();
+
+					commandProcessor->wait();
+					ui.textEdit_cmd->setEnabled(true);
+					ui.textEdit_cmd->setFocus();
+
+					currentCommandIndex++;
+				}
 			}
 
 			ui.textEdit_cmd->setTextColor(QColor("white"));

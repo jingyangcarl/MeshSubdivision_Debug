@@ -89,7 +89,7 @@ signals:
 	void SignalSendKeypointList_4(QVector<bool>);
 	void SignalSendKeypointList_5(QVector<bool>);
 	void SignalSendKeypointList_6(QVector<bool>);
-	void SignalProcessCommand(QString);
+	void SignalAddCommand(QString);
 
 private slots:
 	void GetMeshPath(QString);

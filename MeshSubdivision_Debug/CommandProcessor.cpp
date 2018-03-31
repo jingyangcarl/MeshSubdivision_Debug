@@ -65,7 +65,6 @@ void CommandProcessor::run() {
 	else if (command.predicate == "detect") {
 		if (command.object == "mesh") {
 
-			emit SignalOutputTextEditFinished("Load mesh to KeypointDetector;");
 			KeypointDetector keypointDetector;
 			QVector<bool> keypointList;
 			// Carl: get path
@@ -76,32 +75,39 @@ void CommandProcessor::run() {
 			else if (command.complement == "5") emit SignalGetMeshPath(5);
 			else if (command.complement == "6") emit SignalGetMeshPath(6);
 			else if (command.complement == "all") {
-				emit SignalProcessCommand("detect mesh 1");
-				emit SignalProcessCommand("detect mesh 2");
-				emit SignalProcessCommand("detect mesh 3");
-				emit SignalProcessCommand("detect mesh 4");
-				emit SignalProcessCommand("detect mesh 5");
-				emit SignalProcessCommand("detect mesh 6");
+				emit SignalAddCommand("detect mesh 1");
+				emit SignalAddCommand("detect mesh 2");
+				emit SignalAddCommand("detect mesh 3");
+				emit SignalAddCommand("detect mesh 4");
+				emit SignalAddCommand("detect mesh 5");
+				emit SignalAddCommand("detect mesh 6");
+				return;
 			}
 			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
 
 			// Carl: load mesh
-			if (keypointDetector.LoadMeshFile(pathMesh)) {
-				emit SignalOutputTextEditFinished("Load mesh finished;");
-				emit SignalOutputTextEditProcessing("Detecting");
-				keypointList = keypointDetector.KeypointDetection();
-				if(!keypointList.empty()) emit SignalOutputTextEditFinished("Detection finished;");
-				else emit SignalOutputTextEditError("Detection failed");
-			}
-			else emit SignalOutputTextEditError("Load mesh failed;");
+			if (pathMesh != "") {
+				emit SignalOutputTextEditFinished("Load mesh to KeypointDetector;");
+				if (keypointDetector.LoadMeshFile(pathMesh)) {
+					emit SignalOutputTextEditFinished("Load mesh finished;");
+					emit SignalOutputTextEditProcessing("Detecting");
+					keypointList = keypointDetector.KeypointDetection();
+					if(!keypointList.empty()) emit SignalOutputTextEditFinished("Detection finished;");
+					else emit SignalOutputTextEditError("Detection failed");
+				}
+				else emit SignalOutputTextEditError("Load mesh failed;");
 
-			if (command.complement == "1") emit SignalSendKeypointList_1(keypointList), emit SignalShowKeypoint_1();
-			else if (command.complement == "2") emit SignalSendKeypointList_2(keypointList), emit SignalShowKeypoint_2();
-			else if (command.complement == "3") emit SignalSendKeypointList_3(keypointList), emit SignalShowKeypoint_3();
-			else if (command.complement == "4") emit SignalSendKeypointList_4(keypointList), emit SignalShowKeypoint_4();
-			else if (command.complement == "5") emit SignalSendKeypointList_5(keypointList), emit SignalShowKeypoint_5();
-			else if (command.complement == "6") emit SignalSendKeypointList_6(keypointList), emit SignalShowKeypoint_6();
-			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
+				if (command.complement == "1") emit SignalSendKeypointList_1(keypointList), emit SignalShowKeypoint_1();
+				else if (command.complement == "2") emit SignalSendKeypointList_2(keypointList), emit SignalShowKeypoint_2();
+				else if (command.complement == "3") emit SignalSendKeypointList_3(keypointList), emit SignalShowKeypoint_3();
+				else if (command.complement == "4") emit SignalSendKeypointList_4(keypointList), emit SignalShowKeypoint_4();
+				else if (command.complement == "5") emit SignalSendKeypointList_5(keypointList), emit SignalShowKeypoint_5();
+				else if (command.complement == "6") emit SignalSendKeypointList_6(keypointList), emit SignalShowKeypoint_6();
+				else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
+			}
+			else {
+				
+			}
 		}
 		else emit SignalOutputTextEditError("There isn't parameter \"" + command.object + "\" for \"" + command.predicate + "\"");
 	}

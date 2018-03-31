@@ -3,6 +3,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QVTKWidget.h>
 #include "ui_MeshSubdivision_Debug.h"
+#include <qlist.h>
 
 #include <pcl\point_cloud.h>
 #include <pcl\visualization\pcl_visualizer.h>
@@ -93,6 +94,8 @@ private:
 	// Carl: command analyser and processor
 	CommandAnalyser *commandAnalyser = new CommandAnalyser();
 	CommandProcessor *commandProcessor = new CommandProcessor();
+	QList<QString> commandList;
+	int currentCommandIndex = 0;
 
 private slots:
 	/******************** Initialization.cpp ********************/
@@ -191,7 +194,7 @@ private slots:
 	void GetKeypointList_4(QVector<bool>);
 	void GetKeypointList_5(QVector<bool>);
 	void GetKeypointList_6(QVector<bool>);
-	void ProcessCommand(QString);
+	void AddCommand(QString);
 
 signals:
 	void SignalSendMeshPath(QString);

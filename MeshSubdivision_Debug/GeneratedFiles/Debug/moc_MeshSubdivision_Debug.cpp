@@ -21,7 +21,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MeshSubdivision_Debug_t {
     QByteArrayData data[89];
-    char stringdata0[1473];
+    char stringdata0[1469];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -118,7 +118,7 @@ QT_MOC_LITERAL(84, 1386, 17), // "GetKeypointList_3"
 QT_MOC_LITERAL(85, 1404, 17), // "GetKeypointList_4"
 QT_MOC_LITERAL(86, 1422, 17), // "GetKeypointList_5"
 QT_MOC_LITERAL(87, 1440, 17), // "GetKeypointList_6"
-QT_MOC_LITERAL(88, 1458, 14) // "ProcessCommand"
+QT_MOC_LITERAL(88, 1458, 10) // "AddCommand"
 
     },
     "MeshSubdivision_Debug\0SignalSendMeshPath\0"
@@ -160,7 +160,7 @@ QT_MOC_LITERAL(88, 1458, 14) // "ProcessCommand"
     "QVector<bool>\0GetKeypointList_2\0"
     "GetKeypointList_3\0GetKeypointList_4\0"
     "GetKeypointList_5\0GetKeypointList_6\0"
-    "ProcessCommand"
+    "AddCommand"
 };
 #undef QT_MOC_LITERAL
 
@@ -448,7 +448,7 @@ void MeshSubdivision_Debug::qt_static_metacall(QObject *_o, QMetaObject::Call _c
         case 81: _t->GetKeypointList_4((*reinterpret_cast< QVector<bool>(*)>(_a[1]))); break;
         case 82: _t->GetKeypointList_5((*reinterpret_cast< QVector<bool>(*)>(_a[1]))); break;
         case 83: _t->GetKeypointList_6((*reinterpret_cast< QVector<bool>(*)>(_a[1]))); break;
-        case 84: _t->ProcessCommand((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 84: _t->AddCommand((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {

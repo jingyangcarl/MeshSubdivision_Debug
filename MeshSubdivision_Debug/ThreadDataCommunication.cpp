@@ -2,12 +2,12 @@
 
 void MeshSubdivision_Debug::SendMeshPath(int meshIndex) {
 	switch (meshIndex) {
-	case 1: emit SignalSendMeshPath(pathMesh_1); break;
-	case 2: emit SignalSendMeshPath(pathMesh_2); break;
-	case 3: emit SignalSendMeshPath(pathMesh_3); break;
-	case 4: emit SignalSendMeshPath(pathMesh_4); break;
-	case 5: emit SignalSendMeshPath(pathMesh_5); break;
-	case 6: emit SignalSendMeshPath(pathMesh_6); break;
+	case 1: emit SignalSendMeshPath(meshIndex <= layoutStatus ? pathMesh_1 : ""); break;
+	case 2: emit SignalSendMeshPath(meshIndex <= layoutStatus ? pathMesh_2 : ""); break;
+	case 3: emit SignalSendMeshPath(meshIndex <= layoutStatus ? pathMesh_3 : ""); break;
+	case 4: emit SignalSendMeshPath(meshIndex <= layoutStatus ? pathMesh_4 : ""); break;
+	case 5: emit SignalSendMeshPath(meshIndex <= layoutStatus ? pathMesh_5 : ""); break;
+	case 6: emit SignalSendMeshPath(meshIndex <= layoutStatus ? pathMesh_6 : ""); break;
 	}
 
 	return;
@@ -37,18 +37,10 @@ void MeshSubdivision_Debug::GetKeypointList_6(QVector<bool> keypointList) {
 	this->keypointList_6 = keypointList;
 }
 
-void MeshSubdivision_Debug::ProcessCommand(QString input) {
+void MeshSubdivision_Debug::AddCommand(QString input) {
 	// Carl: slot function to deal with instructions
-	commandAnalyser = new CommandAnalyser(input);
-	commandProcessor->SetCommand(commandAnalyser->Analyse());
-	commandProcessor->start();
-	ui.textEdit_cmd->setEnabled(false);
 
-	while (commandProcessor->isRunning())
-		QCoreApplication::processEvents();
+	commandList.push_back(input);
 
-	commandProcessor->wait();
-	ui.textEdit_cmd->setEnabled(true);
-	ui.textEdit_cmd->setFocus();
 	return;
 }

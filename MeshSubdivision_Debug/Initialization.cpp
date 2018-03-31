@@ -519,6 +519,6 @@ void MeshSubdivision_Debug::InitializeSlotSignal() {
 	connect(commandProcessor, SIGNAL(SignalSendKeypointList_4(QVector<bool>)), this, SLOT(GetKeypointList_4(QVector<bool>)), Qt::DirectConnection);
 	connect(commandProcessor, SIGNAL(SignalSendKeypointList_5(QVector<bool>)), this, SLOT(GetKeypointList_5(QVector<bool>)), Qt::DirectConnection);
 	connect(commandProcessor, SIGNAL(SignalSendKeypointList_6(QVector<bool>)), this, SLOT(GetKeypointList_6(QVector<bool>)), Qt::DirectConnection);
-	connect(commandProcessor, SIGNAL(SignalProcessCommand(QString)), this, SLOT(ProcessCommand(QString)), Qt::DirectConnection);
+	connect(commandProcessor, SIGNAL(SignalAddCommand(QString)), this, SLOT(AddCommand(QString)), Qt::DirectConnection);
 	
 }
