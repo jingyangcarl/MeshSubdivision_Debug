@@ -32,6 +32,12 @@
     <ClCompile Include="MeshSubdivisorTool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MainAlgorithm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AssistAlgorithm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MeshSubdivisior.h">

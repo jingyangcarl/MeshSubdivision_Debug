@@ -4,7 +4,7 @@
 QStringList Command::dicPredicate = {"change", "clear", "detect", "load", "show" , "subdivide" };
 
 // Carl: Object can have one or two words;
-QStringList Command::dicObject = { "cloud" , "help", "keypoint" , "layout" , "mesh", "catmull", "loop", "butterfly", "sqrt3", "sqrt3lgt"};
+QStringList Command::dicObject = { "cloud" , "help", "keypoint" , "layout" , "mesh", "catmull", "loop", "butterfly", "sqrt3", "sqrt3lgt", "efp", "feature"};
 // Carl: Complement is used for parameters;
 QStringList Command::dicComplement = { "" };
 
@@ -24,3 +24,5 @@ QStringList Command::dicComplement = { "" };
 // subdivide butterfly [1/2/3/4/5/6]
 // subdivide sqrt3 [1/2/3/4/5/6]
 // subdivide sqrt3lgt [1/2/3/4/5/6]
+// subdivide efp  [1/2/3/4/5/6]
+// subdivide feature [1/2/3/4/5/6]

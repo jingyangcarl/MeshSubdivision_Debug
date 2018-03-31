@@ -83,7 +83,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AssistAlgorithm.cpp" />
     <ClCompile Include="MeshSubdivisior.cpp" />
+    <ClCompile Include="MainAlgorithm.cpp" />
     <ClCompile Include="MeshSubdivisorTool.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -1,12 +1,9 @@
 #include "MeshSubdivisior.h"
 #include <OpenMesh\Tools\Subdivider\Uniform\CatmullClarkT.hh>
-#include <OpenMesh\Tools\Subdivider\Uniform\LongestEdgeT.hh>
 #include <OpenMesh\Tools\Subdivider\Uniform\LoopT.hh>
 #include <OpenMesh\Tools\Subdivider\Uniform\ModifiedButterFlyT.hh>
 #include <OpenMesh\Tools\Subdivider\Uniform\Sqrt3T.hh>
 #include <OpenMesh\Tools\Subdivider\Uniform\Sqrt3InterpolatingSubdividerLabsikGreinerT.hh>
-#include <OpenMesh\Tools\Subdivider\Adaptive\Composite\RuleInterfaceT.hh>
-#include <OpenMesh\Tools\Subdivider\Adaptive\Composite\RulesT.hh>
 
 void MeshSubdivisior::MeshSubdivisionCatmullClarkT() {
 	Subdivider::Uniform::CatmullClarkT<TriMesh_ArrayKernelT<Traits>> subdivisior;
@@ -46,4 +43,16 @@ void MeshSubdivisior::MeshSubdivisionSqrt3InterpolatingSubdividerLabsikGreinerT(
 	subdivisior(1);
 	subdivisior.detach();
 	return;
+}
+
+void MeshSubdivisior::MeshSubdivisionEdgePreserved() {
+	NeighborWeightedPointGuiding();
+}
+
+void MeshSubdivisior::MeshSubdivisionSmoothedEdgePreserved() {
+
+}
+
+void MeshSubdivisior::MeshSubdivisionFeaturePreserved(QVector<bool> keypointList) {
+	NeighborWeightedGuiding(keypointList);
 }

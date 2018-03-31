@@ -198,7 +198,6 @@ void CommandProcessor::run() {
 	}
 	else if (command.predicate == "subdivide") {
 
-		emit SignalOutputTextEditFinished("Load mesh to MeshSubdivisior;");
 		MeshSubdivisior meshSubdivisior;
 		QString oMeshPath = "./oMesh_" + command.complement + ".ply";
 
@@ -210,6 +209,7 @@ void CommandProcessor::run() {
 		else if (command.complement == "6") meshSubdivisior.SetOutputMeshPath(oMeshPath), emit SignalGetMeshPath(6);
 		else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
 
+		emit SignalOutputTextEditFinished("Load mesh to MeshSubdivisior;");
 		if (meshSubdivisior.LoadMeshFile(pathMesh)) {
 			emit SignalOutputTextEditFinished("Load mesh finished;");
 
@@ -220,6 +220,26 @@ void CommandProcessor::run() {
 			else if (command.object == "butterfly") meshSubdivisior.MeshSubdivisionModifiedButterFlyT();
 			else if (command.object == "sqrt3") meshSubdivisior.MeshSubdivisionSqrt3T();
 			else if (command.object == "sqrt3lgt") meshSubdivisior.MeshSubdivisionSqrt3InterpolatingSubdividerLabsikGreinerT();
+			else if (command.object == "efp") meshSubdivisior.MeshSubdivisionEdgePreserved();
+			else if (command.object == "feature") {
+
+				// Carl: detect keypoint first
+				KeypointDetector keypointDetector;
+				QVector<bool> keypointList;
+				emit SignalOutputTextEditFinished("Load mesh to KeypointDetector;");
+
+				if (keypointDetector.LoadMeshFile(pathMesh)) {
+					emit SignalOutputTextEditFinished("Load mesh finished;");
+					emit SignalOutputTextEditProcessing("Detecting");
+					keypointList = keypointDetector.KeypointDetection();
+					if (!keypointList.empty()) emit SignalOutputTextEditFinished("Detection finished;");
+					else emit SignalOutputTextEditError("Detection failed");
+				}
+				else emit SignalOutputTextEditError("Load mesh failed;");
+
+				emit SignalOutputTextEditProcessing("Subdividing");
+				meshSubdivisior.MeshSubdivisionFeaturePreserved(keypointList);
+			}
 			else emit SignalOutputTextEditError("There isn't parameter \"" + command.object + "\" for \"" + command.predicate + "\"");
 			emit SignalOutputTextEditFinished("Subdivision finished;");
 
