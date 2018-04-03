@@ -125,11 +125,11 @@ private slots:
 	void ChangeToLayout_6();
 
 	/******************** OutputTextEdit.cpp ********************/
-	void OutputTextEditFinished(QString);		// Carl: grey
-	void OutputTextEditProcessing(QString);		// Carl: blue
-	void OutputTextEditNotice(QString);			// Carl: green
-	void OutputTextEditHelp(QString);			// Carl: orange
 	void OutputTextEditError(QString);			// Carl: red
+	void OutputTextEditFinished(QString);		// Carl: grey
+	void OutputTextEditHelp(QString);			// Carl: orange
+	void OutputTextEditNotice(QString);			// Carl: blue
+	void OutputTextEditProcessing(QString);		// Carl: green
 	void OutputTextEditColoredString(QVector<QPair<QColor, QString>>);
 
 	/******************** LoadMesh.cpp ********************/
@@ -147,6 +147,12 @@ private slots:
 	void ShowMesh_4();
 	void ShowMesh_5();
 	void ShowMesh_6();
+	void ShowMeshStatus_1();
+	void ShowMeshStatus_2();
+	void ShowMeshStatus_3();
+	void ShowMeshStatus_4();
+	void ShowMeshStatus_5();
+	void ShowMeshStatus_6();
 	void ClearMesh_1();
 	void ClearMesh_2();
 	void ClearMesh_3();
@@ -159,6 +165,12 @@ private slots:
 	void ShowCloud_4();
 	void ShowCloud_5();
 	void ShowCloud_6();
+	void ShowCloudStatus_1();
+	void ShowCloudStatus_2();
+	void ShowCloudStatus_3();
+	void ShowCloudStatus_4();
+	void ShowCloudStatus_5();
+	void ShowCloudStatus_6();
 	void ClearCloud_1();
 	void ClearCloud_2();
 	void ClearCloud_3();
@@ -188,6 +200,7 @@ private slots:
 
 	/******************** ThreadDataCommunication.cpp ********************/
 	void SendMeshPath(int);
+	void SendLayoutStatus();
 	void GetKeypointList_1(QVector<bool>);
 	void GetKeypointList_2(QVector<bool>);
 	void GetKeypointList_3(QVector<bool>);
@@ -198,5 +211,6 @@ private slots:
 
 signals:
 	void SignalSendMeshPath(QString);
+	void SignalSendLayoutStatus(int);
 
 };

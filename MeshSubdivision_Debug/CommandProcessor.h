@@ -16,16 +16,18 @@ public:
 private:
 	Command command;
 	QString pathMesh;
+	int layoutStatus;
 
 protected:
 	void run();
 
 signals:
 	// Carl: signal to output 
-	void SignalOutputTextEditFinished(QString);
-	void SignalOutputTextEditProcessing(QString);
 	void SignalOutputTextEditError(QString);
+	void SignalOutputTextEditFinished(QString);
 	void SignalOutputTextEditHelp(QString);
+	void SignalOutputTextEditNotice(QString);
+	void SignalOutputTextEditProcessing(QString);
 	// Carl: signal to load mesh
 	void SignalLoadMesh_1(QString);
 	void SignalLoadMesh_2(QString);
@@ -40,6 +42,13 @@ signals:
 	void SignalShowMesh_4();
 	void SignalShowMesh_5();
 	void SignalShowMesh_6();
+	// Carl: signal to show mesh status
+	void SignalShowMeshStatus_1();
+	void SignalShowMeshStatus_2();
+	void SignalShowMeshStatus_3();
+	void SignalShowMeshStatus_4();
+	void SignalShowMeshStatus_5();
+	void SignalShowMeshStatus_6();
 	// Carl: signal to clear mesh
 	void SignalClearMesh_1();
 	void SignalClearMesh_2();
@@ -54,6 +63,13 @@ signals:
 	void SignalShowCloud_4();
 	void SignalShowCloud_5();
 	void SignalShowCloud_6();
+	// Carl: signal to show cloud status
+	void SignalShowCloudStatus_1();
+	void SignalShowCloudStatus_2();
+	void SignalShowCloudStatus_3();
+	void SignalShowCloudStatus_4();
+	void SignalShowCloudStatus_5();
+	void SignalShowCloudStatus_6();
 	// Carl: signal to clear cloud
 	void SignalClearCloud_1();
 	void SignalClearCloud_2();
@@ -83,6 +99,7 @@ signals:
 
 	// Carl: signal to get data
 	void SignalGetMeshPath(int);
+	void SignalGetLayoutStatus();
 	void SignalSendKeypointList_1(QVector<bool>);
 	void SignalSendKeypointList_2(QVector<bool>);
 	void SignalSendKeypointList_3(QVector<bool>);
@@ -93,5 +110,6 @@ signals:
 
 private slots:
 	void GetMeshPath(QString);
+	void GetLayoutStatus(int);
 };
 

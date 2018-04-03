@@ -20,6 +20,10 @@ void CommandProcessor::GetMeshPath(QString pathMesh) {
 	this->pathMesh = pathMesh;
 }
 
+void CommandProcessor::GetLayoutStatus(int layoutStatus) {
+	this->layoutStatus = layoutStatus;
+}
+
 void CommandProcessor::run() {
 
 	if (command.predicate == "change") {
@@ -40,6 +44,16 @@ void CommandProcessor::run() {
 			else if (command.complement == "4") emit SignalClearCloud_4();
 			else if (command.complement == "5") emit SignalClearCloud_5();
 			else if (command.complement == "6") emit SignalClearCloud_6();
+			else if (command.complement == "all" || command.complement == "") {
+				emit SignalGetLayoutStatus();
+				if (layoutStatus >= 1) emit SignalAddCommand("clear cloud 1");
+				if (layoutStatus >= 2) emit SignalAddCommand("clear cloud 2");
+				if (layoutStatus >= 3) emit SignalAddCommand("clear cloud 3");
+				if (layoutStatus >= 4) emit SignalAddCommand("clear cloud 4");
+				if (layoutStatus >= 5) emit SignalAddCommand("clear cloud 5");
+				if (layoutStatus >= 6) emit SignalAddCommand("clear cloud 6");
+				return;
+			}
 			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
 		}
 		else if (command.object == "keypoint") {
@@ -58,6 +72,16 @@ void CommandProcessor::run() {
 			else if (command.complement == "4")	emit SignalClearMesh_4();
 			else if (command.complement == "5") emit SignalClearMesh_5();
 			else if (command.complement == "6") emit SignalClearMesh_6();
+			else if (command.complement == "all" || command.complement == "") {
+				emit SignalGetLayoutStatus();
+				if (layoutStatus >= 1) emit SignalAddCommand("clear mesh 1");
+				if (layoutStatus >= 2) emit SignalAddCommand("clear mesh 2");
+				if (layoutStatus >= 3) emit SignalAddCommand("clear mesh 3");
+				if (layoutStatus >= 4) emit SignalAddCommand("clear mesh 4");
+				if (layoutStatus >= 5) emit SignalAddCommand("clear mesh 5");
+				if (layoutStatus >= 6) emit SignalAddCommand("clear mesh 6");
+				return;
+			}
 			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
 		}
 		else emit SignalOutputTextEditError("There isn't parameter \"" + command.object + "\" for \"" + command.predicate + "\"");
@@ -74,40 +98,36 @@ void CommandProcessor::run() {
 			else if (command.complement == "4") emit SignalGetMeshPath(4);
 			else if (command.complement == "5") emit SignalGetMeshPath(5);
 			else if (command.complement == "6") emit SignalGetMeshPath(6);
-			else if (command.complement == "all") {
-				emit SignalAddCommand("detect mesh 1");
-				emit SignalAddCommand("detect mesh 2");
-				emit SignalAddCommand("detect mesh 3");
-				emit SignalAddCommand("detect mesh 4");
-				emit SignalAddCommand("detect mesh 5");
-				emit SignalAddCommand("detect mesh 6");
+			else if (command.complement == "all" || command.complement == "") {
+				emit SignalGetLayoutStatus();
+				if (layoutStatus >= 1) emit SignalAddCommand("detect mesh 1");
+				if (layoutStatus >= 2) emit SignalAddCommand("detect mesh 2");
+				if (layoutStatus >= 3) emit SignalAddCommand("detect mesh 3");
+				if (layoutStatus >= 4) emit SignalAddCommand("detect mesh 4");
+				if (layoutStatus >= 5) emit SignalAddCommand("detect mesh 5");
+				if (layoutStatus >= 6) emit SignalAddCommand("detect mesh 6");
 				return;
 			}
 			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
 
 			// Carl: load mesh
-			if (pathMesh != "") {
-				emit SignalOutputTextEditFinished("Load mesh to KeypointDetector;");
-				if (keypointDetector.LoadMeshFile(pathMesh)) {
-					emit SignalOutputTextEditFinished("Load mesh finished;");
-					emit SignalOutputTextEditProcessing("Detecting");
-					keypointList = keypointDetector.KeypointDetection();
-					if(!keypointList.empty()) emit SignalOutputTextEditFinished("Detection finished;");
-					else emit SignalOutputTextEditError("Detection failed");
-				}
-				else emit SignalOutputTextEditError("Load mesh failed;");
+			emit SignalOutputTextEditFinished("Load mesh to KeypointDetector;");
+			if (keypointDetector.LoadMeshFile(pathMesh)) {
+				emit SignalOutputTextEditFinished("Load mesh finished;");
+				emit SignalOutputTextEditProcessing("Detecting");
+				keypointList = keypointDetector.KeypointDetection();
+				if(!keypointList.empty()) emit SignalOutputTextEditFinished("Detection finished;");
+				else emit SignalOutputTextEditError("Detection failed");
+			}
+			else emit SignalOutputTextEditError("Load mesh failed;");
 
-				if (command.complement == "1") emit SignalSendKeypointList_1(keypointList), emit SignalShowKeypoint_1();
-				else if (command.complement == "2") emit SignalSendKeypointList_2(keypointList), emit SignalShowKeypoint_2();
-				else if (command.complement == "3") emit SignalSendKeypointList_3(keypointList), emit SignalShowKeypoint_3();
-				else if (command.complement == "4") emit SignalSendKeypointList_4(keypointList), emit SignalShowKeypoint_4();
-				else if (command.complement == "5") emit SignalSendKeypointList_5(keypointList), emit SignalShowKeypoint_5();
-				else if (command.complement == "6") emit SignalSendKeypointList_6(keypointList), emit SignalShowKeypoint_6();
-				else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
-			}
-			else {
-				
-			}
+			if (command.complement == "1") emit SignalSendKeypointList_1(keypointList), emit SignalShowKeypoint_1();
+			else if (command.complement == "2") emit SignalSendKeypointList_2(keypointList), emit SignalShowKeypoint_2();
+			else if (command.complement == "3") emit SignalSendKeypointList_3(keypointList), emit SignalShowKeypoint_3();
+			else if (command.complement == "4") emit SignalSendKeypointList_4(keypointList), emit SignalShowKeypoint_4();
+			else if (command.complement == "5") emit SignalSendKeypointList_5(keypointList), emit SignalShowKeypoint_5();
+			else if (command.complement == "6") emit SignalSendKeypointList_6(keypointList), emit SignalShowKeypoint_6();
+			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
 		}
 		else emit SignalOutputTextEditError("There isn't parameter \"" + command.object + "\" for \"" + command.predicate + "\"");
 	}
@@ -134,23 +154,48 @@ void CommandProcessor::run() {
 			else if (command.complement == "6") emit SignalShowCloud_6();
 			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
 		}
+		else if (command.object == "cloud status") {
+			if (command.complement == "1") emit SignalShowCloudStatus_1();
+			else if (command.complement == "2") emit SignalShowCloudStatus_2();
+			else if (command.complement == "3") emit SignalShowCloudStatus_3();
+			else if (command.complement == "4") emit SignalShowCloudStatus_4();
+			else if (command.complement == "5") emit SignalShowCloudStatus_5();
+			else if (command.complement == "6") emit SignalShowCloudStatus_6();
+			else if (command.complement == "all" || command.complement == "") {
+				emit SignalGetLayoutStatus();
+				if (layoutStatus >= 1) emit SignalAddCommand("show cloud status 1");
+				if (layoutStatus >= 2) emit SignalAddCommand("show cloud status 2");
+				if (layoutStatus >= 3) emit SignalAddCommand("show cloud status 3");
+				if (layoutStatus >= 4) emit SignalAddCommand("show cloud status 4");
+				if (layoutStatus >= 5) emit SignalAddCommand("show cloud status 5");
+				if (layoutStatus >= 6) emit SignalAddCommand("show cloud status 6");
+				return;
+			}
+			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
+		}
 		else if (command.object == "error") emit SignalOutputTextEditError(command.complement);
 		else if (command.object == "help") {
 			if (command.complement == "instruction") {
 				emit SignalOutputTextEditHelp("----------- INSTRUCTION -----------");
 				emit SignalOutputTextEditHelp("change layout [1/2/4]");
-				emit SignalOutputTextEditHelp("clear cloud [1/2/3/4/5/6]");
+				emit SignalOutputTextEditHelp("clear cloud (1/2/3/4/5/6/all)");
 				emit SignalOutputTextEditHelp("clear keypoint [1/2/3/4/5/6]");
-				emit SignalOutputTextEditHelp("clear mesh [1/2/3/4/5/6]");
-				emit SignalOutputTextEditHelp("detect mesh [1/2/3/4/5/6/all]");
+				emit SignalOutputTextEditHelp("clear mesh (1/2/3/4/5/6/all)");
+				emit SignalOutputTextEditHelp("detect mesh (1/2/3/4/5/6/all)");
 				emit SignalOutputTextEditHelp("load mesh [1/2/3/4/5/6]");
-				emit SignalOutputTextEditHelp("show help (instruction/key/note)");
 				emit SignalOutputTextEditHelp("show cloud [1/2/3/4/5/6]");
+				emit SignalOutputTextEditHelp("show cloud status (1/2/3/4/5/6/all)");
+				emit SignalOutputTextEditHelp("show help (instruction/key/note)");
 				emit SignalOutputTextEditHelp("show keypoint [1/2/3/4/5/6]");
 				emit SignalOutputTextEditHelp("show mesh [1/2/3/4/5/6]");
-				emit SignalOutputTextEditHelp("subdivide catmull [1/2/3/4/5/6]");
-				emit SignalOutputTextEditHelp("subdivide loop [1/2/3/4/5/6]");
+				emit SignalOutputTextEditHelp("show mesh status (1/2/3/4/5/6/all)");
+				emit SignalOutputTextEditHelp("show status (1/2/3/4/5/6/all)");
 				emit SignalOutputTextEditHelp("subdivide butterfly [1/2/3/4/5/6]");
+				emit SignalOutputTextEditHelp("subdivide catmull [1/2/3/4/5/6]");
+				emit SignalOutputTextEditHelp("subdivide efp [1/2/3/4/5/6]");
+				emit SignalOutputTextEditHelp("subdivide feature [1/2/3/4/5/6]");
+				emit SignalOutputTextEditHelp("subdivide loop [1/2/3/4/5/6]");
+				emit SignalOutputTextEditHelp("subdivide setup");
 				emit SignalOutputTextEditHelp("subdivide sqrt3 [1/2/3/4/5/6]");
 				emit SignalOutputTextEditHelp("subdivide sqrt3lgt [1/2/3/4/5/6]");
 			}
@@ -172,7 +217,9 @@ void CommandProcessor::run() {
 				emit SignalOutputTextEditHelp("NOTE: [] nondefault parameter");
 			}
 			else if (command.complement == "") {
-
+				emit SignalAddCommand("show help instruction");
+				emit SignalAddCommand("show help key");
+				emit SignalAddCommand("show help note");
 			}
 			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
 		}
@@ -194,12 +241,64 @@ void CommandProcessor::run() {
 			else if (command.complement == "6") emit SignalShowMesh_6();
 			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
 		}
+		else if (command.object == "mesh status") {
+			if (command.complement == "1") emit SignalShowMeshStatus_1();
+			else if (command.complement == "2") emit SignalShowMeshStatus_2();
+			else if (command.complement == "3") emit SignalShowMeshStatus_3();
+			else if (command.complement == "4") emit SignalShowMeshStatus_4();
+			else if (command.complement == "5") emit SignalShowMeshStatus_5();
+			else if (command.complement == "6") emit SignalShowMeshStatus_6();
+			else if (command.complement == "all" || command.complement == "") {
+				emit SignalGetLayoutStatus();
+				if (layoutStatus >= 1) emit SignalAddCommand("show mesh status 1");
+				if (layoutStatus >= 2) emit SignalAddCommand("show mesh status 2");
+				if (layoutStatus >= 3) emit SignalAddCommand("show mesh status 3");
+				if (layoutStatus >= 4) emit SignalAddCommand("show mesh status 4");
+				if (layoutStatus >= 5) emit SignalAddCommand("show mesh status 5");
+				if (layoutStatus >= 6) emit SignalAddCommand("show mesh status 6");
+				return;
+			}
+			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
+		}
+		else if (command.object == "status") {
+			if (command.complement == "1") emit SignalShowMeshStatus_1(), emit SignalShowCloudStatus_1();
+			else if (command.complement == "2") emit SignalShowMeshStatus_2(), emit SignalShowCloudStatus_2();
+			else if (command.complement == "3") emit SignalShowMeshStatus_3(), emit SignalShowCloudStatus_3();
+			else if (command.complement == "4") emit SignalShowMeshStatus_4(), emit SignalShowCloudStatus_4();
+			else if (command.complement == "5") emit SignalShowMeshStatus_5(), emit SignalShowCloudStatus_5();
+			else if (command.complement == "6") emit SignalShowMeshStatus_6(), emit SignalShowCloudStatus_6();
+			else if (command.complement == "all" || command.complement == "") {
+				emit SignalGetLayoutStatus();
+				if (layoutStatus >= 1) emit SignalAddCommand("show status 1");
+				if (layoutStatus >= 2) emit SignalAddCommand("show status 2");
+				if (layoutStatus >= 3) emit SignalAddCommand("show status 3");
+				if (layoutStatus >= 4) emit SignalAddCommand("show status 4");
+				if (layoutStatus >= 5) emit SignalAddCommand("show status 5");
+				if (layoutStatus >= 6) emit SignalAddCommand("show status 6");
+				return;
+			}
+			else emit SignalOutputTextEditError("There isn't parameter \"" + command.complement + "\" for \"" + command.object + "\"");
+		}
 		else emit SignalOutputTextEditError("There isn't parameter \"" + command.object + "\" for \"" + command.predicate + "\"");
 	}
 	else if (command.predicate == "subdivide") {
 
 		MeshSubdivisior meshSubdivisior;
 		QString oMeshPath = "./oMesh_" + command.complement + ".ply";
+
+		if (command.object == "setup") {
+			emit SignalGetLayoutStatus();
+			if (layoutStatus >= 6) {
+				emit SignalAddCommand("subdivide butterfly 1");
+				emit SignalAddCommand("subdivide catmull 2");
+				emit SignalAddCommand("subdivide efp 3");
+				emit SignalAddCommand("subdivide feature 4");
+				emit SignalAddCommand("subdivide loop 5");
+				emit SignalAddCommand("subdivide sqrt3 6");
+				emit SignalOutputTextEditNotice("1: butterfly, 2: catmull, 3: efp, 4: feature, 5: loop, 6: sqrt3;");
+				return;
+			}
+		}
 
 		if (command.complement == "1") meshSubdivisior.SetOutputMeshPath(oMeshPath), emit SignalGetMeshPath(1);
 		else if (command.complement == "2") meshSubdivisior.SetOutputMeshPath(oMeshPath), emit SignalGetMeshPath(2);
@@ -215,29 +314,24 @@ void CommandProcessor::run() {
 
 			// Carl: subdivision
 			emit SignalOutputTextEditProcessing("Subdividing");
-			if (command.object == "catmull") meshSubdivisior.MeshSubdivisionCatmullClarkT();
+			if (command.object == "butterfly") meshSubdivisior.MeshSubdivisionModifiedButterFlyT();
+			else if (command.object == "catmull") meshSubdivisior.MeshSubdivisionCatmullClarkT();
+			else if (command.object == "efp") meshSubdivisior.MeshSubdivisionEdgePreserved();
 			else if (command.object == "loop") meshSubdivisior.MeshSubdivisiorLoopT();
-			else if (command.object == "butterfly") meshSubdivisior.MeshSubdivisionModifiedButterFlyT();
 			else if (command.object == "sqrt3") meshSubdivisior.MeshSubdivisionSqrt3T();
 			else if (command.object == "sqrt3lgt") meshSubdivisior.MeshSubdivisionSqrt3InterpolatingSubdividerLabsikGreinerT();
-			else if (command.object == "efp") meshSubdivisior.MeshSubdivisionEdgePreserved();
 			else if (command.object == "feature") {
 
 				// Carl: detect keypoint first
 				KeypointDetector keypointDetector;
 				QVector<bool> keypointList;
-				emit SignalOutputTextEditFinished("Load mesh to KeypointDetector;");
 
 				if (keypointDetector.LoadMeshFile(pathMesh)) {
-					emit SignalOutputTextEditFinished("Load mesh finished;");
-					emit SignalOutputTextEditProcessing("Detecting");
 					keypointList = keypointDetector.KeypointDetection();
-					if (!keypointList.empty()) emit SignalOutputTextEditFinished("Detection finished;");
-					else emit SignalOutputTextEditError("Detection failed");
+					if (keypointList.empty()) emit SignalOutputTextEditError("Detection failed");
 				}
 				else emit SignalOutputTextEditError("Load mesh failed;");
 
-				emit SignalOutputTextEditProcessing("Subdividing");
 				meshSubdivisior.MeshSubdivisionFeaturePreserved(keypointList);
 			}
 			else emit SignalOutputTextEditError("There isn't parameter \"" + command.object + "\" for \"" + command.predicate + "\"");

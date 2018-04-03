@@ -1,7 +1,7 @@
 #include "MeshSubdivision_Debug.h"
 
 void MeshSubdivision_Debug::ShowMesh_1() {
-	// Carl: show mesh_1 to QVTKWidget
+	// Carl: show mesh_6 to QVTKWidget
 	if (layoutStatus >= 1) {
 		viewer_1->addPolygonMesh(mesh_1, "mesh_1");
 		viewer_1->resetCamera();
@@ -10,7 +10,6 @@ void MeshSubdivision_Debug::ShowMesh_1() {
 		OutputTextEditFinished("Show Mesh_1 finished;");
 	}
 	else OutputTextEditError("QVTKWidget_1 hasn't been initialized;");
-
 	return;
 }
 
@@ -74,6 +73,78 @@ void MeshSubdivision_Debug::ShowMesh_6() {
 		qvtkWidget_6->update();
 
 		OutputTextEditFinished("Show Mesh_6 finished;");
+	}
+	else OutputTextEditError("QVTKWidget_6 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ShowMeshStatus_1() {
+	if(layoutStatus >= 1){
+		QVector<QPair<QColor, QString>> output;
+		output.append(QPair<QColor, QString>(QColor("gray"), "Mesh_1 Info: "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Points: " + QString::number(mesh_1.cloud.height*mesh_1.cloud.width) + "] "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Faces: " + QString::number(mesh_1.polygons.size()) + "] "));
+		OutputTextEditColoredString(output);
+	}
+	else OutputTextEditError("QVTKWidget_1 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ShowMeshStatus_2() {
+	if (layoutStatus >= 2) {
+		QVector<QPair<QColor, QString>> output;
+		output.append(QPair<QColor, QString>(QColor("gray"), "Mesh_2 Info: "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Points: " + QString::number(mesh_2.cloud.height*mesh_2.cloud.width) + "] "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Faces: " + QString::number(mesh_2.polygons.size()) + "] "));
+		OutputTextEditColoredString(output);
+	}
+	else OutputTextEditError("QVTKWidget_2 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ShowMeshStatus_3() {
+	if (layoutStatus >= 3) {
+		QVector<QPair<QColor, QString>> output;
+		output.append(QPair<QColor, QString>(QColor("gray"), "Mesh_3 Info: "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Points: " + QString::number(mesh_3.cloud.height*mesh_3.cloud.width) + "] "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Faces: " + QString::number(mesh_3.polygons.size()) + "] "));
+		OutputTextEditColoredString(output);
+	}
+	else OutputTextEditError("QVTKWidget_3 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ShowMeshStatus_4() {
+	if(layoutStatus >= 4){
+		QVector<QPair<QColor, QString>> output;
+		output.append(QPair<QColor, QString>(QColor("gray"), "Mesh_4 Info: "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Points: " + QString::number(mesh_4.cloud.height*mesh_4.cloud.width) + "] "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Faces: " + QString::number(mesh_4.polygons.size()) + "] "));
+		OutputTextEditColoredString(output);
+	}
+	else OutputTextEditError("QVTKWidget_4 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ShowMeshStatus_5() {
+	if (layoutStatus >= 5) {
+		QVector<QPair<QColor, QString>> output;
+		output.append(QPair<QColor, QString>(QColor("gray"), "Mesh_5 Info: "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Points: " + QString::number(mesh_5.cloud.height*mesh_5.cloud.width) + "] "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Faces: " + QString::number(mesh_5.polygons.size()) + "] "));
+		OutputTextEditColoredString(output);
+	}
+	else OutputTextEditError("QVTKWidget_5 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ShowMeshStatus_6() {
+	if (layoutStatus >= 6) {
+		QVector<QPair<QColor, QString>> output;
+		output.append(QPair<QColor, QString>(QColor("gray"), "Mesh_6 Info: "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Points: " + QString::number(mesh_6.cloud.height*mesh_6.cloud.width) + "] "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Faces: " + QString::number(mesh_6.polygons.size()) + "] "));
+		OutputTextEditColoredString(output);
 	}
 	else OutputTextEditError("QVTKWidget_6 hasn't been initialized;");
 	return;
@@ -231,6 +302,78 @@ void MeshSubdivision_Debug::ShowCloud_6() {
 		qvtkWidget_6->update();
 
 		OutputTextEditFinished("Show Cloud_6 finished;");
+	}
+	else OutputTextEditError("QVTKWidget_6 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ShowCloudStatus_1() {
+	if (layoutStatus >= 1) {
+		QVector<QPair<QColor, QString>> output;
+		output.append(QPair<QColor, QString>(QColor("gray"), "Cloud_1 Info: "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Points: " + QString::number(mesh_1.cloud.height*mesh_1.cloud.width) + "] "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Keypoints: " + (keypointList_1.isEmpty() ? "no status" : (QString::number(keypointList_1.count(true))) + " - " + QString::number((double)keypointList_1.count(true) / (mesh_6.cloud.height*mesh_1.cloud.width) * 100)) + "%] "));
+		OutputTextEditColoredString(output);
+	}
+	else OutputTextEditError("QVTKWidget_1 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ShowCloudStatus_2() {
+	if (layoutStatus >= 2) {
+		QVector<QPair<QColor, QString>> output;
+		output.append(QPair<QColor, QString>(QColor("gray"), "Cloud_2 Info: "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Points: " + QString::number(mesh_2.cloud.height*mesh_2.cloud.width) + "] "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Keypoints: " + (keypointList_2.isEmpty() ? "no status" : (QString::number(keypointList_2.count(true))) + " - " + QString::number((double)keypointList_2.count(true) / (mesh_6.cloud.height*mesh_2.cloud.width) * 100)) + "%] "));
+		OutputTextEditColoredString(output);
+	}
+	else OutputTextEditError("QVTKWidget_2 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ShowCloudStatus_3() {
+	if (layoutStatus >= 3) {
+		QVector<QPair<QColor, QString>> output;
+		output.append(QPair<QColor, QString>(QColor("gray"), "Cloud_3 Info: "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Points: " + QString::number(mesh_3.cloud.height*mesh_3.cloud.width) + "] "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Keypoints: " + (keypointList_3.isEmpty() ? "no status" : (QString::number(keypointList_3.count(true))) + " - " + QString::number((double)keypointList_3.count(true) / (mesh_6.cloud.height*mesh_3.cloud.width) * 100)) + "%] "));
+		OutputTextEditColoredString(output);
+	}
+	else OutputTextEditError("QVTKWidget_3 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ShowCloudStatus_4() {
+	if (layoutStatus >= 4) {
+		QVector<QPair<QColor, QString>> output;
+		output.append(QPair<QColor, QString>(QColor("gray"), "Cloud_4 Info: "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Points: " + QString::number(mesh_4.cloud.height*mesh_4.cloud.width) + "] "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Keypoints: " + (keypointList_4.isEmpty() ? "no status" : (QString::number(keypointList_4.count(true))) + " - " + QString::number((double)keypointList_4.count(true) / (mesh_6.cloud.height*mesh_4.cloud.width) * 100)) + "%] "));
+		OutputTextEditColoredString(output);
+	}
+	else OutputTextEditError("QVTKWidget_4 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ShowCloudStatus_5() {
+	if (layoutStatus >= 5) {
+		QVector<QPair<QColor, QString>> output;
+		output.append(QPair<QColor, QString>(QColor("gray"), "Cloud_5 Info: "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Points: " + QString::number(mesh_5.cloud.height*mesh_5.cloud.width) + "] "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Keypoints: " + (keypointList_5.isEmpty() ? "no status" : (QString::number(keypointList_5.count(true))) + " - " + QString::number((double)keypointList_5.count(true) / (mesh_5.cloud.height*mesh_5.cloud.width) * 100)) + "%] "));
+		OutputTextEditColoredString(output);
+	}
+	else OutputTextEditError("QVTKWidget_5 hasn't been initialized;");
+	return;
+}
+
+void MeshSubdivision_Debug::ShowCloudStatus_6() {
+	if (layoutStatus >= 6) {
+		QVector<QPair<QColor, QString>> output;
+		output.append(QPair<QColor, QString>(QColor("gray"), "Cloud_6 Info: "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Points: " + QString::number(mesh_6.cloud.height*mesh_6.cloud.width) + "] "));
+		output.append(QPair<QColor, QString>(QColor("yellow"), "[Keypoints: " + (keypointList_6.isEmpty() ? "no status" : (QString::number(keypointList_6.count(true))) + " - " + QString::number((double)keypointList_6.count(true)/ (mesh_6.cloud.height*mesh_6.cloud.width) * 100)) + "%] "));
+		OutputTextEditColoredString(output);
 	}
 	else OutputTextEditError("QVTKWidget_6 hasn't been initialized;");
 	return;

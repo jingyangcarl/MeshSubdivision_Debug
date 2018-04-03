@@ -442,10 +442,11 @@ void MeshSubdivision_Debug::InitializeSlotSignal() {
 	// Carl: initialize connections between slot and signals;
 
 	// Carl: connection for OutputTextEdit
-	connect(commandProcessor, SIGNAL(SignalOutputTextEditFinished(QString)), this, SLOT(OutputTextEditFinished(QString)));
-	connect(commandProcessor, SIGNAL(SignalOutputTextEditProcessing(QString)), this, SLOT(OutputTextEditProcessing(QString)));
 	connect(commandProcessor, SIGNAL(SignalOutputTextEditError(QString)), this, SLOT(OutputTextEditError(QString)));
+	connect(commandProcessor, SIGNAL(SignalOutputTextEditFinished(QString)), this, SLOT(OutputTextEditFinished(QString)));
 	connect(commandProcessor, SIGNAL(SignalOutputTextEditHelp(QString)), this, SLOT(OutputTextEditHelp(QString)));
+	connect(commandProcessor, SIGNAL(SignalOutputTextEditNotice(QString)), this, SLOT(OutputTextEditNotice(QString)));
+	connect(commandProcessor, SIGNAL(SignalOutputTextEditProcessing(QString)), this, SLOT(OutputTextEditProcessing(QString)));
 
 	// Carl: connection for LoadMesh
 	connect(commandProcessor, SIGNAL(SignalLoadMesh_1(QString)), this, SLOT(LoadMesh_1(QString)));
@@ -463,6 +464,14 @@ void MeshSubdivision_Debug::InitializeSlotSignal() {
 	connect(commandProcessor, SIGNAL(SignalShowMesh_5()), this, SLOT(ShowMesh_5()));
 	connect(commandProcessor, SIGNAL(SignalShowMesh_6()), this, SLOT(ShowMesh_6()));
 
+	// Carl: connection for ShowMeshStatus
+	connect(commandProcessor, SIGNAL(SignalShowMeshStatus_1()), this, SLOT(ShowMeshStatus_1()));
+	connect(commandProcessor, SIGNAL(SignalShowMeshStatus_2()), this, SLOT(ShowMeshStatus_2()));
+	connect(commandProcessor, SIGNAL(SignalShowMeshStatus_3()), this, SLOT(ShowMeshStatus_3()));
+	connect(commandProcessor, SIGNAL(SignalShowMeshStatus_4()), this, SLOT(ShowMeshStatus_4()));
+	connect(commandProcessor, SIGNAL(SignalShowMeshStatus_5()), this, SLOT(ShowMeshStatus_5()));
+	connect(commandProcessor, SIGNAL(SignalShowMeshStatus_6()), this, SLOT(ShowMeshStatus_6()));
+
 	// Carl: connection for ClearMesh
 	connect(commandProcessor, SIGNAL(SignalClearMesh_1()), this, SLOT(ClearMesh_1()));
 	connect(commandProcessor, SIGNAL(SignalClearMesh_2()), this, SLOT(ClearMesh_2()));
@@ -478,6 +487,14 @@ void MeshSubdivision_Debug::InitializeSlotSignal() {
 	connect(commandProcessor, SIGNAL(SignalShowCloud_4()), this, SLOT(ShowCloud_4()));
 	connect(commandProcessor, SIGNAL(SignalShowCloud_5()), this, SLOT(ShowCloud_5()));
 	connect(commandProcessor, SIGNAL(SignalShowCloud_6()), this, SLOT(ShowCloud_6()));
+
+	// Carl: connection for ShowCloudStatus
+	connect(commandProcessor, SIGNAL(SignalShowCloudStatus_1()), this, SLOT(ShowCloudStatus_1()));
+	connect(commandProcessor, SIGNAL(SignalShowCloudStatus_2()), this, SLOT(ShowCloudStatus_2()));
+	connect(commandProcessor, SIGNAL(SignalShowCloudStatus_3()), this, SLOT(ShowCloudStatus_3()));
+	connect(commandProcessor, SIGNAL(SignalShowCloudStatus_4()), this, SLOT(ShowCloudStatus_4()));
+	connect(commandProcessor, SIGNAL(SignalShowCloudStatus_5()), this, SLOT(ShowCloudStatus_5()));
+	connect(commandProcessor, SIGNAL(SignalShowCloudStatus_6()), this, SLOT(ShowCloudStatus_6()));
 
 	// Carl: connection for ClearCloud
 	connect(commandProcessor, SIGNAL(SignalClearCloud_1()), this, SLOT(ClearCloud_1()));
@@ -513,6 +530,8 @@ void MeshSubdivision_Debug::InitializeSlotSignal() {
 	// Carl: the parameter Qt::DirectConnection is to make sure the communication between two threads is synchronized
 	connect(commandProcessor, SIGNAL(SignalGetMeshPath(int)), this, SLOT(SendMeshPath(int)), Qt::DirectConnection);
 	connect(this, SIGNAL(SignalSendMeshPath(QString)), commandProcessor, SLOT(GetMeshPath(QString)), Qt::DirectConnection);
+	connect(commandProcessor, SIGNAL(SignalGetLayoutStatus()), this, SLOT(SendLayoutStatus()), Qt::DirectConnection);
+	connect(this, SIGNAL(SignalSendLayoutStatus(int)), commandProcessor, SLOT(GetLayoutStatus(int)), Qt::DirectConnection);
 	connect(commandProcessor, SIGNAL(SignalSendKeypointList_1(QVector<bool>)), this, SLOT(GetKeypointList_1(QVector<bool>)), Qt::DirectConnection);
 	connect(commandProcessor, SIGNAL(SignalSendKeypointList_2(QVector<bool>)), this, SLOT(GetKeypointList_2(QVector<bool>)), Qt::DirectConnection);
 	connect(commandProcessor, SIGNAL(SignalSendKeypointList_3(QVector<bool>)), this, SLOT(GetKeypointList_3(QVector<bool>)), Qt::DirectConnection);
